@@ -316,7 +316,7 @@ entonces:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-y(t)\sim2\sum_{n=1}^{\infty}\left|b_{2n-1}\right|\left|H\left((2n-1)f_{0}\right)\right|cos\left[2\pi(2n-1)f_{0}t+\phi((2n-1)f_{0})+\theta_{2n-1}\right]
+y(t)\sim\sum_{n=1}^{\infty}\left|b_{2n-1}\right|\left|H\left((2n-1)f_{0}\right)\right|cos\left[2\pi(2n-1)f_{0}t+\phi((2n-1)f_{0})+\theta_{2n-1}\right]
 \]
 
 \end_inset
@@ -419,7 +419,7 @@ Finalmente, podemos escribir la salida como:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-y(t)\sim\sum_{n=1}^{\infty}\frac{40}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t-arctg\left(2\pi(2n-1)f_{0}RC\right)\right)
+y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t-arctg\left(2\pi(2n-1)f_{0}RC\right)\right)
 \]
 
 \end_inset

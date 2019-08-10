@@ -62,7 +62,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -243,11 +243,7 @@ x(t)
 \emph default
  será igual a 
 \emph on
-y(t) 
-\emph default
-en todos los numeros reales exceptuando los puntos de discontinuidad.
- Esto quiere decir, que es posible que al trabajar con ondas cuadradas,
- se encuentren sobrepicos.
+y()
 \end_layout
 
 \begin_layout Standard

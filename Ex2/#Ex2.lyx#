@@ -146,7 +146,134 @@ name "2_1"
 
 \begin_layout Standard
 Si queremos ver como reacciona el circuito a una señal cuadrada, debemos
- calcular pr
+ calcular primero como afecta nuestro circuito a la onda de entrada.
+ Como sabemos que la onda es una cuadrada, haciendo su descomposición de
+ suma de señales trigonometricas, los coeficientes de Fourier resultan ser:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{0}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+a_{n}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b_{2n-1}=\frac{20}{(2n-1)\pi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+b_{2n}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, la onda cuadrada se puede expresar en el espacio temporal
+ como se ve en la expresión 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2_1"
+
+\end_inset
+
+.
+ Sin embargo, podemos ver, por temas de idealizacion, que una señal cuadrada
+ ideal, se puede aproximar por una suma de términos finitos de senoidales,
+ por lo tanto, si aproximamos la cuadrada con 10 terminos o con 100 términos,
+ podemos ver como las aproximaciones van quedando mas parecidas, esto se
+ muestra en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "2_2"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi}sin\left(2\pi(2n-1)f_{0}t\right)\label{eq:2_1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Square.png
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representación de onda cuadrada mediante suma de senoidales
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "2_2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

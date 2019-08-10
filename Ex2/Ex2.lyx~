@@ -62,7 +62,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \html_math_output 0
 \html_css_as_file 0
@@ -111,10 +111,6 @@ reference "2_1"
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -243,7 +239,11 @@ x(t)
 \emph default
  será igual a 
 \emph on
-y()
+y(t) 
+\emph default
+en todos los numeros reales exceptuando los puntos de discontinuidad.
+ Esto quiere decir, que es posible que al trabajar con ondas cuadradas,
+ se encuentren sobrepicos.
 \end_layout
 
 \begin_layout Standard
@@ -294,9 +294,127 @@ name "2_2"
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
+
+\begin_layout Standard
+Debido a que la entrada es una función continua a trozos de período 
+\emph on
+T, 
+\emph default
+entonces:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y(t)\sim2\sum_{n=1}^{\infty}\left|b_{2n-1}\right|\left|H\left((2n-1)f_{0}\right)\right|cos\left[2\pi(2n-1)f_{0}t+\phi((2n-1)f_{0})+\theta_{2n-1}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+b_{2n-1}=\left|b_{2n-1}\right|e^{i\theta_{2n-1}}\label{eq:3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\left|H(f)\right|e^{i\phi(f)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A su vez;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(f)=\frac{1}{1+i2\pi fRC}\label{eq:2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, haciendo calculos de las ecuaciones 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:3"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2"
+
+\end_inset
+
+, concluimos que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\phi(f)=-arctg(2\pi fRC)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\frac{1}{\sqrt{(2\pi fRC)^{2}+1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta_{n}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, podemos escribir la salida como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y(t)\sim\sum_{n=1}^{\infty}\frac{40}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t-arctg\left(2\pi(2n-1)f_{0}RC\right)\right)
+\]
 
 \end_inset
 

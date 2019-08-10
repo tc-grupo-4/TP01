@@ -113,10 +113,6 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -207,9 +203,9 @@ reference "eq:2_1"
 .
  Sin embargo, podemos ver, por temas de idealizacion, que una señal cuadrada
  ideal, se puede aproximar por una suma de términos finitos de senoidales,
- por lo tanto, si aproximamos la cuadrada con 10 terminos o con 100 términos,
- podemos ver como las aproximaciones van quedando mas parecidas, esto se
- muestra en la figura 
+ por lo tanto, si aproximamos la cuadrada con 10 terminos, podemos ver como
+ la aproximacion van quedando mas parecidas, esto se muestra en la figura
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "2_2"
@@ -217,6 +213,37 @@ reference "2_2"
 \end_inset
 
 .
+ A medida que agreguemos mas términos a nuestra suma, menos sera la diferencia
+ con una onda cuadrada ideal.
+ No obstante, hay que tener en cuenta que, como fue visto en Matemática
+ V, al tener una discontinuidad no evitable cada 
+\begin_inset Formula $\frac{T}{2}$
+\end_inset
+
+, siendo 
+\emph on
+T
+\emph default
+ el período de la señal, se generaran sobrepicos en los puntos de discontinuidad.
+ por ende, si llamamos 
+\emph on
+x(t)
+\emph default
+ a la función cuadrada ideal e 
+\emph on
+y(t)
+\emph default
+ a su aproximación por senoides, 
+\emph on
+x(t)
+\emph default
+ será igual a 
+\emph on
+y(t) 
+\emph default
+en todos los numeros reales exceptuando los puntos de discontinuidad.
+ Esto quiere decir, que es posible que al trabajar con ondas cuadradas,
+ se encuentren sobrepicos.
 \end_layout
 
 \begin_layout Standard
@@ -267,13 +294,120 @@ name "2_2"
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
+
+\begin_layout Standard
+Debido a que la entrada es una función continua a trozos de período 
+\emph on
+T, 
+\emph default
+entonces:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y(t)\sim2\sum_{n=1}^{\infty}\left|b_{2n-1}\right|\left|H\left((2n-1)f_{0}\right)\right|cos\left[2\pi(2n-1)f_{0}t+\phi((2n-1)f_{0})+\theta_{2n-1}\right]
+\]
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Siendo\,b_{2n-1}=\left|b_{2n-1}\right|e^{i\theta_{2n-1}}\label{eq:3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\left|H(f)\right|e^{i\phi(f)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A su vez;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(f)=\frac{1}{1+i2\pi fRC}\label{eq:2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, haciendo calculos de las ecuaciones 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:3"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2"
+
+\end_inset
+
+, concluimos que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\phi(f)=-arctg(2\pi fRC)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(f)=\frac{1}{\sqrt{(2\pi fRC)^{2}+1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\theta_{n}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, podemos escribir la sa
 \end_layout
 
 \end_body

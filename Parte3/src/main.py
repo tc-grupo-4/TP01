@@ -1,4 +1,6 @@
 import tkinter
+import FileParser as fp
+import os.path
 
 from matplotlib.backends.backend_tkagg import (
     FigureCanvasTkAgg, NavigationToolbar2Tk)
@@ -13,6 +15,7 @@ HEIGHT = 600
 
 class PlotTool:
     def __init__(self, master):
+        self.parser = fp.FileParser()
         self.root = master
         # Frames
         # Creo dos frames que de distribuyen la ventana en un grid de 2 col y una fila
@@ -72,10 +75,19 @@ class PlotTool:
             self.deleteButton.config(state=tkinter.DISABLED)
 
     def onSpiceBtnClicked(self):
+        #type, data = self.parser.parseSpiceFile("resources/ac.txt")
+        #print(type)
+        #print(len(data[0]))
         # Abrir selector de archivos
-        filename = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Archivos de Texto", "*.txt"),("Todos los archivos", "*.*")))
-        if filename != '':
-            self.plotManager.addSpiceFile(filename)
+        filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Archivos de Texto", "*.txt"),("Todos los archivos", "*.*")))[0]
+        if filePath != '':
+            type, data = self.parser.parseSpiceFile(filePath)
+            if type.lower() == "ac":
+                pass
+                # Agregar Plot bode
+            elif type.lower == "transit":
+                # agregar plot tiempo
+                pass
 
 def main():
     # Root window

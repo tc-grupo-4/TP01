@@ -1,17 +1,19 @@
-function [] = test()
+function [] = out()
   clear all;
   clc;
-  x = 0:1/100:1;
+  x = 0:2/200:2;
   y = zeros(1,length(x));
-  y = hola(x,1);
+  y = chau(x,1);
   plot(x,y,'k');
   hold on;
   for  k =2:100
-    y = y + hola(x,k);
+    y = y + chau(x,k);
     plot(x,y,'k');
     endfor
     grid on;
     title("Señal de entrada de 1 a 100 armonicos");
     xlabel("tiempo/periodo");
     ylabel("Tension");
+  
+  
 endfunction

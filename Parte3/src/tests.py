@@ -1,5 +1,5 @@
 import PlotManager as pm
 
-filePath = "textTest.txt"
+filePath = "resources/textTest.txt"
 plotMngr = pm.PlotManager()
 plotMngr.parseSpiceFile(filePath)

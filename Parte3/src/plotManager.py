@@ -22,11 +22,11 @@ class PlotManager:
         # leo hasta el primer \t
         headers = lines[0].split("\t")
         if headers[0] == "time":
-            self.parseTransitFile(lines)
+            self.parseTransitFile(lines[1,:])
         elif headers[0] == "Freq.":
             self.parseACFlie(lines)
 
-        def parseTransitFile(self, lines[1,:]):
+        def parseTransitFile(self, lines):
             pass
 
         def parseACFlie(self, lines):

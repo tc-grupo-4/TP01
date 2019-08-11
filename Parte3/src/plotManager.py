@@ -26,7 +26,7 @@ class PlotManager:
         elif headers[0] == "Freq.":
             self.parseACFlie(lines)
 
-        def parseTransitFile(self, lines):
+        def parseTransitFile(self, lines[1,:]):
             pass
 
         def parseACFlie(self, lines):
@@ -35,6 +35,11 @@ class PlotManager:
             # data contiene (magdB,phaseº)
             data = []
             for line in lines:
+                freq.append(line.split("\t")[0])
+                data.append(line.split("\t")[1])
+
+            print(freq)
+            print(data)
                 
 
         

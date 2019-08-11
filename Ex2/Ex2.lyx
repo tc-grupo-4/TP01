@@ -383,7 +383,7 @@ reference "eq:2"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\phi(f)=-arctg(2\pi fRC)
+\phi(f)=arctg(2\pi fRC)
 \]
 
 \end_inset
@@ -420,7 +420,7 @@ Finalmente, podemos escribir la salida como:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t-arctg\left(2\pi(2n-1)f_{0}RC\right)\right)
+y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t+arctg\left(2\pi(2n-1)f_{0}RC\right)\right)
 \]
 
 \end_inset

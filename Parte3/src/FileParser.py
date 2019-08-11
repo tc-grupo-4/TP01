@@ -56,6 +56,8 @@ class FileParser:
 
         return [freq,mag,phase]
 
+    def parseTransferFunctionFile(self, filePath):
+        pass
 
     def parseACData(self, data):
         mag = data[data.find("(")+1:data.find("d")]

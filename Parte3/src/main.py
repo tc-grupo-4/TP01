@@ -1,4 +1,5 @@
 import tkinter
+from tkinter import simpledialog, messagebox, ttk
 import FileParser as fp
 import os.path
 
@@ -47,13 +48,22 @@ class PlotTool:
         self.spiceButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
 
         # Boton transferencia
-        self.transferButton = tkinter.Button(self.controlsFrame, text="H(s)")
+        self.transferBtnText = tkinter.StringVar()
+        self.transferButton = tkinter.Button(self.controlsFrame, textvariable=self.transferBtnText, command=self.onTransferFunctionButtonClicked)
         self.transferButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
-
+        # radioButton polos/ceros/mag o num/den
+        self.MODES = ["(Poles, Zeros & Gain)", "(Num & Den)"]
+        self.var = tkinter.IntVar()
+        self.rb1 = tkinter.Radiobutton(self.controlsFrame, text=self.MODES[0], variable=self.var, value=0, command=self.selTransferMethod, bg = self.controlsFrame["bg"])
+        self.rb1.grid(columnspan=2, sticky="WE", padx=5, pady=5)
+        self.rb2 = tkinter.Radiobutton(self.controlsFrame, text=self.MODES[1], variable=self.var, value=1, command=self.selTransferMethod, bg = self.controlsFrame["bg"])
+        self.rb2.grid(columnspan=2, sticky="WE", padx=5, pady=5)
+        # llamo a selTransferMethod para setear el string del boton segun el radiobuttton por default
+        self.selTransferMethod()
 
         # Boton medicion
         self.measurementButton = tkinter.Button(self.controlsFrame, text="Medición")
-        self.measurementButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
+        self.measurementButton.grid(columnspan=2, sticky="W", padx=5, pady=5)
 
         # Boton borrar plots
         # lista de prueba:
@@ -75,12 +85,10 @@ class PlotTool:
             self.deleteButton.config(state=tkinter.DISABLED)
 
     def onSpiceBtnClicked(self):
-        #type, data = self.parser.parseSpiceFile("resources/ac.txt")
-        #print(type)
-        #print(len(data[0]))
-        # Abrir selector de archivos
-        filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Archivos de Texto", "*.txt"),("Todos los archivos", "*.*")))[0]
-        if filePath != '':
+        filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Archivos de Texto", "*.txt"),("Todos los archivos", "*.*")))
+        if not filePath:
+            return
+        elif filePath[0] != '':
             type, data = self.parser.parseSpiceFile(filePath)
             if type.lower() == "ac":
                 pass
@@ -88,7 +96,69 @@ class PlotTool:
             elif type.lower == "transit":
                 # agregar plot tiempo
                 pass
+    
+    def onTransferFunctionButtonClicked(self):
+        mode = self.var.get()
+        if mode == 0: # plos, ceros y gain
+            print ("polos y ceros")
+            # Prompt Polos
+            self.polesZerosWindow()
+        elif mode == 1: # num y den
+            print ("num y den")
+            self.numDenWindow()
 
+    def polesZerosWindow(self):
+        t = tkinter.Toplevel(self.controlsFrame)
+        t.wm_title("Poles, Zeros & Gain Configuration")
+        t.resizable(False, False)
+        pLabel = tkinter.Label(t, text="Funtion Poles")
+        pLabel.grid(row=0,column=0, padx=5, pady=5, sticky="WE")
+        pEntry = tkinter.Entry(t)
+        pEntry.grid(row=0, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+        
+        zLabel = tkinter.Label(t, text="Function Zeros")
+        zLabel.grid(row=1,column=0, padx=5, pady=5, sticky="WE")
+        zEntry = tkinter.Entry(t)
+        zEntry.grid(row=1, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+
+        gLabel = tkinter.Label(t, text="Function Gain")
+        gLabel.grid(row=2,column=0, padx=5, pady=5, sticky="WE")
+        gEntry = tkinter.Entry(t)
+        gEntry.grid(row=2, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+
+        acceptButton = tkinter.Button(t, text="Accept")
+        acceptButton.grid(row=3,column=2, padx=5, pady=5, sticky="WE")
+
+        cancelButton = tkinter.Button(t, text="Cancel")
+        cancelButton.grid(row=3,column=3, padx=5, pady=5, sticky="WE")
+
+    def numDenWindow(self):
+        t = tkinter.Toplevel(self.controlsFrame)
+        t.wm_title("Numerator & Denumerator")
+        t.resizable(False, False)
+
+        nLabel = tkinter.Label(t, text="Function Numerator")
+        nLabel.grid(row=1,column=0, padx=5, pady=5, sticky="WE")
+        nEntry = tkinter.Entry(t)
+        nEntry.grid(row=1, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+
+        dLabel = tkinter.Label(t, text="Function Denominator")
+        dLabel.grid(row=2,column=0, padx=5, pady=5, sticky="WE")
+        dEntry = tkinter.Entry(t)
+        dEntry.grid(row=2, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+
+        acceptButton = tkinter.Button(t, text="Accept")
+        acceptButton.grid(row=3,column=2, padx=5, pady=5, sticky="WE")
+
+        cancelButton = tkinter.Button(t, text="Cancel")
+        cancelButton.grid(row=3,column=3, padx=5, pady=5, sticky="WE")
+
+    def selTransferMethod(self):
+        selection = str(self.MODES[self.var.get()])
+        temp = "H(s)\n" + selection
+        self.transferBtnText.set(temp)
+
+    
 def main():
     # Root window
     root = tkinter.Tk()

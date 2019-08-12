@@ -79,7 +79,7 @@
 \begin_body
 
 \begin_layout Section
-Ejercicio 2
+Filtro pasabajos
 \end_layout
 
 \begin_layout Standard
@@ -452,7 +452,7 @@ reference "eq:2"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\phi(f)=arctg(2\pi fRC)
+\phi(f)=-arctg(2\pi fRC)
 \]
 
 \end_inset
@@ -503,8 +503,31 @@ reference "2_3"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t+arctg\left(2\pi(2n-1)f_{0}RC\right)\right)\label{eq:2_3}
+y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t-arctg\left(2\pi(2n-1)f_{0}RC\right)+\frac{\pi}{2}\right)\label{eq:2_3}
 \end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta que 
+\begin_inset Formula $f_{0}=\frac{1}{2\pi RC}$
+\end_inset
+
+ , y llamando 
+\emph on
+k=2n-1, 
+\emph default
+entonces
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y(t)\sim\sum_{k\,impares}\frac{20}{k\pi\sqrt{k^{2}+1}}cos\left(2\pi kf_{0}t-arctg\left(k\right)+\frac{\pi}{2}\right)
+\]
 
 \end_inset
 

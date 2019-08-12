@@ -1,7 +1,7 @@
 function [] = test()
   clear all;
   clc;
-  x = 0:1/100:1;
+  x = 0:2/100:2;
   y = zeros(1,length(x));
   y = hola(x,1);
   plot(x,y,'k');

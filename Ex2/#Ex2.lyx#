@@ -79,7 +79,7 @@
 \begin_body
 
 \begin_layout Section
-Ejercicio 2
+Filtro pasabajos
 \end_layout
 
 \begin_layout Standard
@@ -106,8 +106,27 @@ reference "2_1"
 
 .
  A su vez, se calculo la transferecia del circuito idealmente resultando
- ser 
-\begin_inset Formula $H(s)=\frac{1}{1+sRC}$
+ ser:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+H(s)=\frac{1}{1+sRC}\label{eq:2_4}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si simulamos la transferencia del circuito en LTSpice, el resultado es el
+ que se ve en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "2_4"
+
 \end_inset
 
 .
@@ -145,6 +164,56 @@ name "2_1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plot.pdf
+	lyxscale 25
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulacion LTSpice
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "2_4"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Calculo de armónicos
 \end_layout
 
 \begin_layout Standard
@@ -274,8 +343,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename Square.png
-	lyxscale 50
-	scale 35
+	lyxscale 20
+	scale 50
 
 \end_inset
 
@@ -443,12 +512,39 @@ y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\righ
 \end_layout
 
 \begin_layout Standard
+Teniendo en cuenta que 
+\begin_inset Formula $f_{0}=\frac{1}{2\pi RC}$
+\end_inset
+
+ entonces;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2n-1\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t+arctg\left((2n-1)f_{0}RC\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename out_calc.png
+	lyxscale 20
+	scale 50
+
+\end_inset
+
 
 \end_layout
 
@@ -476,13 +572,63 @@ name "2_3"
 
 \end_layout
 
+\begin_layout Subsection
+Circuito como Integrador
+\end_layout
+
 \begin_layout Standard
-Teniendo en cuenta esto, si graficamos los primeros 50 términos de 
+Como ya sabemos, un circuito integrador es aquel que cumple que su funcion
+ transferencia sea 
+\begin_inset Formula $H(s)=\frac{1}{s}$
+\end_inset
+
+, como vemos en la ecuacion 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2_4"
+
+\end_inset
+
+, nuestro circuito no posee esa transferencia, sin embargo, si procuramos
+ movernos en un intervalo donde 
 \emph on
-y(t), 
+sRC 
 \emph default
-podemos ver que la funcion se comporta con lo observado en las simulaciones
- y en las mediciones.
+sea lo suficientemente grande comparado con 1, podremos aproximar a una
+ funcion transferecia integradora.
+ Es decir;
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Si\,\,sRC\ggg1\Longrightarrow H(s)=\frac{1}{1+sRC}\approx\frac{1}{RC}\frac{1}{s}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ende, si cambiamos al espacio de frecuencias, procurando que 
+\begin_inset Formula $2\pi fRC\ggg1$
+\end_inset
+
+ podemos obtener la transferencia de un circuito integrador.
+ En particular, para 
+\begin_inset Formula $R=2.5(k\Omega)\,y\,C=1(nF)$
+\end_inset
+
+ debemos concluir que para una frecuiencia 
+\begin_inset Formula $f_{a}\ggg63(kHz)$
+\end_inset
+
+, nuestro circuito se comportará como un integrador.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \end_body

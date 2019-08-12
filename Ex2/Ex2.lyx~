@@ -516,13 +516,17 @@ Teniendo en cuenta que
 \begin_inset Formula $f_{0}=\frac{1}{2\pi RC}$
 \end_inset
 
- entonces;
+ , y llamando 
+\emph on
+k=2n-1, 
+\emph default
+entonces
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2n-1\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t-arctg\left(2n-1\right)+\frac{\pi}{2}\right)
+y(t)\sim\sum_{k\,impares}\frac{20}{k\pi\sqrt{k^{2}+1}}cos\left(2\pi kf_{0}t-arctg\left(k\right)+\frac{\pi}{2}\right)
 \]
 
 \end_inset

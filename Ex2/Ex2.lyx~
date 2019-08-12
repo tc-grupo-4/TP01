@@ -344,7 +344,15 @@ status open
 \begin_inset Graphics
 	filename Square.png
 	lyxscale 20
-	scale 50
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename DiagEspcTeo.png
+	lyxscale 25
+	scale 35
 
 \end_inset
 
@@ -355,7 +363,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Representación de onda cuadrada mediante suma de senoidales
+Representación de onda cuadrada mediante suma de senoidales y su diagrama
+ espectral teórico
 \end_layout
 
 \end_inset

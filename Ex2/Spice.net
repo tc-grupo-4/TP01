@@ -1,7 +1,9 @@
 * C:\Users\Ian Diaz\Desktop\TP01\Ex2\Spice.asc
 V1 N001 0 SINE(0 1 1K) AC 1 0
-R1 N002 N001 2.49k
+R1 N002 N001 {mc(2.49k,tola)} tol=tola
 C1 N002 0 1n
 .ac dec 10 10 100000k
+.param tola=0.05
+.step param run 1 100 1
 .backanno
 .end

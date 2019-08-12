@@ -121,6 +121,18 @@ H(s)=\frac{1}{1+sRC}\label{eq:2_4}
 \end_layout
 
 \begin_layout Standard
+Si simulamos la transferencia del circuito en LTSpice, el resultado es el
+ que se ve en la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "2_4"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
@@ -139,6 +151,52 @@ Resultados
 \begin_inset CommandInset label
 LatexCommand label
 name "2_1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plot.pdf
+	lyxscale 25
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulacion LTSpice
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "2_4"
 
 \end_inset
 
@@ -534,7 +592,20 @@ Si\,\,sRC\ggg1\Longrightarrow H(s)=\frac{1}{1+sRC}\approx\frac{1}{RC}\frac{1}{s}
 \end_layout
 
 \begin_layout Standard
+Por ende, si cambiamos al espacio de frecuencias, procurando que 
+\begin_inset Formula $2\pi fRC\ggg1$
+\end_inset
 
+ podemos obtener la transferencia de un circuito integrador.
+ En particular, para 
+\begin_inset Formula $R=2.5(k\Omega)\,y\,C=1(nF)$
+\end_inset
+
+ debemos concluir que para una frecuiencia 
+\begin_inset Formula $f_{a}\ggg63(kHz)$
+\end_inset
+
+, nuestro circuito se comportará como un integrador.
 \end_layout
 
 \end_body

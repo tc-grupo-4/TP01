@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="generator" content="http://www.nongnu.org/elyxer/"/>
+<meta name="create-date" content="2019-08-12"/>
+<link rel="stylesheet" href="http://elyxer.nongnu.org/lyx.css" type="text/css" media="all"/>
+<title>Converted document</title>
+</head>
+<body>
+<div id="globalWrapper">
+<h1 class="Section">
+<a class="toc" name="toc-Section-1">1</a> Filtro pasabajos
+</h1>
+<div class="Unindented">
+Se pidió aplicar a un filtro RC de frecuencia de corte <span class="formula"><i>f</i><sub>0</sub> = 64 (<i>kHz</i>)</span> una onda cuadrada de <span class="formula">10 <i>V</i><sub><i>pp</i></sub></span> con frecuencia de <span class="formula"><i>f</i> = 32 (<i>kHz</i>)</span> . Los resultados obtenidos empiricamente fueron los que se muestran en la figura <a class="Reference" href="#2_1">1↓</a>. A su vez, se calculo la transferecia del circuito idealmente resultando ser:
+</div>
+<div class="Indented">
+<div class="formula">
+<a class="eqnumber" name="eq:2_4">(1) </a><i>H</i>(<i>s</i>) = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">1 + <i>sRC</i></span><span class="ignored">)</span></span>
+</div>
+
+</div>
+<div class="Indented">
+Si simulamos la transferencia del circuito en LTSpice, el resultado es el que se ve en las figuras <a class="Reference" href="#2_4">2↓</a> y <a class="Reference" href="#2_5">3↓</a>.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-1"> </a><div class="figure">
+<div class="caption">
+Figure 1 Resultados
+</div>
+<a class="Label" name="2_1"> </a>
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-2"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="plot.png" alt="figure plot.png"/>
+
+</div>
+<div class="caption">
+Figure 2 Simulacion LTSpice
+</div>
+<a class="Label" name="2_4"> </a>
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-3"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="montecarlo.png" alt="figure montecarlo.png"/>
+
+</div>
+<div class="caption">
+Figure 3 Análisis montecarlo
+</div>
+<a class="Label" name="2_5"> </a>
+</div>
+
+</div>
+
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-1.1">1.1</a> Calculo de armónicos
+</h2>
+<div class="Unindented">
+Si queremos ver como reacciona el circuito a una señal cuadrada, debemos calcular primero como afecta nuestro circuito a la onda de entrada. Como sabemos que la onda es una cuadrada, haciendo su descomposición de suma de señales trigonometricas, los coeficientes de Fourier resultan ser:
+</div>
+<div class="Indented">
+<div class="formula">
+<i>a</i><sub>0</sub> = 0
+</div>
+
+</div>
+<div class="Indented">
+<div class="formula">
+<i>a</i><sub><i>n</i></sub> = 0
+</div>
+
+</div>
+<div class="Indented">
+<div class="formula">
+<i>b</i><sub>2<i>n</i> − 1</sub> = <span class="fraction"><span class="ignored">(</span><span class="numerator">20</span><span class="ignored">)/(</span><span class="denominator">(2<i>n</i> − 1)<i>π</i></span><span class="ignored">)</span></span>
+</div>
+
+</div>
+<div class="Indented">
+<div class="formula">
+<i>b</i><sub>2<i>n</i></sub> = 0
+</div>
+
+</div>
+<div class="Indented">
+Por lo tanto, la onda cuadrada se puede expresar en el espacio temporal como se ve en la expresión <a class="Reference" href="#eq:2_1">2↓</a>. Sin embargo, podemos ver, por temas de idealizacion, que una señal cuadrada ideal, se puede aproximar por una suma de términos finitos de senoidales, por lo tanto, si aproximamos la cuadrada con 10 terminos, podemos ver como la aproximacion van quedando mas parecidas, esto se muestra en la figura <a class="Reference" href="#2_2">4↓</a>. A medida que agreguemos mas términos a nuestra suma, menos sera la diferencia con una onda cuadrada ideal. No obstante, hay que tener en cuenta que, como fue visto en Matemática V, al tener una discontinuidad no evitable cada <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>T</i></span><span class="ignored">)/(</span><span class="denominator">2</span><span class="ignored">)</span></span></span>, siendo <i>T</i> el período de la señal, se generaran sobrepicos en los puntos de discontinuidad. por ende, si llamamos <i>x(t)</i> a la función cuadrada ideal e <i>y(t)</i> a su aproximación por senoides, <i>x(t)</i> será igual a <i>y(t) </i>en todos los numeros reales exceptuando los puntos de discontinuidad. Esto quiere decir, que es posible que al trabajar con ondas cuadradas, se encuentren sobrepicos.
+</div>
+<div class="Indented">
+<div class="formula">
+<a class="eqnumber" name="eq:2_1">(2) </a><i>x</i>(<i>t</i>) ~ <span class="limits"><sup class="limit">∞</sup><span class="limit">⎲</span><span class="limit">⎳</span><sub class="limit"><i>n</i> = 1</sub></span><span class="fraction"><span class="ignored">(</span><span class="numerator">20</span><span class="ignored">)/(</span><span class="denominator">(2<i>n</i> − 1)<i>π</i></span><span class="ignored">)</span></span><i>sin</i><span class="symbol">(</span>2<i>π</i>(2<i>n</i> − 1)<i>f</i><sub>0</sub><i>t</i><span class="symbol">)</span>
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-4"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="Square.png" alt="figure Square.png"/>
+<img class="embedded" src="DiagEspcTeo.png" alt="figure DiagEspcTeo.png"/>
+
+</div>
+<div class="caption">
+Figure 4 Representación de onda cuadrada mediante suma de senoidales y su diagrama espectral teórico
+</div>
+<a class="Label" name="2_2"> </a>
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+Debido a que la entrada es una función continua a trozos de período <i>T, </i>entonces:
+</div>
+<div class="Indented">
+<div class="formula">
+<i>y</i>(<i>t</i>) ~ <span class="limits"><sup class="limit">∞</sup><span class="limit">⎲</span><span class="limit">⎳</span><sub class="limit"><i>n</i> = 1</sub></span><span class="symbol">|</span><i>b</i><sub>2<i>n</i> − 1</sub><span class="symbol">|</span><span class="symbol">|</span><i>H</i><span class="symbol">(</span>(2<i>n</i> − 1)<i>f</i><sub>0</sub><span class="symbol">)</span><span class="symbol">|</span><i>cos</i><span class="symbol">[</span>2<i>π</i>(2<i>n</i> − 1)<i>f</i><sub>0</sub><i>t</i> + <i>φ</i>((2<i>n</i> − 1)<i>f</i><sub>0</sub>) + <i>θ</i><sub>2<i>n</i> − 1</sub><span class="symbol">]</span>
+</div>
+
+</div>
+<div class="Indented">
+<div class="formula">
+<a class="eqnumber" name="eq:3">(3) </a><i>b</i><sub>2<i>n</i> − 1</sub> = <span class="symbol">|</span><i>b</i><sub>2<i>n</i> − 1</sub><span class="symbol">|</span><i>e</i><sup><i>i</i><i>θ</i><sub>2<i>n</i> − 1</sub></sup>
+</div>
+
+</div>
+<div class="Indented">
+<div class="formula">
+<i>H</i>(<i>f</i>) = <span class="symbol">|</span><i>H</i>(<i>f</i>)<span class="symbol">|</span><i>e</i><sup><i>i</i><i>φ</i>(<i>f</i>)</sup>
+</div>
+
+</div>
+<div class="Indented">
+A su vez;
+</div>
+<div class="Indented">
+<div class="formula">
+<a class="eqnumber" name="eq:2">(4) </a><i>H</i>(<i>f</i>) = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">1 + <i>i</i>2<i>π</i><i>fRC</i></span><span class="ignored">)</span></span>
+</div>
+
+</div>
+<div class="Indented">
+Por lo tanto, haciendo calculos de las ecuaciones <a class="Reference" href="#eq:3">3↑</a> y <a class="Reference" href="#eq:2">4↑</a>, concluimos que:
+</div>
+<div class="Indented">
+<div class="formula">
+<i>φ</i>(<i>f</i>) =  − <i>arctg</i>(2<i>π</i><i>fRC</i>)
+</div>
+
+</div>
+<div class="Indented">
+<div class="formula">
+<i>H</i>(<i>f</i>) = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root">(2<i>π</i><i>fRC</i>)<sup>2</sup> + 1</span><span class="ignored">)</span></span></span><span class="ignored">)</span></span>
+</div>
+
+</div>
+<div class="Indented">
+<div class="formula">
+<i>θ</i><sub><i>n</i></sub> = 0
+</div>
+
+</div>
+<div class="Indented">
+Finalmente, podemos escribir la salida como la ecuacion <a class="Reference" href="#eq:2_3">5↓</a> y graficamente se ve como la figura <a class="Reference" href="#2_3">5↓</a>.
+</div>
+<div class="Indented">
+<div class="formula">
+<a class="eqnumber" name="eq:2_3">(5) </a><i>y</i>(<i>t</i>) ~ <span class="limits"><sup class="limit">∞</sup><span class="limit">⎲</span><span class="limit">⎳</span><sub class="limit"><i>n</i> = 1</sub></span><span class="fraction"><span class="ignored">(</span><span class="numerator">20</span><span class="ignored">)/(</span><span class="denominator">(2<i>n</i> − 1)<i>π</i><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><span class="symbol">(</span>2<i>π</i>(2<i>n</i> − 1)<i>f</i><sub>0</sub><i>RC</i><span class="symbol">)</span><sup>2</sup> + 1</span><span class="ignored">)</span></span></span><span class="ignored">)</span></span><i>cos</i><span class="array"><span class="arrayrow"><span class="bracket align-left">⎛</span></span><span class="arrayrow"><span class="bracket align-left">⎝</span></span></span>2<i>π</i>(2<i>n</i> − 1)<i>f</i><sub>0</sub><i>t</i> − <i>arctg</i><span class="symbol">(</span>2<i>π</i>(2<i>n</i> − 1)<i>f</i><sub>0</sub><i>RC</i><span class="symbol">)</span> + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>π</i></span><span class="ignored">)/(</span><span class="denominator">2</span><span class="ignored">)</span></span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎞</span></span><span class="arrayrow"><span class="bracket align-right">⎠</span></span></span>
+</div>
+
+</div>
+<div class="Indented">
+Teniendo en cuenta que <span class="formula"><i>f</i><sub>0</sub> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">2<i>π</i><i>RC</i></span><span class="ignored">)</span></span></span> , y llamando <i>k=2n-1, </i>entonces
+</div>
+<div class="Indented">
+<div class="formula">
+<i>y</i>(<i>t</i>) ~ <span class="limits"><sup class="limit"> </sup><span class="limit">⎲</span><span class="limit">⎳</span><sub class="limit"><i>k</i> <i>impares</i></sub></span><span class="fraction"><span class="ignored">(</span><span class="numerator">20</span><span class="ignored">)/(</span><span class="denominator"><i>k</i><i>π</i><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>k</i><sup>2</sup> + 1</span><span class="ignored">)</span></span></span><span class="ignored">)</span></span><i>cos</i><span class="array"><span class="arrayrow"><span class="bracket align-left">⎛</span></span><span class="arrayrow"><span class="bracket align-left">⎝</span></span></span>2<i>π</i><i>kf</i><sub>0</sub><i>t</i> − <i>arctg</i><span class="symbol">(</span><i>k</i><span class="symbol">)</span> + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>π</i></span><span class="ignored">)/(</span><span class="denominator">2</span><span class="ignored">)</span></span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎞</span></span><span class="arrayrow"><span class="bracket align-right">⎠</span></span></span>
+</div>
+
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="Figure-5"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="out_calc.png" alt="figure out_calc.png"/>
+
+</div>
+<div class="caption">
+Figure 5 Salida del RC en armónicos
+</div>
+<a class="Label" name="2_3"> </a>
+</div>
+
+</div>
+
+</div>
+<h2 class="Subsection">
+<a class="toc" name="toc-Subsection-1.2">1.2</a> Circuito como Integrador
+</h2>
+<div class="Unindented">
+Como ya sabemos, un circuito integrador es aquel que cumple que su funcion transferencia sea <span class="formula"><i>H</i>(<i>s</i>) = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>s</i></span><span class="ignored">)</span></span></span>, como vemos en la ecuacion <a class="Reference" href="#eq:2_4">1↑</a>, nuestro circuito no posee esa transferencia, sin embargo, si procuramos movernos en un intervalo donde <i>sRC </i>sea lo suficientemente grande comparado con 1, podremos aproximar a una funcion transferecia integradora. Es decir;
+</div>
+<div class="Indented">
+<div class="formula">
+<i>Si</i>  <i>sRC</i>⋙1⟹<i>H</i>(<i>s</i>) = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">1 + <i>sRC</i></span><span class="ignored">)</span></span> ≈ <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>RC</i></span><span class="ignored">)</span></span><span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>s</i></span><span class="ignored">)</span></span>
+</div>
+
+</div>
+<div class="Indented">
+Por ende, si cambiamos al espacio de frecuencias, procurando que <span class="formula">2<i>π</i><i>fRC</i>⋙1</span> podemos obtener la transferencia de un circuito integrador. En particular, para <span class="formula"><i>R</i> = 2.5(<i>k</i>Ω) <i>y</i> <i>C</i> = 1(<i>nF</i>)</span> debemos concluir que para una frecuiencia <span class="formula"><i>f</i><sub><i>a</i></sub>⋙63(<i>kHz</i>)</span>, nuestro circuito se comportará como un integrador.
+</div>
+
+</div>
+</body>
+</html>

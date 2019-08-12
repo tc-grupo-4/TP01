@@ -228,9 +228,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename montecarlo.pdf
+	filename montecarlo.png
 	lyxscale 25
-	scale 40
+	scale 50
 
 \end_inset
 

@@ -122,10 +122,17 @@ H(s)=\frac{1}{1+sRC}\label{eq:2_4}
 
 \begin_layout Standard
 Si simulamos la transferencia del circuito en LTSpice, el resultado es el
- que se ve en la figura 
+ que se ve en las figuras 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "2_4"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "2_5"
 
 \end_inset
 
@@ -197,6 +204,45 @@ Simulacion LTSpice
 \begin_inset CommandInset label
 LatexCommand label
 name "2_4"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Análisis montecarlo
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "2_5"
 
 \end_inset
 
@@ -344,7 +390,15 @@ status open
 \begin_inset Graphics
 	filename Square.png
 	lyxscale 20
-	scale 50
+	scale 35
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename DiagEspcTeo.png
+	lyxscale 25
+	scale 35
 
 \end_inset
 
@@ -355,7 +409,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Representación de onda cuadrada mediante suma de senoidales
+Representación de onda cuadrada mediante suma de senoidales y su diagrama
+ espectral teórico
 \end_layout
 
 \end_inset
@@ -452,7 +507,7 @@ reference "eq:2"
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\phi(f)=arctg(2\pi fRC)
+\phi(f)=-arctg(2\pi fRC)
 \]
 
 \end_inset
@@ -503,7 +558,7 @@ reference "2_3"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t+arctg\left(2\pi(2n-1)f_{0}RC\right)\right)\label{eq:2_3}
+y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t-arctg\left(2\pi(2n-1)f_{0}RC\right)+\frac{\pi}{2}\right)\label{eq:2_3}
 \end{equation}
 
 \end_inset
@@ -516,13 +571,17 @@ Teniendo en cuenta que
 \begin_inset Formula $f_{0}=\frac{1}{2\pi RC}$
 \end_inset
 
- entonces;
+ , y llamando 
+\emph on
+k=2n-1, 
+\emph default
+entonces
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2n-1\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t+arctg\left((2n-1)f_{0}RC\right)\right)
+y(t)\sim\sum_{k\,impares}\frac{20}{k\pi\sqrt{k^{2}+1}}cos\left(2\pi kf_{0}t-arctg\left(k\right)+\frac{\pi}{2}\right)
 \]
 
 \end_inset

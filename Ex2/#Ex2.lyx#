@@ -146,6 +146,34 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename scope_0.png
+	lyxscale 25
+	scale 20
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Med_Mod.png
+	lyxscale 25
+	scale 30
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Med_Ph.png
+	lyxscale 25
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -161,10 +189,6 @@ name "2_1"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -227,6 +251,13 @@ status open
 
 \begin_layout Plain Layout
 \align center
+\begin_inset Graphics
+	filename montecarlo.png
+	lyxscale 25
+	scale 50
+
+\end_inset
+
 
 \end_layout
 

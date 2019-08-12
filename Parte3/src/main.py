@@ -2,12 +2,15 @@ import tkinter
 from tkinter import simpledialog, messagebox, ttk
 import FileParser as fp
 import os.path
+from matplotlib import rc
+
 
 from matplotlib.backends.backend_tkagg import (
     FigureCanvasTkAgg, NavigationToolbar2Tk)
 # Implement the default Matplotlib key bindings.
 from matplotlib.backend_bases import key_press_handler
 from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
 
 import numpy as np
 
@@ -18,6 +21,7 @@ class PlotTool:
     def __init__(self, master):
         self.parser = fp.FileParser()
         self.root = master
+        self.plotList = []
         # Frames
         # Creo dos frames que de distribuyen la ventana en un grid de 2 col y una fila
         # En controlsFrame van los controles del programa (a la izquierda)
@@ -33,14 +37,27 @@ class PlotTool:
         self.root.grid_rowconfigure(0, weight=1)
 
         # Controles para etiquetas de ejes.
-        tkinter.Label(self.controlsFrame, text="x label:", bg=self.controlsFrame["bg"]).grid(row=0,padx=5)
-        tkinter.Label(self.controlsFrame, text="y label:",bg=self.controlsFrame["bg"]).grid(row=1,padx=5)
+        tkinter.Label(self.controlsFrame, text="Freq Label:", bg=self.controlsFrame["bg"]).grid(row=0,padx=5)
+        tkinter.Label(self.controlsFrame, text="Mag Label:",bg=self.controlsFrame["bg"]).grid(row=1,padx=5)
+        tkinter.Label(self.controlsFrame, text="Phase Label:",bg=self.controlsFrame["bg"]).grid(row=2,padx=5)
 
-        self.xLabelEntry = tkinter.Entry(self.controlsFrame)
-        self.yLabelEntry = tkinter.Entry(self.controlsFrame)
+        self.freqLabel = tkinter.StringVar()
+        self.magLabel = tkinter.StringVar()
+        self.phaseLabel = tkinter.StringVar()
+        self.freqLabel.set("Frequency [Hz]")
+        self.magLabel.set("Mag [dB]")
+        self.phaseLabel.set("Phase [grad]")
 
-        self.xLabelEntry.grid(row=0, column=1, pady=5, padx=5)
-        self.yLabelEntry.grid(row=1, column=1, pady=5, padx=5)
+        self.freqLabelEntry = tkinter.Entry(self.controlsFrame, textvariable=self.freqLabel)
+        self.magLabelEntry = tkinter.Entry(self.controlsFrame, textvariable=self.magLabel)
+        self.phaseLabelEntry = tkinter.Entry(self.controlsFrame, textvariable=self.phaseLabel)
+
+        self.freqLabelEntry.grid(row=0, column=1, pady=5, padx=5, sticky="W")
+        self.magLabelEntry.grid(row=1, column=1, pady=5, padx=5, sticky="W")
+        self.phaseLabelEntry.grid(row=2, column=1, pady=5, padx=5, sticky="W")
+
+        self.labelsButton = tkinter.Button(self.controlsFrame, text ="Set Labels", command=self.setLabels)
+        self.labelsButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
 
         # Controles para cargar archivos
         # Boton Spice
@@ -55,27 +72,41 @@ class PlotTool:
         self.MODES = ["(Poles, Zeros & Gain)", "(Num & Den)"]
         self.var = tkinter.IntVar()
         self.rb1 = tkinter.Radiobutton(self.controlsFrame, text=self.MODES[0], variable=self.var, value=0, command=self.selTransferMethod, bg = self.controlsFrame["bg"])
-        self.rb1.grid(columnspan=2, sticky="WE", padx=5, pady=5)
+        self.rb1.grid(columnspan=2, sticky="W", padx=5, pady=5)
         self.rb2 = tkinter.Radiobutton(self.controlsFrame, text=self.MODES[1], variable=self.var, value=1, command=self.selTransferMethod, bg = self.controlsFrame["bg"])
-        self.rb2.grid(columnspan=2, sticky="WE", padx=5, pady=5)
+        self.rb2.grid(columnspan=2, sticky="W", padx=5, pady=5)
         # llamo a selTransferMethod para setear el string del boton segun el radiobuttton por default
         self.selTransferMethod()
 
         # Boton medicion
         self.measurementButton = tkinter.Button(self.controlsFrame, text="Medición")
-        self.measurementButton.grid(columnspan=2, sticky="W", padx=5, pady=5)
+        self.measurementButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
+
+        # Distribucion Bode
+        tkinter.Label(self.controlsFrame, text="Bode Distribution:", bg=self.controlsFrame["bg"]).grid(columnspan=2,padx=5, sticky="W")
+        self.DIST = ["Condensed", "Expanded"]
+        self.bodeMode = tkinter.IntVar()
+        self.bodeMode.set(0)
+        self.bodeModeFlag = self.bodeMode.get()
+        self.rb1 = tkinter.Radiobutton(self.controlsFrame, text=self.DIST[0], variable=self.bodeMode, value=0, command=self.selBodeMode, bg = self.controlsFrame["bg"])
+        self.rb1.grid(columnspan=2, sticky="W", padx=5, pady=5)
+        self.rb2 = tkinter.Radiobutton(self.controlsFrame, text=self.DIST[1], variable=self.bodeMode, value=1, command=self.selBodeMode, bg = self.controlsFrame["bg"])
+        self.rb2.grid(columnspan=2, sticky="W", padx=5, pady=5)
 
         # Boton borrar plots
-        # lista de prueba:
-        self.testList = ["plot 1", "plot 2", "plot 3"]
-        self.plotListBox = tkinter.Listbox(self.controlsFrame, exportselection=0, selectmode=tkinter.MULTIPLE)
-        for entry in self.testList:
-            self.plotListBox.insert(tkinter.END, entry)
-        self.plotListBox.grid(columnspan=2, sticky="WE", padx=5, pady=5)
-        self.deleteButton = tkinter.Button(self.controlsFrame, text="Eliminar", state=tkinter.DISABLED)
+        self.deleteButton = tkinter.Button(self.controlsFrame, text="Eliminar", command=self.deletePlots)
         self.deleteButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
-        self.plotListBox.bind('<<ListboxSelect>>', lambda event: self.onSelect())
 
+
+        # TEST!!! pongo un grafico de prueba
+        self.fig1 = Figure(figsize=(6,4))
+        plt.rc('text', usetex=True)
+        plt.rc('font', family='serif')
+        self.axis1 = self.fig1.add_subplot(111)
+        self.axis2 = self.axis1.twinx()
+        self.figCanvas = FigureCanvasTkAgg(self.fig1, master=self.figuresFrame)
+        self.figCanvas.draw()
+        self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
 
     def onSelect(self):
         selection = self.plotListBox.curselection()
@@ -89,13 +120,21 @@ class PlotTool:
         if not filePath:
             return
         elif filePath[0] != '':
-            type, data = self.parser.parseSpiceFile(filePath)
+            type, data = self.parser.parseSpiceFile(filePath[0])
+            # agrego a la lista de plots
+            self.plotList.append(data)
             if type.lower() == "ac":
-                pass
                 # Agregar Plot bode
-            elif type.lower == "transit":
-                # agregar plot tiempo
-                pass
+                f=data[:][0]
+                mag=data[:][1]
+                phase=data[:][2]
+                if self.bodeModeFlag == 0: # condensado
+                    # los dos en uno
+                    self.drawCondensated(f, mag, phase)
+                    
+                elif self.bodeModeFlag == 1: # extendido
+                    self.drawExpanded(f, mag, phase)
+
     
     def onTransferFunctionButtonClicked(self):
         mode = self.var.get()
@@ -158,7 +197,87 @@ class PlotTool:
         temp = "H(s)\n" + selection
         self.transferBtnText.set(temp)
 
+    def selBodeMode(self):
+        option = self.bodeMode.get()
+        if option == 0 and self.bodeModeFlag == 1:
+            # condensar los bodes:
+            # reacomodar la figura
+            self.redrawCondensated()
+        elif option == 1 and self.bodeModeFlag == 0:
+            # reacomodar figura
+            
+            self.redrawExpanded()
+            # tomar todas las mag y phase de los bodes y graficarlas todas en un solo plot
+
+        self.bodeModeFlag = option
+
+    def redrawCondensated(self):
+        self.fig1.clf()
+        self.axis1 = self.fig1.add_subplot(111)
+        self.axis2 = self.axis1.twinx()
+        for data in self.plotList:
+            f = data[:][0]
+            mag = data[:][1]
+            phase = data[:][2]
+            self.drawCondensated(f, mag, phase)
     
+    def drawCondensated(self, f, mag, phase):
+        self.axis1.semilogx(f, mag, linewidth=0.5, linestyle='-')
+        self.axis1.tick_params(axis='y')
+        self.axis1.grid(True, which="both", ls="-")
+        self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
+        self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
+        self.axis2.semilogx(f, phase, linewidth=0.5, linestyle='-.')
+        self.axis2.tick_params(axis='y')
+        self.axis2.grid(True, which="both", ls="-")
+        self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
+
+        self.figCanvas.draw()
+
+    def redrawExpanded(self):
+        self.fig1.clf()
+        self.axis1 = self.fig1.add_subplot(211)
+        self.axis2 = self.fig1.add_subplot(212)
+        for data in self.plotList:
+            f = data[:][0]
+            mag = data[:][1]
+            phase = data[:][2]
+            self.drawExpanded(f, mag, phase)
+
+    def drawExpanded(self, f, mag, phase):
+        self.axis1.semilogx(f, mag, linewidth=0.5)
+        self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
+        self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
+        self.axis1.grid(True, which="both", ls="-")
+        self.axis2.semilogx(f, phase, linewidth=0.5)
+        self.axis2.set_xlabel(r'{}'.format(self.freqLabel.get()))
+        self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
+        self.axis2.grid(True, which="both", ls="-")
+        self.fig1.tight_layout()
+        self.figCanvas.draw()
+
+    def setLabels(self):
+        if self.freqLabel.get():
+            self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
+            self.axis2.set_xlabel(r'{}'.format(self.freqLabel.get()))  
+        
+        if self.magLabel.get():
+            self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
+        
+        if self.phaseLabel.get():
+            self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
+
+        self.axis1.relim()
+        self.axis2.relim()
+        self.figCanvas.draw()
+
+
+    def deletePlots(self):
+        self.axis1.cla()
+        self.axis2.cla()
+        self.figCanvas.draw()
+        self.plotList = []
+
 def main():
     # Root window
     root = tkinter.Tk()

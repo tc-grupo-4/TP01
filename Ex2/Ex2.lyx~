@@ -150,7 +150,7 @@ status open
 \begin_inset Graphics
 	filename scope_0.png
 	lyxscale 25
-	scale 20
+	scale 25
 
 \end_inset
 
@@ -167,10 +167,6 @@ status open
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename Med_Ph.png
 	lyxscale 25

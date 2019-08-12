@@ -466,6 +466,46 @@ name "2_2"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Med_Arm.png
+	lyxscale 20
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Transferencia superpuesta con los armonicos(los ptos de los armonicos están
+ unidos por lineas)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Debido a que la entrada es una función continua a trozos de período 
 \emph on
 T, 

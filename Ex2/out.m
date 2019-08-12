@@ -11,7 +11,7 @@ function [] = out()
     plot(x,y,'k');
     endfor
     grid on;
-    title("Señal de entrada de 1 a 100 armonicos");
+    title("Output Signal de 1 a 100 armonicos");
     xlabel("tiempo/periodo");
     ylabel("Tension");
   

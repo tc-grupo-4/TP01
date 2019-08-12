@@ -44,6 +44,9 @@ class PlotTool:
         self.freqLabel = tkinter.StringVar()
         self.magLabel = tkinter.StringVar()
         self.phaseLabel = tkinter.StringVar()
+        self.freqLabel.set("Frequency [Hz]")
+        self.magLabel.set("Mag [dB]")
+        self.phaseLabel.set("Phase [grad]")
 
         self.freqLabelEntry = tkinter.Entry(self.controlsFrame, textvariable=self.freqLabel)
         self.magLabelEntry = tkinter.Entry(self.controlsFrame, textvariable=self.magLabel)
@@ -222,12 +225,12 @@ class PlotTool:
         self.axis1.semilogx(f, mag, linewidth=0.5, linestyle='-')
         self.axis1.tick_params(axis='y')
         self.axis1.grid(True, which="both", ls="-")
-        self.axis1.set_xlabel(r'Frequency [Hz]')
-        self.axis1.set_ylabel(r'Mag [dB]')
+        self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
+        self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
         self.axis2.semilogx(f, phase, linewidth=0.5, linestyle='-.')
         self.axis2.tick_params(axis='y')
         self.axis2.grid(True, which="both", ls="-")
-        self.axis2.set_ylabel(r'Phase [grad]')
+        self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
 
         self.figCanvas.draw()
 

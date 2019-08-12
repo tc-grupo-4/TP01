@@ -763,11 +763,11 @@ Por ende, si cambiamos al espacio de frecuencias, procurando que
 
 \begin_layout Standard
 En particular, si tenemos una frecuencia 
-\begin_inset Formula $f_{i}=1(MHz)$
+\begin_inset Formula $f_{i}=640(kHz)$
 \end_inset
 
 , 
-\begin_inset Formula $2\pi f_{a}RC\approx18$
+\begin_inset Formula $2\pi f_{a}RC\gg1$
 \end_inset
 
 ,con lo cual podemos aproximar el denominado de la transferencia y usar
@@ -790,7 +790,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Integrador.png
+	filename Med_640.png
 	lyxscale 50
 	scale 30
 
@@ -803,7 +803,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Circuito como integrador
+Circuito como integrador a 640 (kHz)
 \end_layout
 
 \end_inset

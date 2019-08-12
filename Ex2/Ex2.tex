@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[english]{article}
 \usepackage[T1]{fontenc}
-\usepackage[latin9]{luainputenc}
+\usepackage[latin9]{inputenc}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm}
 \setlength{\parindent}{0bp}
@@ -24,12 +24,17 @@ H(s)=\frac{1}{1+sRC}\label{eq:2_4}
 \end{equation}
 
 Si simulamos la transferencia del circuito en LTSpice, el resultado
-es el que se ve en la figura \ref{2_4}.
+es el que se ve en las figuras \ref{2_4} y \ref{2_5}.
 
 \begin{figure}[h]
+\begin{centering}
+\includegraphics[scale=0.25]{scope_0}
+\par\end{centering}
+\begin{centering}
+\includegraphics[scale=0.3]{Med_Mod}\includegraphics[scale=0.3]{Med_Ph}
+\par\end{centering}
 \caption{Resultados}
 \label{2_1}
-
 \end{figure}
 
 \begin{figure}[h]
@@ -38,6 +43,15 @@ es el que se ve en la figura \ref{2_4}.
 \par\end{centering}
 \caption{Simulacion LTSpice}
 \label{2_4}
+
+\end{figure}
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[scale=0.5]{montecarlo}
+\par\end{centering}
+\caption{Análisis montecarlo}
+\label{2_5}
 
 \end{figure}
 
@@ -88,10 +102,20 @@ x(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi}sin\left(2\pi(2n-1)f_{0}t\right)\
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.5]{Square}
+\includegraphics[scale=0.35]{Square}\includegraphics[scale=0.35]{DiagEspcTeo}
 \par\end{centering}
-\caption{Representación de onda cuadrada mediante suma de senoidales}
+\caption{Representación de onda cuadrada mediante suma de senoidales y su diagrama
+espectral teórico}
 \label{2_2}
+\end{figure}
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[scale=0.4]{Med_Arm}
+\par\end{centering}
+\caption{Transferencia superpuesta con los armonicos(los ptos de los armonicos
+están unidos por lineas)}
+
 \end{figure}
 
 Debido a que la entrada es una función continua a trozos de período
@@ -137,10 +161,11 @@ y graficamente se ve como la figura \ref{2_3}.
 y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2\pi(2n-1)f_{0}RC\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t-arctg\left(2\pi(2n-1)f_{0}RC\right)+\frac{\pi}{2}\right)\label{eq:2_3}
 \end{equation}
 
-Teniendo en cuenta que $f_{0}=\frac{1}{2\pi RC}$ entonces;
+Teniendo en cuenta que $f_{0}=\frac{1}{2\pi RC}$ , y llamando \emph{k=2n-1,
+}entonces
 
 \[
-y(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi\sqrt{\left(2n-1\right)^{2}+1}}cos\left(2\pi(2n-1)f_{0}t-arctg\left(2n-1\right)+\frac{\pi}{2}\right)
+y(t)\sim\sum_{k\,impares}\frac{20}{k\pi\sqrt{k^{2}+1}}cos\left(2\pi kf_{0}t-arctg\left(k\right)+\frac{\pi}{2}\right)
 \]
 
 \begin{figure}[h]
@@ -169,5 +194,18 @@ podemos obtener la transferencia de un circuito integrador. En particular,
 para $R=2.5(k\Omega)\,y\,C=1(nF)$ debemos concluir que para una frecuiencia
 $f_{a}\ggg63(kHz)$, nuestro circuito se comportará como un integrador.
 
+En particular, si tenemos una frecuencia $f_{i}=640(kHz)$, $2\pi f_{a}RC\gg1$,con
+lo cual podemos aproximar el denominado de la transferencia y usar
+nuestro circuito como integrador, como se puede observar en la figura
+\ref{2_6}.
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[scale=0.3]{Med_640}
+\par\end{centering}
+\caption{Circuito como integrador a 640 (kHz)}
+\label{2_6}
+
+\end{figure}
 
 \end{document}

@@ -1,0 +1,12 @@
+Board Information Report
+Filename     : \\Mac\Home\Documents\Altium\TC_TP1\PCB.PcbDoc
+Date         : 11/08/2019
+Time         : 14:14:52
+Time Elapsed : 00:00:00
+
+Routing Information
+    Routing completion, 100,00%
+    Connections, 11
+    Connections routed, 11
+    Connections remaining, 0
+count : 4

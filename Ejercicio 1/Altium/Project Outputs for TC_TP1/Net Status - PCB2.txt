@@ -1,0 +1,15 @@
+Net Status Report
+Filename     : \\Mac\Home\Documents\Altium\TC_TP1\PCB2.PcbDoc
+Date         : 12/08/2019
+Time         : 12:13:34
+Time Elapsed : 00:00:00
+
+Nets, Layer, Length
+    GND, Signal Layers Only, 58.8401mm
+    NetC1_1, Signal Layers Only, 59.2871mm
+    NetC1_2, Signal Layers Only, 11.049mm
+    NetC2_2, Signal Layers Only, 68.1028mm
+    NetC3_2, Signal Layers Only, 15.748mm
+    NetR1_2, Signal Layers Only, 3.683mm
+    NetR3_2, Signal Layers Only, 3.683mm
+count : 7

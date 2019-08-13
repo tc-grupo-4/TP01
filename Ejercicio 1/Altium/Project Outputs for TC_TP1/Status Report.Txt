@@ -1,0 +1,10 @@
+Output: Report Project Hierarchy
+Type  : ReportHierarchy
+From  : Variant [[No Variations]] of Project [TC_TP1.PrjPcb]
+   Generated File[PCB1.REP]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 20:46:40 On 11/08/2019

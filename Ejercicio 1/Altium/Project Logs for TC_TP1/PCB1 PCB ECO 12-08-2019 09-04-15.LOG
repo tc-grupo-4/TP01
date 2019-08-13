@@ -1,0 +1,21 @@
+Removed Pin From Net: NetName=GND Pin=P1-1
+Removed Pin From Net: NetName=NetC1_1 Pin=P1-2
+Removed Pin From Net: NetName=GND Pin=P2-1
+Removed Pin From Net: NetName=NetC2_2 Pin=P2-2
+Added Component: Designator=J1(BORNERA2)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J2(BORNERA2)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=J1-1
+Added Pin To Net: NetName=NetC1_1 Pin=J1-2
+Added Pin To Net: NetName=GND Pin=J2-1
+Added Pin To Net: NetName=NetC2_2 Pin=J2-2
+Added Member To Class: ClassName=Punto1 Member=Component C1 CAP
+Added Member To Class: ClassName=Punto1 Member=Component C2 CAP
+Added Member To Class: ClassName=Punto1 Member=Component C3 CAP
+Added Member To Class: ClassName=Punto1 Member=Component J1 BORNERA 2
+Added Member To Class: ClassName=Punto1 Member=Component J2 BORNERA 2
+Added Member To Class: ClassName=Punto1 Member=Component R1 RES
+Added Member To Class: ClassName=Punto1 Member=Component R2 RES
+Added Member To Class: ClassName=Punto1 Member=Component R3 RES
+Added Room: Name=Punto1

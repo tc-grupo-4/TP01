@@ -24,6 +24,7 @@ class PlotTool:
         self.measurementParser = mp.MeasurementParser()
         self.root = master
         self.legends = []
+        self.markers = []
         self.root.geometry("1000x600")
         self.plotList = []
         # Frames
@@ -127,6 +128,7 @@ class PlotTool:
             self.deleteButton.config(state=tkinter.DISABLED)
 
     def onSpiceBtnClicked(self):
+        self.markers.append('')
         filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Archivos de Texto", "*.txt"),("Todos los archivos", "*.*")))
         if not filePath:
             return
@@ -142,6 +144,7 @@ class PlotTool:
             self.updatePlots()
 
     def onTransferFunctionButtonClicked(self):
+        self.markers.append('')
         mode = self.var.get()
         if mode == 0: # plos, ceros y gain
             print ("polos y ceros")
@@ -235,6 +238,7 @@ class PlotTool:
         self.transferBtnText.set(temp)
 
     def onMeasurementButton(self):
+        self.markers.append('.')
         filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Coma Separated Values", "*.csv"),("Excel Spreadsheet", "*.xlsx"),("Todos los archivos", "*.*")))
         if not filePath:
             return
@@ -256,6 +260,7 @@ class PlotTool:
             self.updatePlots()
 
     def updatePlots(self):
+        self.index = 0
         if self.bodeModeFlag == 0:
             self.redrawCondensated()
         elif self.bodeModeFlag == 1:
@@ -264,10 +269,12 @@ class PlotTool:
     def selBodeMode(self):
         option = self.bodeMode.get()
         if option == 0 and self.bodeModeFlag == 1:
+            self.index = 0
             # condensar los bodes:
             # reacomodar la figura
             self.redrawCondensated()
         elif option == 1 and self.bodeModeFlag == 0:
+            self.index = 0
             # reacomodar figura
             
             self.redrawExpanded()
@@ -290,15 +297,16 @@ class PlotTool:
             mag = data[:][1]
             phase = data[:][2]
             self.drawCondensated(f, mag, phase)
+            self.index = self.index + 1
 
     def drawCondensated(self, f, mag, phase):
-        self.axis1.semilogx(f, mag, linewidth=1, linestyle='-')
+        self.axis1.semilogx(f, mag, linewidth=1, linestyle='-', marker=self.markers[self.index])
         self.axis1.tick_params(axis='y')
-        self.axis1.grid(True, which="major", ls="-")
+        self.axis1.grid(True, which="major", ls='-')
         self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
         self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
         self.axis1.legend(self.legends)
-        self.axis2.semilogx(f, phase, linewidth=1, linestyle='-.')
+        self.axis2.semilogx(f, phase, linewidth=1, linestyle='-.', marker=self.markers[self.index])
         self.axis2.tick_params(axis='y')
         self.axis2.grid(True, which="major", ls="-")
         self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
@@ -318,17 +326,18 @@ class PlotTool:
             mag = data[:][1]
             phase = data[:][2]
             self.drawExpanded(f, mag, phase)
+            self.index = self.index+1
 
     def drawExpanded(self, f, mag, phase):
-        self.axis1.semilogx(f, mag, linewidth=1)
+        self.axis1.semilogx(f, mag, linewidth=1, marker=self.markers[self.index])
         self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
         self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
-        self.axis1.grid(True, which="major", ls="-")
+        self.axis1.grid(True, which="major", ls='-')
         self.axis1.legend(self.legends)
-        self.axis2.semilogx(f, phase, linewidth=1)
+        self.axis2.semilogx(f, phase, linewidth=1, marker=self.markers[self.index])
         self.axis2.set_xlabel(r'{}'.format(self.freqLabel.get()))
         self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
-        self.axis2.grid(True, which="major", ls="-")
+        self.axis2.grid(True, which="major", ls='-')
         self.axis2.legend(self.legends)
         self.fig1.tight_layout()
         self.figCanvas.draw()

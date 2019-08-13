@@ -21,14 +21,9 @@ class SpiceParser:
         # o un transit
         # leo hasta el primer \t
         headers = lines[0].split("\t")
-        if headers[0] == "time":
-            self.parseTransitFile(lines[1,:])
-            type = "transit"
-        elif headers[0] == "Freq.":
-            [freq,mag,phase] = self.parseACFile(lines[1:])
-            type = "ac"
+        [freq,mag,phase] = self.parseACFile(lines[1:])
         # devuelvo los datos:
-        return type,[freq, mag, phase]
+        return [freq, mag, phase]
 
     def parseTransitFile(self, lines):
         pass

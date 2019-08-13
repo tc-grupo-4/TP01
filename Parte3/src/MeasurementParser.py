@@ -31,22 +31,19 @@ class MeasurementParser:
 		j = 0
 		row = []
 		data = []
-		while sheet.cell(i,j).value is not xlrd.empty_cell.value:
-			row = []
-			while sheet.cell(i,j).value is not xlrd.empty_cell.value:
-				row.append(sheet.cell(i,j).value)
-				j = j + 1
-				pass
-			data.append(row)
-			i = i+1
-			pass
-		f = data[:][0]
-		mag = data[:][1]
-		phase = data[:][2]
+		f = []
+		mag = []
+		phase = []
 
-		f = [float(i) for i in f]
-		mag = [float(i) for i in mag]
-		phase = [float(i) for i in phase]
+		for i in range (0, sheet.nrows):
+			f.append(sheet.cell_value(i,0))
+			mag.append(sheet.cell_value(i,1))
+			phase.append(sheet.cell_value(i,2))
+			pass
+
+		#f = [float(i) for i in f]
+		#mag = [float(i) for i in mag]
+		#phase = [float(i) for i in phase]
 
 		data = [f, mag, phase]
 		return data

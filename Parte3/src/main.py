@@ -1,6 +1,9 @@
 import tkinter
 from tkinter import simpledialog, messagebox, ttk
-import FileParser as fp
+from tkinter.filedialog import asksaveasfile
+import SpiceParser as sp
+import TransferParser as tp
+import MeasurementParser as mp
 import os.path
 from matplotlib import rc
 
@@ -19,7 +22,9 @@ HEIGHT = 600
 
 class PlotTool:
     def __init__(self, master):
-        self.parser = fp.FileParser()
+        self.spiceParser = sp.SpiceParser()
+        self.transferParser = tp.TransferParser()
+        self.measurementParser = mp.MeasurementParser()
         self.root = master
         self.plotList = []
         # Frames
@@ -79,7 +84,7 @@ class PlotTool:
         self.selTransferMethod()
 
         # Boton medicion
-        self.measurementButton = tkinter.Button(self.controlsFrame, text="Medición")
+        self.measurementButton = tkinter.Button(self.controlsFrame, text="Medición", command=self.onMeasurementButton)
         self.measurementButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
 
         # Distribucion Bode
@@ -97,8 +102,15 @@ class PlotTool:
         self.deleteButton = tkinter.Button(self.controlsFrame, text="Eliminar", command=self.deletePlots)
         self.deleteButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
 
+        # Boton exportar como pdf
+        self.pdfExportButton = tkinter.Button(self.controlsFrame, text="Export as PDF", command=self.pdfExport)
+        self.pdfExportButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
 
-        # TEST!!! pongo un grafico de prueba
+        # Boton exportar como PNG
+        self.pngExport = tkinter.Button(self.controlsFrame, text="Export as PNG", command=self.pngExport)
+        self.pngExport.grid(columnspan=2, sticky="WE", padx=5, pady=5)
+
+        # Seteo canvas de graficos
         self.fig1 = Figure(figsize=(6,4))
         plt.rc('text', usetex=True)
         plt.rc('font', family='serif')
@@ -106,7 +118,7 @@ class PlotTool:
         self.axis2 = self.axis1.twinx()
         self.figCanvas = FigureCanvasTkAgg(self.fig1, master=self.figuresFrame)
         self.figCanvas.draw()
-        self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH, expand=1)
+        self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH,expand=1)
 
     def onSelect(self):
         selection = self.plotListBox.curselection()
@@ -120,7 +132,7 @@ class PlotTool:
         if not filePath:
             return
         elif filePath[0] != '':
-            type, data = self.parser.parseSpiceFile(filePath[0])
+            type, data = self.spiceParser.parseSpiceFile(filePath[0])
             # agrego a la lista de plots
             self.plotList.append(data)
             if type.lower() == "ac":
@@ -128,14 +140,8 @@ class PlotTool:
                 f=data[:][0]
                 mag=data[:][1]
                 phase=data[:][2]
-                if self.bodeModeFlag == 0: # condensado
-                    # los dos en uno
-                    self.drawCondensated(f, mag, phase)
-                    
-                elif self.bodeModeFlag == 1: # extendido
-                    self.drawExpanded(f, mag, phase)
+                self.updatePlots()
 
-    
     def onTransferFunctionButtonClicked(self):
         mode = self.var.get()
         if mode == 0: # plos, ceros y gain
@@ -147,55 +153,109 @@ class PlotTool:
             self.numDenWindow()
 
     def polesZerosWindow(self):
-        t = tkinter.Toplevel(self.controlsFrame)
-        t.wm_title("Poles, Zeros & Gain Configuration")
-        t.resizable(False, False)
-        pLabel = tkinter.Label(t, text="Funtion Poles")
-        pLabel.grid(row=0,column=0, padx=5, pady=5, sticky="WE")
-        pEntry = tkinter.Entry(t)
-        pEntry.grid(row=0, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+        self.transferType = 'poles'
+        self.poles = tkinter.StringVar()
+        self.zeros = tkinter.StringVar()
+        self.gain = tkinter.StringVar()
+
+        self.poles.set('')
+        self.zeros.set('')
+        self.gain.set('')
+
+        self.prompt = tkinter.Toplevel(self.controlsFrame)
+        self.prompt.wm_title("Poles, Zeros & Gain Configuration")
+        self.prompt.resizable(False, False)
+
+        self.pLabel = tkinter.Label(self.prompt, text="Funtion Poles")
+        self.pLabel.grid(row=0,column=0, padx=5, pady=5, sticky="WE")
+        self.pEntry = tkinter.Entry(self.prompt, textvariable=self.poles)
+        self.pEntry.grid(row=0, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
         
-        zLabel = tkinter.Label(t, text="Function Zeros")
-        zLabel.grid(row=1,column=0, padx=5, pady=5, sticky="WE")
-        zEntry = tkinter.Entry(t)
-        zEntry.grid(row=1, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+        self.zLabel = tkinter.Label(self.prompt, text="Function Zeros")
+        self.zLabel.grid(row=1,column=0, padx=5, pady=5, sticky="WE")
+        self.zEntry = tkinter.Entry(self.prompt, textvariable=self.zeros)
+        self.zEntry.grid(row=1, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
 
-        gLabel = tkinter.Label(t, text="Function Gain")
-        gLabel.grid(row=2,column=0, padx=5, pady=5, sticky="WE")
-        gEntry = tkinter.Entry(t)
-        gEntry.grid(row=2, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+        self.gLabel = tkinter.Label(self.prompt, text="Function Gain")
+        self.gLabel.grid(row=2,column=0, padx=5, pady=5, sticky="WE")
+        self.gEntry = tkinter.Entry(self.prompt, textvariable=self.gain)
+        self.gEntry.grid(row=2, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
 
-        acceptButton = tkinter.Button(t, text="Accept")
+        acceptButton = tkinter.Button(self.prompt, text="Accept", command=self.submitTransferData)
         acceptButton.grid(row=3,column=2, padx=5, pady=5, sticky="WE")
 
-        cancelButton = tkinter.Button(t, text="Cancel")
+        cancelButton = tkinter.Button(self.prompt, text="Cancel", command=self.closePrompt)
         cancelButton.grid(row=3,column=3, padx=5, pady=5, sticky="WE")
 
+    def submitTransferData(self):
+        if self.transferType == 'poles':
+            # parseo la data:
+            valid, data = self.transferParser.parsePZG([self.poles.get(), self.zeros.get(), self.gain.get()])
+        elif self.transferType == 'numden':
+            valid, data = self.transferParser.parseNumDen([self.num.get(), self.den.get()])
+        if valid:
+            # agregar a lista de plots y actualizar
+            self.closePrompt()
+            self.plotList.append(data)
+            self.updatePlots()
+
+    def closePrompt(self):
+        self.prompt.destroy()
+
     def numDenWindow(self):
-        t = tkinter.Toplevel(self.controlsFrame)
-        t.wm_title("Numerator & Denumerator")
-        t.resizable(False, False)
+        self.transferType='numden'
+        self.prompt = tkinter.Toplevel(self.controlsFrame)
+        self.prompt.wm_title("Numerator & Denumerator")
+        self.prompt.resizable(False, False)
 
-        nLabel = tkinter.Label(t, text="Function Numerator")
-        nLabel.grid(row=1,column=0, padx=5, pady=5, sticky="WE")
-        nEntry = tkinter.Entry(t)
-        nEntry.grid(row=1, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+        self.num = tkinter.StringVar()
+        self.den = tkinter.StringVar()
 
-        dLabel = tkinter.Label(t, text="Function Denominator")
-        dLabel.grid(row=2,column=0, padx=5, pady=5, sticky="WE")
-        dEntry = tkinter.Entry(t)
-        dEntry.grid(row=2, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+        self.nLabel = tkinter.Label(self.prompt, text="Function Numerator")
+        self.nLabel.grid(row=1,column=0, padx=5, pady=5, sticky="WE")
+        self.nEntry = tkinter.Entry(self.prompt, textvariable=self.num)
+        self.nEntry.grid(row=1, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
 
-        acceptButton = tkinter.Button(t, text="Accept")
+        self.dLabel = tkinter.Label(self.prompt, text="Function Denominator")
+        self.dLabel.grid(row=2,column=0, padx=5, pady=5, sticky="WE")
+        self.dEntry = tkinter.Entry(self.prompt, textvariable=self.den)
+        self.dEntry.grid(row=2, column=1, padx=5, pady=5, columnspan=3, sticky="WE")
+
+        acceptButton = tkinter.Button(self.prompt, text="Accept", command=self.submitTransferData)
         acceptButton.grid(row=3,column=2, padx=5, pady=5, sticky="WE")
 
-        cancelButton = tkinter.Button(t, text="Cancel")
+        cancelButton = tkinter.Button(self.prompt, text="Cancel", command=self.closePrompt)
         cancelButton.grid(row=3,column=3, padx=5, pady=5, sticky="WE")
 
     def selTransferMethod(self):
         selection = str(self.MODES[self.var.get()])
         temp = "H(s)\n" + selection
         self.transferBtnText.set(temp)
+
+    def onMeasurementButton(self):
+        filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Coma Separated Values", "*.csv"),("Todos los archivos", "*.*")))
+        if not filePath:
+            return
+        elif filePath[0] != '':
+            data = []
+            fn, ext = os.path.splitext(filePath[0])
+            if ext == '.csv':
+                data = self.measurementParser.parseCSV(filePath[0])
+            elif ext == '.xls' or ext == '.xlsx':
+                data = self.measurementParser.parseSpreadsheet(filePath[0]) 
+                # agrego a la lista de plots
+            self.plotList.append(data)
+            f=data[:][0]
+            mag=data[:][1]
+            phase=data[:][2]
+            self.updatePlots()
+
+
+    def updatePlots(self):
+        if self.bodeModeFlag == 0:
+            self.redrawCondensated()
+        elif self.bodeModeFlag == 1:
+            self.redrawExpanded()
 
     def selBodeMode(self):
         option = self.bodeMode.get()
@@ -212,30 +272,40 @@ class PlotTool:
         self.bodeModeFlag = option
 
     def redrawCondensated(self):
-        self.fig1.clf()
+
+        self.figCanvas._tkcanvas.destroy()
+        self.fig1 = Figure(figsize=(6,4))
         self.axis1 = self.fig1.add_subplot(111)
         self.axis2 = self.axis1.twinx()
+        self.figCanvas = FigureCanvasTkAgg(self.fig1, master=self.figuresFrame)
+        self.figCanvas.draw()
+        self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH,expand=1)
+
         for data in self.plotList:
             f = data[:][0]
             mag = data[:][1]
             phase = data[:][2]
             self.drawCondensated(f, mag, phase)
-    
+
     def drawCondensated(self, f, mag, phase):
-        self.axis1.semilogx(f, mag, linewidth=0.5, linestyle='-')
+        self.axis1.semilogx(f, mag, linewidth=1, linestyle='-')
         self.axis1.tick_params(axis='y')
         self.axis1.grid(True, which="both", ls="-")
         self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
         self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
-        self.axis2.semilogx(f, phase, linewidth=0.5, linestyle='-.')
+        self.axis2.semilogx(f, phase, linewidth=1, linestyle='-.')
         self.axis2.tick_params(axis='y')
         self.axis2.grid(True, which="both", ls="-")
         self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
-
         self.figCanvas.draw()
 
     def redrawExpanded(self):
-        self.fig1.clf()
+
+        self.figCanvas._tkcanvas.destroy()
+        self.fig1 = Figure(figsize=(6,4))
+        self.figCanvas = FigureCanvasTkAgg(self.fig1, master=self.figuresFrame)
+        self.figCanvas.draw()
+        self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH,expand=1)
         self.axis1 = self.fig1.add_subplot(211)
         self.axis2 = self.fig1.add_subplot(212)
         for data in self.plotList:
@@ -245,11 +315,11 @@ class PlotTool:
             self.drawExpanded(f, mag, phase)
 
     def drawExpanded(self, f, mag, phase):
-        self.axis1.semilogx(f, mag, linewidth=0.5)
+        self.axis1.semilogx(f, mag, linewidth=1)
         self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
         self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
         self.axis1.grid(True, which="both", ls="-")
-        self.axis2.semilogx(f, phase, linewidth=0.5)
+        self.axis2.semilogx(f, phase, linewidth=1)
         self.axis2.set_xlabel(r'{}'.format(self.freqLabel.get()))
         self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
         self.axis2.grid(True, which="both", ls="-")
@@ -260,7 +330,7 @@ class PlotTool:
         if self.freqLabel.get():
             self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
             self.axis2.set_xlabel(r'{}'.format(self.freqLabel.get()))  
-        
+
         if self.magLabel.get():
             self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
         
@@ -271,12 +341,22 @@ class PlotTool:
         self.axis2.relim()
         self.figCanvas.draw()
 
-
     def deletePlots(self):
         self.axis1.cla()
         self.axis2.cla()
         self.figCanvas.draw()
         self.plotList = []
+
+    def pdfExport(self):
+        file = asksaveasfile(filetypes=[('PDF Files', '*.pdf')], defaultextension=[('PDF Files', '*.pdf')])
+        if not file:
+            return
+        elif file.name != '':
+            self.fig1.savefig(file.name, bbox_inches='tight')
+        pass
+
+    def pngExport(self):
+        pass
 
 def main():
     # Root window

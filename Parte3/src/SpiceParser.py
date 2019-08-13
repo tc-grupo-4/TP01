@@ -1,6 +1,6 @@
 import numpy as np
 
-class FileParser:
+class SpiceParser:
     def __init__(self):
         pass
     
@@ -56,7 +56,8 @@ class FileParser:
 
         return [freq,mag,phase]
 
-    def parseTransferFunctionFile(self, filePath):
+    def parseTransferFunction(self, type, data):
+        
         pass
 
     def parseACData(self, data):

@@ -210,9 +210,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename plot.pdf
-	lyxscale 25
-	scale 40
+	filename MedYPost.pdf
+	scale 65
 
 \end_inset
 
@@ -223,7 +222,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulacion LTSpice
+Simulacion LTSpice y Mediciones
 \end_layout
 
 \end_inset
@@ -281,10 +280,6 @@ name "2_5"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -824,6 +819,10 @@ name "2_6"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

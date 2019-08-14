@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.8)  14 AUG 2019 16:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.8.8)  14 AUG 2019 17:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -953,35 +953,51 @@ Package pdftex.def Info: circuito_1.png  used on input line 30.
 <bode_ltspice_teorico.png, id=42, 3817.26125pt x 1732.4725pt>
 File: bode_ltspice_teorico.png Graphic file (type png)
 <use bode_ltspice_teorico.png>
-Package pdftex.def Info: bode_ltspice_teorico.png  used on input line 72.
+Package pdftex.def Info: bode_ltspice_teorico.png  used on input line 66.
 (pdftex.def)             Requested size: 341.94652pt x 155.1756pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
+Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
  []
 
 [2 </Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/bode_ltspice_teorico.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+LaTeX Warning: Reference `fig:placa_altium' on page 3 undefined on input line 111.
+
+
+LaTeX Warning: Reference `fig:rta_frec' on page 3 undefined on input line 123.
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
-[3] (/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.aux
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+
+ []
+
+[4] (/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-) ) 
+)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 44166 strings out of 492616
- 1094903 string characters out of 6129482
+ 44215 strings out of 492616
+ 1096078 string characters out of 6129482
  1287114 words of memory out of 5000000
- 47535 multiletter control sequences out of 15000+600000
+ 47584 multiletter control sequences out of 15000+600000
  538678 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,6n,119p,957b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,6n,119p,957b,612s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.pdf" (3 pages, 233343 bytes).
+Output written on "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.pdf" (4 pages, 237726 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

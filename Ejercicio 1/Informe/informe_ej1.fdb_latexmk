@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1565810018 "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.tex" "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.pdf" "informe_ej1" 1565810020
-  "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.aux" 1565810020 911 05e877453c5fbb3e1e1f4440ebe6fe4f ""
-  "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.tex" 1565810015 4867 f9663853367dca45c8753fe5ec341d6b ""
-  "/dev/null" 1565810020 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1565816266 "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.tex" "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.pdf" "informe_ej1" 1565816268
+  "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.aux" 1565816268 1029 1f5c3793ce4bcd37e6f238587fd16b2c ""
+  "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.tex" 1565816265 6546 62b2f682cf697a92f12a7d78834d097c ""
+  "/dev/null" 1565816265 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2019/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2019/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -227,11 +227,11 @@
   "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
   "bode_ltspice_teorico.png" 1565807163 231266 08d0bf7dda1addf960e43d857e040327 ""
   "circuito_1.png" 1565790250 47807 d4a4d0a78ff4f839189387253affa2fd ""
-  "informe_ej1.aux" 1565810020 911 05e877453c5fbb3e1e1f4440ebe6fe4f "pdflatex"
-  "informe_ej1.tex" 1565810015 4867 f9663853367dca45c8753fe5ec341d6b ""
+  "informe_ej1.aux" 1565816268 1029 1f5c3793ce4bcd37e6f238587fd16b2c "pdflatex"
+  "informe_ej1.tex" 1565816265 6546 62b2f682cf697a92f12a7d78834d097c ""
   (generated)
-  "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.log"
-  "informe_ej1.pdf"
-  "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.pdf"
-  "informe_ej1.aux"
   "informe_ej1.log"
+  "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.pdf"
+  "informe_ej1.pdf"
+  "/Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.log"
+  "informe_ej1.aux"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.30)  14 AUG 2019 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.30)  14 AUG 2019 20:12
 entering extended mode
 **"./Informe Parte 3.tex"
 ("Informe Parte 3.tex"
@@ -189,20 +189,20 @@ LaTeX Info: Redefining \% on input line 6.
 )
 \openout1 = `"Informe Parte 3.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Info: Redefining \. on input line 12.
-LaTeX Info: Redefining \% on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -294,37 +294,95 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<window.png, id=1, 1872.24469pt x 1041.8925pt>
-File: window.png Graphic file (type png)
-<use window.png>
-Package pdftex.def Info: window.png  used on input line 37.
+<resources/window.png, id=1, 1872.24469pt x 1041.8925pt>
+File: resources/window.png Graphic file (type png)
+<use resources/window.png>
+Package pdftex.def Info: resources/window.png  used on input line 36.
 (pdftex.def)             Requested size: 374.4423pt x 208.3748pt.
-<controlPanel_ref.png, id=2, 508.14844pt x 994.46532pt>
-File: controlPanel_ref.png Graphic file (type png)
-<use controlPanel_ref.png>
-Package pdftex.def Info: controlPanel_ref.png  used on input line 49.
-(pdftex.def)             Requested size: 101.62788pt x 198.88954pt.
+<resources/inputControls.png, id=2, 393.72093pt x 373.395pt>
+File: resources/inputControls.png Graphic file (type png)
+<use resources/inputControls.png>
+Package pdftex.def Info: resources/inputControls.png  used on input line 49.
+(pdftex.def)             Requested size: 118.11719pt x 112.01936pt.
 [1
 
-{C:/Users/lisan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./window.pn
-g>] [2 <./controlPanel_ref.png>] ("Informe Parte 3.aux"
+{C:/Users/lisan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./resources
+/window.png>]
+<resources/pzgPrompt.png, id=10, 434.37282pt x 302.63063pt>
+File: resources/pzgPrompt.png Graphic file (type png)
+<use resources/pzgPrompt.png>
+Package pdftex.def Info: resources/pzgPrompt.png  used on input line 61.
+(pdftex.def)             Requested size: 130.31284pt x 90.78989pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+<resources/numDenPrompt.png, id=11, 505.89pt x 237.88875pt>
+File: resources/numDenPrompt.png Graphic file (type png)
+<use resources/numDenPrompt.png>
+Package pdftex.def Info: resources/numDenPrompt.png  used on input line 70.
+(pdftex.def)             Requested size: 151.76816pt x 71.36716pt.
+ [2 <./resources/inputControls.png> <./resources/pzgPrompt.png> <./resources/nu
+mDenPrompt.png>]
+<resources/labelsControl.png, id=18, 400.49625pt x 233.37187pt>
+File: resources/labelsControl.png Graphic file (type png)
+<use resources/labelsControl.png>
+Package pdftex.def Info: resources/labelsControl.png  used on input line 89.
+(pdftex.def)             Requested size: 120.1498pt x 70.01208pt.
+<resources/condensed.png, id=19, 1882.03125pt x 1178.90437pt>
+File: resources/condensed.png Graphic file (type png)
+<use resources/condensed.png>
+Package pdftex.def Info: resources/condensed.png  used on input line 99.
+(pdftex.def)             Requested size: 282.29251pt x 176.82802pt.
+<resources/expanded.png, id=20, 1875.25594pt x 1178.90437pt>
+File: resources/expanded.png Graphic file (type png)
+<use resources/expanded.png>
+Package pdftex.def Info: resources/expanded.png  used on input line 106.
+(pdftex.def)             Requested size: 281.27626pt x 176.82802pt.
+
+[3 <./resources/labelsControl.png> <./resources/condensed.png> <./resources/exp
+anded.png>]
+<resources/condExport.pdf, id=24, 531.7648pt x 266.97572pt>
+File: resources/condExport.pdf Graphic file (type pdf)
+<use resources/condExport.pdf>
+Package pdftex.def Info: resources/condExport.pdf  used on input line 119.
+(pdftex.def)             Requested size: 372.23282pt x 186.88171pt.
+<resources/expExport.pdf, id=25, 560.0925pt x 426.39299pt>
+File: resources/expExport.pdf Graphic file (type pdf)
+<use resources/expExport.pdf>
+Package pdftex.def Info: resources/expExport.pdf  used on input line 126.
+(pdftex.def)             Requested size: 392.06207pt x 298.47305pt.
+ [4 <./resources/condExport.pdf> <./resources/expExport.pdf
+
+pdfTeX warning: pdflatex (file ./resources/expExport.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>] ("Informe Parte 3.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 3794 strings out of 492902
- 50858 string characters out of 3133550
- 135133 words of memory out of 3000000
- 7656 multiletter control sequences out of 15000+200000
- 5158 words of font info for 19 fonts, out of 3000000 for 9000
+ 3866 strings out of 492902
+ 52463 string characters out of 3133550
+ 138185 words of memory out of 3000000
+ 7707 multiletter control sequences out of 15000+200000
+ 7203 words of font info for 28 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,31p,401b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,6n,31p,688b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
 rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on "Informe Parte 3.pdf" (2 pages, 396161 bytes).
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmti10.pfb>
+Output written on "Informe Parte 3.pdf" (4 pages, 1347952 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
+ 78 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -100,7 +100,7 @@ class PlotTool:
         self.rb2.grid(columnspan=2, sticky="W", padx=5, pady=5)
 
         # Boton borrar plots
-        self.deleteButton = tkinter.Button(self.controlsFrame, text="Eliminar", command=self.deletePlots)
+        self.deleteButton = tkinter.Button(self.controlsFrame, text="Remove Plots", command=self.deletePlots)
         self.deleteButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
 
         # Boton exportar como pdf
@@ -154,7 +154,6 @@ class PlotTool:
         elif mode == 1: # num y den
             print ("num y den")
             self.numDenWindow()
-        
 
     def polesZerosWindow(self):
         self.transferType = 'poles'
@@ -364,6 +363,7 @@ class PlotTool:
         self.figCanvas.draw()
         self.plotList = []
         self.legends = []
+        self.markers = []
 
     def pdfExport(self):
         file = asksaveasfile(filetypes=[('PDF Files', '*.pdf')], defaultextension=[('PDF Files', '*.pdf')])
@@ -379,8 +379,6 @@ class PlotTool:
             return
         elif file.name != '':
             self.fig1.savefig(file.name, bbox_inches='tight')
-        pass
-        pass
 
 def main():
     # Root window

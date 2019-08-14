@@ -210,7 +210,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename MedYPost.pdf
+	filename MedyPost.png
 	scale 65
 
 \end_inset
@@ -823,6 +823,41 @@ name "2_6"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename sim.png
+	lyxscale 20
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulacion del circuito a 300 (kHz)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

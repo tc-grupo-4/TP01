@@ -211,6 +211,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename MedYPost.pdf
+	scale 65
 
 \end_inset
 
@@ -279,10 +280,6 @@ name "2_5"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -810,6 +807,45 @@ Circuito como integrador a 300 (kHz)
 \begin_inset CommandInset label
 LatexCommand label
 name "2_6"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename sim.png
+	lyxscale 20
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulacion del circuito a 300 (kHz)
+\end_layout
 
 \end_inset
 

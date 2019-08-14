@@ -1,8 +1,8 @@
 * C:\Users\Ian Diaz\Desktop\TP01\Ex2\Spice.asc
-V1 N001 0 PULSE(-5 5 0 1n 1n 781.25n 1.5625u) AC 1 0
 R1 N003 N002 3.68k
 C1 N003 0 560p
 R2 N002 N001 50
-.tran 0 15.625u 7.8125u startup
+V1 N001 0 SINE(0 1 1K) AC 1
+.ac dec 10 1 1meg
 .backanno
 .end

@@ -751,7 +751,7 @@ Por ende, si cambiamos al espacio de frecuencias, procurando que
 
  podemos obtener la transferencia de un circuito integrador.
  En particular, para 
-\begin_inset Formula $R=2.5(k\Omega)\,y\,C=1(nF)$
+\begin_inset Formula $R=3.68(k\Omega)\,y\,C=560(pF)$
 \end_inset
 
  debemos concluir que para una frecuiencia 
@@ -763,11 +763,11 @@ Por ende, si cambiamos al espacio de frecuencias, procurando que
 
 \begin_layout Standard
 En particular, si tenemos una frecuencia 
-\begin_inset Formula $f_{i}=1(MHz)$
+\begin_inset Formula $f_{i}=300(kHz)$
 \end_inset
 
 , 
-\begin_inset Formula $2\pi f_{a}RC\approx18$
+\begin_inset Formula $2\pi f_{a}RC\gg1$
 \end_inset
 
 ,con lo cual podemos aproximar el denominado de la transferencia y usar
@@ -790,7 +790,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Integrador.png
+	filename 300k.png
 	lyxscale 50
 	scale 30
 
@@ -803,7 +803,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Circuito como integrador
+Circuito como integrador a 300 (kHz)
 \end_layout
 
 \end_inset
@@ -812,6 +812,45 @@ Circuito como integrador
 \begin_inset CommandInset label
 LatexCommand label
 name "2_6"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 640.png
+	lyxscale 20
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito andando a 640(Hz)
+\end_layout
 
 \end_inset
 

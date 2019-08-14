@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[english]{article}
 \usepackage[T1]{fontenc}
-\usepackage[latin9]{inputenc}
+\usepackage[latin9]{luainputenc}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm}
 \setlength{\parindent}{0bp}
@@ -16,8 +16,8 @@
 Se pidió aplicar a un filtro RC de frecuencia de corte $f_{0}=64\,(kHz)$
 una onda cuadrada de $10\,V_{pp}$ con frecuencia de $f=32\,(kHz)$
 . Los resultados obtenidos empiricamente fueron los que se muestran
-en la figura \ref{2_1}. A su vez, se calculo la transferecia del
-circuito idealmente resultando ser:
+en las figuras \ref{2_1} y \ref{2_4}. A su vez, se calculo la transferecia
+del circuito idealmente resultando ser:
 
 \begin{equation}
 H(s)=\frac{1}{1+sRC}\label{eq:2_4}
@@ -28,10 +28,7 @@ es el que se ve en las figuras \ref{2_4} y \ref{2_5}.
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.25]{scope_0}
-\par\end{centering}
-\begin{centering}
-\includegraphics[scale=0.3]{Med_Mod}\includegraphics[scale=0.3]{Med_Ph}
+\includegraphics[scale=0.4]{scope_0}
 \par\end{centering}
 \caption{Resultados}
 \label{2_1}
@@ -39,9 +36,9 @@ es el que se ve en las figuras \ref{2_4} y \ref{2_5}.
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.4]{plot}
+\includegraphics[scale=0.65]{MedyPost}
 \par\end{centering}
-\caption{Simulacion LTSpice}
+\caption{Simulacion LTSpice y Mediciones}
 \label{2_4}
 
 \end{figure}
@@ -52,7 +49,6 @@ es el que se ve en las figuras \ref{2_4} y \ref{2_5}.
 \par\end{centering}
 \caption{Análisis montecarlo}
 \label{2_5}
-
 \end{figure}
 
 \subsection{Calculo de armónicos}
@@ -191,20 +187,37 @@ Si\,\,sRC\ggg1\Longrightarrow H(s)=\frac{1}{1+sRC}\approx\frac{1}{RC}\frac{1}{s}
 
 Por ende, si cambiamos al espacio de frecuencias, procurando que $2\pi fRC\ggg1$
 podemos obtener la transferencia de un circuito integrador. En particular,
-para $R=2.5(k\Omega)\,y\,C=1(nF)$ debemos concluir que para una frecuiencia
-$f_{a}\ggg63(kHz)$, nuestro circuito se comportará como un integrador.
+para $R=3.68(k\Omega)\,y\,C=560(pF)$ debemos concluir que para una
+frecuiencia $f_{a}\ggg63(kHz)$, nuestro circuito se comportará como
+un integrador.
 
-En particular, si tenemos una frecuencia $f_{i}=640(kHz)$, $2\pi f_{a}RC\gg1$,con
+En particular, si tenemos una frecuencia $f_{i}=300(kHz)$, $2\pi f_{a}RC\gg1$,con
 lo cual podemos aproximar el denominado de la transferencia y usar
 nuestro circuito como integrador, como se puede observar en la figura
 \ref{2_6}.
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.3]{Med_640}
+\includegraphics[scale=0.4]{300k}
 \par\end{centering}
-\caption{Circuito como integrador a 640 (kHz)}
+\caption{Circuito como integrador a 300 (kHz)}
 \label{2_6}
+
+\end{figure}
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[scale=0.6]{sim}
+\par\end{centering}
+\caption{Simulacion del circuito a 300 (kHz)}
+
+\end{figure}
+
+\begin{figure}[h]
+\begin{centering}
+\includegraphics[scale=0.4]{640}
+\par\end{centering}
+\caption{Circuito andando a 640(Hz)}
 
 \end{figure}
 

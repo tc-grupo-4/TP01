@@ -96,11 +96,18 @@ Se pidió aplicar a un filtro RC de frecuencia de corte
 \end_inset
 
  .
- Los resultados obtenidos empiricamente fueron los que se muestran en la
- figura 
+ Los resultados obtenidos empiricamente fueron los que se muestran en las
+ figuras 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "2_1"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "2_4"
 
 \end_inset
 
@@ -151,26 +158,6 @@ status open
 	filename scope_0.png
 	lyxscale 25
 	scale 40
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename Med_Mod.png
-	lyxscale 25
-	scale 30
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename Med_Ph.png
-	lyxscale 25
-	scale 30
 
 \end_inset
 

@@ -1,0 +1,130 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[siunitx,american]{circuitikz}
+\usepackage{pgfplots}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{textcomp}
+\usepackage[spanish, es-tabla]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
+
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{vmargin}
+\setmarginsrb{3 cm}{2.5 cm}{3 cm}{2.5 cm}{1 cm}{1.5 cm}{1 cm}{1.5 cm}
+
+
+\pgfplotsset{compat=1.15}
+
+\begin{document}
+\section{Ejercicio I}
+\subsubsection{Analisis del circuito}
+En este ejercicio se analizo el circuito \ref{fig:circuito_1}. 
+
+\begin{figure}[ht]                                                       
+    \centering\includegraphics[width=0.8\textwidth]{circuito_1.png}
+    \caption{Filtro Notch Pasivo}
+    \label{fig:circuito_1}
+    \end{figure}
+
+
+En primer lugar, se calculo analíticamente al circuito mediante un método alternativo como es el de cuadripolos para
+obtener la función transferencia $H(s)$ que se puede ver en la ecuación \ref{transferencia_1}. Vale aclarar que se tomo la ayuda propuesta por la catedra y se considero que $R_{1}$ = $R_{2}$
+= $2R_{3}$, $2C_{1} = 2C_{2} = C_{3}$
+
+\begin{equation} H(s) = \frac{(\frac{S}{1/C_{3} R_{3}})^2 + 1} {(\frac{S}{1/C_{3}R_{3}})^2 + 4\frac{S}{C_{3}R_{3}} + 1}  \label{transferencia_1}\end{equation}
+
+Como se puede observar, la función transferencia describe un filtro Notch. Su frecuencia de corte es
+$Wc$. Su exprecion se muestra en la ecuación \ref{frecuencia_corte}
+
+\begin{equation} W_{0} =  \frac{1}{C_{3} R_{3}}  \label{frecuencia_corte}\end{equation}
+
+La frecuencia de corte pedida es $10.8k Hz$. Entonces nos queda la relación que se puede ver en la ecuación 
+\ref{relacion_RC}.
+
+\begin{equation} R_{3} = \frac{1}{C_{3} 2\pi 10.8k} \label{relacion_RC}\end{equation}
+
+Para obtener la respuesta inpulsiva $h(t)$, se utilzo la antitrasformada de Laplace. Esta resulto ser: 
+
+\begin{equation} h_{t} = asdasd  \end{equation}
+
+%En cuanto al diagrama de polos y ceros, este se ve representado en el diagrama \ref:fig{diagrama_polos_ceros}
+
+
+
+
+
+
+
+
+Volviendo a la relacion \ref{relacion_RC} es posible dar valores a la capacitor y asi obtener un valor para las resistencias. Teniendo en cuenta
+los valores comerciales disponibles en el pañol, se tomo $C_{3} = 10nF$ por lo que se obtuvo $R_{3}=1.47k\Omega$. Como
+no hay disponibe una resistencia de ese valor, se utilizo $R_{3}=1.5k\Omega$. Tampoco se encontraron capacitores de $C = 5nF$ 
+por lo que $C_{1} = 4.7nF y  C{2} = 4.7nF$. Estos valores se cargaron en LTspice y se obtuvo el bode de la 
+figura \ref{fig:bode_ltspice_teorico}.
+
+\begin{figure}[ht]                                                       
+    \centering\includegraphics[width=0.8\textwidth]{bode_ltspice_teorico.png}
+    \caption{Circuito con los componentes definidos}
+    \label{fig:bode_ltspice_teorico}
+    \end{figure}
+
+Se puede observar que el comportamiento del bode describe un filtro notch y que la frecuencia de corte se ubica en $11.1kHz$. Si
+bien la frecuencia de corte pedida es $10.8kHz$ nos vemos obligados a tomar $11.1kHz$ por motivos de disponibilidad de componentes
+en el pañol. Luego las mediciones se comparan respecto al bode obtenido en la figura \ref{fig:bode_ltspice_teorico}
+
+
+
+
+
+
+
+
+
+
+\subsection{Respuesta al escalon}
+En esta parte se analizo la respuesta al escalon. En primer lugar se calculo la expresion analitica. Teniendo en cuenta que 
+la entreda $X(t)$ es el escalon $U(t)$, que su transformada de Laplace es $\frac{1}{S}$ y que la funcion transferencia es la que 
+vimos en la ecuacion \ref{transferencia_1}. La transformada de Laplace de la salida nos queda \ref{transferencia_2}
+
+
+\begin{equation} Y(S) = \frac{S^2+W_{0}^2}{S^2+4W_{0}S+W_{0}^2} * \frac{1}{S}  \label{transferencia_2}\end{equation}
+
+Si acomodamos un poco esta expresion podemos llegar a: \\
+
+\begin{center}
+    $Y(S) = \frac{(S-S_{0})(S+S_{0})}{(S-P_{1})(S-P_{2})S}$  \\
+    
+    $S_{0}=67858.40132j
+    P_{1}=-18182.60383
+    P_{2}=-253251.0014$
+    \end{center}
+
+Si antitrasformamos nos queda:\\
+
+\begin{center}
+    $y(t) = (A\exp{P_{1}t}+B\exp{P_{2}t}+C) * u(t)$
+
+    $A = \frac{P_{1}^2 + W_{0}^2}{(P_{1}-P_{2})*P_{1}} = -1.1547$
+    $B = \frac{P_{2}^2 + W_{0}^2}{(P_{2}-P_{1})*P_{2}} =  1.1547$
+    $C = \frac{W_{0}^2}{(P_{2}P_{1}} = 1$
+
+    \end{center}
+
+%Si simulamos en LTspice la respuesta al ecalon tomando $C_{3} = 10nF$ y $R_{3}=1.47k\Omega$, nos queda los que observamos en 
+%la figura \ref:fig{rta_escalon_teorica}
+
+%\begin{figure}[ht]                                                       
+%    \centering\includegraphics[width=0.8\textwidth]{rta_escalon_teorica.png}
+%    \caption{Respuesta al Escalón}
+%    \label{fig:rta_escalon_teorica}
+%    \end{figure}
+
+Las mediciones resultaron ser:
+
+\end{document}

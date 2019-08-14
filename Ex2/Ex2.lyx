@@ -210,9 +210,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename plot.pdf
-	lyxscale 25
-	scale 40
+	filename MedYPost.pdf
 
 \end_inset
 
@@ -223,7 +221,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Simulacion LTSpice
+Simulacion LTSpice y Mediciones
 \end_layout
 
 \end_inset
@@ -751,7 +749,7 @@ Por ende, si cambiamos al espacio de frecuencias, procurando que
 
  podemos obtener la transferencia de un circuito integrador.
  En particular, para 
-\begin_inset Formula $R=2.5(k\Omega)\,y\,C=1(nF)$
+\begin_inset Formula $R=3.68(k\Omega)\,y\,C=560(pF)$
 \end_inset
 
  debemos concluir que para una frecuiencia 
@@ -763,7 +761,7 @@ Por ende, si cambiamos al espacio de frecuencias, procurando que
 
 \begin_layout Standard
 En particular, si tenemos una frecuencia 
-\begin_inset Formula $f_{i}=640(kHz)$
+\begin_inset Formula $f_{i}=300(kHz)$
 \end_inset
 
 , 
@@ -790,9 +788,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Med_640.png
+	filename 300k.png
 	lyxscale 50
-	scale 30
+	scale 40
 
 \end_inset
 
@@ -803,7 +801,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Circuito como integrador a 640 (kHz)
+Circuito como integrador a 300 (kHz)
 \end_layout
 
 \end_inset
@@ -812,6 +810,45 @@ Circuito como integrador a 640 (kHz)
 \begin_inset CommandInset label
 LatexCommand label
 name "2_6"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 640.png
+	lyxscale 20
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito andando a 640(Hz)
+\end_layout
 
 \end_inset
 

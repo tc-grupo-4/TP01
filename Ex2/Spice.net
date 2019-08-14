@@ -1,9 +1,9 @@
 * C:\Users\Ian Diaz\Desktop\TP01\Ex2\Spice.asc
-V1 N001 0 SINE(0 1 1K) AC 1 0
-R1 N002 N001 {mc(3.68k,tola)} tol=tola
-C1 N002 0 {mc(560p,tola)}
-.ac dec 10 10 100000k
-.param tola=0.05
-.step param run 1 100 1
+R1 N003 N002 3.785k
+C1 N003 0 560p
+R2 N002 N001 50
+V1 N001 0 SINE(0 1 1K) AC 1
+;tran 0 15.625u 7.8125u startup
+.ac dec 5 1 10meg
 .backanno
 .end

@@ -17,15 +17,15 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 
-WIDTH = 800
-HEIGHT = 600
-
 class PlotTool:
     def __init__(self, master):
         self.spiceParser = sp.SpiceParser()
         self.transferParser = tp.TransferParser()
         self.measurementParser = mp.MeasurementParser()
         self.root = master
+        self.legends = []
+        self.markers = []
+        self.root.geometry("1000x600")
         self.plotList = []
         # Frames
         # Creo dos frames que de distribuyen la ventana en un grid de 2 col y una fila
@@ -118,7 +118,7 @@ class PlotTool:
         self.axis2 = self.axis1.twinx()
         self.figCanvas = FigureCanvasTkAgg(self.fig1, master=self.figuresFrame)
         self.figCanvas.draw()
-        self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH,expand=1)
+        self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH)
 
     def onSelect(self):
         selection = self.plotListBox.curselection()
@@ -128,21 +128,23 @@ class PlotTool:
             self.deleteButton.config(state=tkinter.DISABLED)
 
     def onSpiceBtnClicked(self):
+        self.markers.append('')
         filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Archivos de Texto", "*.txt"),("Todos los archivos", "*.*")))
         if not filePath:
             return
         elif filePath[0] != '':
-            type, data = self.spiceParser.parseSpiceFile(filePath[0])
+            data = self.spiceParser.parseSpiceFile(filePath[0])
             # agrego a la lista de plots
             self.plotList.append(data)
-            if type.lower() == "ac":
-                # Agregar Plot bode
-                f=data[:][0]
-                mag=data[:][1]
-                phase=data[:][2]
-                self.updatePlots()
+            self.legend = simpledialog.askstring("Input", "Plot Legend", parent=self.root)
+            self.legends.append(self.legend)
+            f=data[:][0]
+            mag=data[:][1]
+            phase=data[:][2]
+            self.updatePlots()
 
     def onTransferFunctionButtonClicked(self):
+        self.markers.append('')
         mode = self.var.get()
         if mode == 0: # plos, ceros y gain
             print ("polos y ceros")
@@ -151,6 +153,7 @@ class PlotTool:
         elif mode == 1: # num y den
             print ("num y den")
             self.numDenWindow()
+        
 
     def polesZerosWindow(self):
         self.transferType = 'poles'
@@ -188,6 +191,8 @@ class PlotTool:
         cancelButton.grid(row=3,column=3, padx=5, pady=5, sticky="WE")
 
     def submitTransferData(self):
+        self.legend = simpledialog.askstring("Input", "Plot Legend", parent=self.root)
+        self.legends.append(self.legend)
         if self.transferType == 'poles':
             # parseo la data:
             valid, data = self.transferParser.parsePZG([self.poles.get(), self.zeros.get(), self.gain.get()])
@@ -233,7 +238,8 @@ class PlotTool:
         self.transferBtnText.set(temp)
 
     def onMeasurementButton(self):
-        filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Coma Separated Values", "*.csv"),("Todos los archivos", "*.*")))
+        self.markers.append('.')
+        filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Coma Separated Values", "*.csv"),("Excel Spreadsheet", "*.xlsx"),("Todos los archivos", "*.*")))
         if not filePath:
             return
         elif filePath[0] != '':
@@ -243,15 +249,18 @@ class PlotTool:
                 data = self.measurementParser.parseCSV(filePath[0])
             elif ext == '.xls' or ext == '.xlsx':
                 data = self.measurementParser.parseSpreadsheet(filePath[0]) 
-                # agrego a la lista de plots
+            
+            # agrego a la lista de plots
+            self.legend = simpledialog.askstring("Input", "Plot Legend", parent=self.root)
+            self.legends.append(self.legend)
             self.plotList.append(data)
             f=data[:][0]
             mag=data[:][1]
             phase=data[:][2]
             self.updatePlots()
 
-
     def updatePlots(self):
+        self.index = 0
         if self.bodeModeFlag == 0:
             self.redrawCondensated()
         elif self.bodeModeFlag == 1:
@@ -260,10 +269,12 @@ class PlotTool:
     def selBodeMode(self):
         option = self.bodeMode.get()
         if option == 0 and self.bodeModeFlag == 1:
+            self.index = 0
             # condensar los bodes:
             # reacomodar la figura
             self.redrawCondensated()
         elif option == 1 and self.bodeModeFlag == 0:
+            self.index = 0
             # reacomodar figura
             
             self.redrawExpanded()
@@ -279,23 +290,25 @@ class PlotTool:
         self.axis2 = self.axis1.twinx()
         self.figCanvas = FigureCanvasTkAgg(self.fig1, master=self.figuresFrame)
         self.figCanvas.draw()
-        self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH,expand=1)
+        self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH)
 
         for data in self.plotList:
             f = data[:][0]
             mag = data[:][1]
             phase = data[:][2]
             self.drawCondensated(f, mag, phase)
+            self.index = self.index + 1
 
     def drawCondensated(self, f, mag, phase):
-        self.axis1.semilogx(f, mag, linewidth=1, linestyle='-')
+        self.axis1.semilogx(f, mag, linewidth=1, linestyle='-', marker=self.markers[self.index])
         self.axis1.tick_params(axis='y')
-        self.axis1.grid(True, which="both", ls="-")
+        self.axis1.grid(True, which="major", ls='-')
         self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
         self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
-        self.axis2.semilogx(f, phase, linewidth=1, linestyle='-.')
+        self.axis1.legend(self.legends)
+        self.axis2.semilogx(f, phase, linewidth=1, linestyle='-.', marker=self.markers[self.index])
         self.axis2.tick_params(axis='y')
-        self.axis2.grid(True, which="both", ls="-")
+        self.axis2.grid(True, which="major", ls="-")
         self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
         self.figCanvas.draw()
 
@@ -313,16 +326,19 @@ class PlotTool:
             mag = data[:][1]
             phase = data[:][2]
             self.drawExpanded(f, mag, phase)
+            self.index = self.index+1
 
     def drawExpanded(self, f, mag, phase):
-        self.axis1.semilogx(f, mag, linewidth=1)
+        self.axis1.semilogx(f, mag, linewidth=1, marker=self.markers[self.index])
         self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
         self.axis1.set_ylabel(r'{}'.format(self.magLabel.get()))
-        self.axis1.grid(True, which="both", ls="-")
-        self.axis2.semilogx(f, phase, linewidth=1)
+        self.axis1.grid(True, which="major", ls='-')
+        self.axis1.legend(self.legends)
+        self.axis2.semilogx(f, phase, linewidth=1, marker=self.markers[self.index])
         self.axis2.set_xlabel(r'{}'.format(self.freqLabel.get()))
         self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
-        self.axis2.grid(True, which="both", ls="-")
+        self.axis2.grid(True, which="major", ls='-')
+        self.axis2.legend(self.legends)
         self.fig1.tight_layout()
         self.figCanvas.draw()
 
@@ -346,6 +362,7 @@ class PlotTool:
         self.axis2.cla()
         self.figCanvas.draw()
         self.plotList = []
+        self.legends = []
 
     def pdfExport(self):
         file = asksaveasfile(filetypes=[('PDF Files', '*.pdf')], defaultextension=[('PDF Files', '*.pdf')])
@@ -356,6 +373,12 @@ class PlotTool:
         pass
 
     def pngExport(self):
+        file = asksaveasfile(filetypes=[('PNG Files', '*.png')], defaultextension=[('PNG Files', '*.png')])
+        if not file:
+            return
+        elif file.name != '':
+            self.fig1.savefig(file.name, bbox_inches='tight')
+        pass
         pass
 
 def main():

@@ -26,6 +26,7 @@ class PlotTool:
         self.legends = []
         self.markers = []
         self.root.geometry("1000x600")
+        self.root.title("Plot Tool")
         self.plotList = []
         # Frames
         # Creo dos frames que de distribuyen la ventana en un grid de 2 col y una fila
@@ -84,7 +85,7 @@ class PlotTool:
         self.selTransferMethod()
 
         # Boton medicion
-        self.measurementButton = tkinter.Button(self.controlsFrame, text="Medición", command=self.onMeasurementButton)
+        self.measurementButton = tkinter.Button(self.controlsFrame, text="Measurement", command=self.onMeasurementButton)
         self.measurementButton.grid(columnspan=2, sticky="WE", padx=5, pady=5)
 
         # Distribucion Bode

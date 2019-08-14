@@ -336,6 +336,7 @@ INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/circuito_1.png
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/circuito_1.png
@@ -344,7 +345,6 @@ INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/bode_ltspice_teorico.png
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/bode_ltspice_teorico.png
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/bode_ltspice_teorico.png
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.aux
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb

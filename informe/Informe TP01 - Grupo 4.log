@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.30)  14 AUG 2019 20:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.30)  15 AUG 2019 13:48
 entering extended mode
 **"./Informe TP01 - Grupo 4.tex"
 ("Informe TP01 - Grupo 4.tex"
@@ -155,7 +155,7 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen113
 \Gin@req@width=\dimen114
-))
+)
 ("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
 Package: geometry 2018/04/16 v5.8 Page Geometry
 
@@ -182,10 +182,9 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen122
 \Gm@dimlist=\toks25
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
+("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg")))
 ("Informe TP01 - Grupo 4.aux"
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
+No file ../Ex2/Ex2.aux.
 )
 \openout1 = `"Informe TP01 - Grupo 4.aux"'.
 
@@ -203,8 +202,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Info: Redefining \. on input line 3.
 LaTeX Info: Redefining \% on input line 3.
-
-("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+ ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count107
 \scratchdimen=\dimen123
@@ -294,97 +292,245 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(parte3.tex
-<resources/window.png, id=1, 1872.24469pt x 1041.8925pt>
-File: resources/window.png Graphic file (type png)
-<use resources/window.png>
-Package pdftex.def Info: resources/window.png  used on input line 26.
-(pdftex.def)             Requested size: 374.4423pt x 208.3748pt.
-<resources/inputControls.png, id=2, 393.72093pt x 373.395pt>
-File: resources/inputControls.png Graphic file (type png)
-<use resources/inputControls.png>
-Package pdftex.def Info: resources/inputControls.png  used on input line 39.
-(pdftex.def)             Requested size: 118.11719pt x 112.01936pt.
- [1
-
-{C:/Users/lisan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./resources
-/window.png>]
-<resources/pzgPrompt.png, id=10, 434.37282pt x 302.63063pt>
-File: resources/pzgPrompt.png Graphic file (type png)
-<use resources/pzgPrompt.png>
-Package pdftex.def Info: resources/pzgPrompt.png  used on input line 51.
-(pdftex.def)             Requested size: 130.31284pt x 90.78989pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 56.
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+(Ex2.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
+ ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 56.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<resources/numDenPrompt.png, id=11, 505.89pt x 237.88875pt>
+
+LaTeX Warning: Reference `2_1' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Reference `2_4' on page 1 undefined on input line 6.
+
+
+LaTeX Warning: Reference `2_4' on page 1 undefined on input line 14.
+
+
+LaTeX Warning: Reference `2_5' on page 1 undefined on input line 14.
+
+<resources2/scope_0.png, id=1, 803.0pt x 481.8pt>
+File: resources2/scope_0.png Graphic file (type png)
+<use resources2/scope_0.png>
+Package pdftex.def Info: resources2/scope_0.png  used on input line 18.
+(pdftex.def)             Requested size: 321.1943pt x 192.71658pt.
+<resources2/MedyPost.png, id=2, 531.1845pt x 266.6763pt>
+File: resources2/MedyPost.png Graphic file (type png)
+<use resources2/MedyPost.png>
+Package pdftex.def Info: resources2/MedyPost.png  used on input line 26.
+(pdftex.def)             Requested size: 345.26582pt x 173.33754pt.
+<resources2/montecarlo.png, id=4, 486.31688pt x 366.61969pt>
+File: resources2/montecarlo.png Graphic file (type png)
+<use resources2/montecarlo.png>
+Package pdftex.def Info: resources2/montecarlo.png  used on input line 35.
+(pdftex.def)             Requested size: 243.15784pt x 183.30939pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[1
+
+{C:/Users/lisan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./resources
+2/scope_0.png (PNG copy)> <./resources2/MedyPost.png>]
+
+LaTeX Warning: Reference `eq:2_1' on page 2 undefined on input line 66.
+
+
+LaTeX Warning: Reference `2_2' on page 2 undefined on input line 70.
+
+<resources2/Square.png, id=18, 578.16pt x 432.6564pt>
+File: resources2/Square.png Graphic file (type png)
+<use resources2/Square.png>
+Package pdftex.def Info: resources2/Square.png  used on input line 88.
+(pdftex.def)             Requested size: 202.35902pt x 151.432pt.
+<resources2/DiagEspcTeo.png, id=19, 602.25pt x 372.39125pt>
+File: resources2/DiagEspcTeo.png Graphic file (type png)
+<use resources2/DiagEspcTeo.png>
+Package pdftex.def Info: resources2/DiagEspcTeo.png  used on input line 88.
+(pdftex.def)             Requested size: 210.79065pt x 130.33888pt.
+<resources2/Med_Arm.png, id=20, 602.25pt x 372.39125pt>
+File: resources2/Med_Arm.png Graphic file (type png)
+<use resources2/Med_Arm.png>
+Package pdftex.def Info: resources2/Med_Arm.png  used on input line 97.
+(pdftex.def)             Requested size: 240.89572pt x 148.95386pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./resources2/montecarlo.png> <./resources2/Square.png (PNG copy)> <./resour
+ces2/DiagEspcTeo.png>]
+
+LaTeX Warning: Reference `eq:3' on page 3 undefined on input line 125.
+
+
+LaTeX Warning: Reference `eq:2' on page 3 undefined on input line 125.
+
+
+LaTeX Warning: Reference `eq:2_3' on page 3 undefined on input line 140.
+
+
+LaTeX Warning: Reference `2_3' on page 3 undefined on input line 141.
+
+<resources2/out_calc.png, id=30, 578.16pt x 432.6564pt>
+File: resources2/out_calc.png Graphic file (type png)
+<use resources2/out_calc.png>
+Package pdftex.def Info: resources2/out_calc.png  used on input line 156.
+(pdftex.def)             Requested size: 289.07928pt x 216.32767pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `eq:2_4' on page 3 undefined on input line 166.
+
+
+LaTeX Warning: Reference `2_6' on page 3 undefined on input line 184.
+
+<resources2/300k.png, id=31, 803.0pt x 481.8pt>
+File: resources2/300k.png Graphic file (type png)
+<use resources2/300k.png>
+Package pdftex.def Info: resources2/300k.png  used on input line 188.
+(pdftex.def)             Requested size: 321.1943pt x 192.71658pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<resources2/sim.png, id=32, 489.32813pt x 297.36093pt>
+File: resources2/sim.png Graphic file (type png)
+<use resources2/sim.png>
+Package pdftex.def Info: resources2/sim.png  used on input line 197.
+(pdftex.def)             Requested size: 293.59914pt x 178.41792pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<resources2/640.png, id=33, 803.0pt x 481.8pt>
+File: resources2/640.png Graphic file (type png)
+<use resources2/640.png>
+Package pdftex.def Info: resources2/640.png  used on input line 205.
+(pdftex.def)             Requested size: 321.1943pt x 192.71658pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (parte3.tex [3 <./resources2/Med_Arm.png>] [4 <./resources2/out_calc.png (PNG
+ copy)> <./resources2/300k.png (PNG copy)>]
+<resources/window.png, id=42, 1872.24469pt x 1041.8925pt>
+File: resources/window.png Graphic file (type png)
+<use resources/window.png>
+Package pdftex.def Info: resources/window.png  used on input line 26.
+(pdftex.def)             Requested size: 374.4423pt x 208.3748pt.
+
+
+LaTeX Warning: Reference `fig:inputControls' on page 5 undefined on input line 
+35.
+
+<resources/inputControls.png, id=43, 393.72093pt x 373.395pt>
+File: resources/inputControls.png Graphic file (type png)
+<use resources/inputControls.png>
+Package pdftex.def Info: resources/inputControls.png  used on input line 39.
+(pdftex.def)             Requested size: 118.11719pt x 112.01936pt.
+
+LaTeX Warning: Reference `fig:pzgPromt' on page 5 undefined on input line 47.
+
+[5 <./resources2/sim.png> <./resources2/640.png (PNG copy)>]
+<resources/pzgPrompt.png, id=47, 434.37282pt x 302.63063pt>
+File: resources/pzgPrompt.png Graphic file (type png)
+<use resources/pzgPrompt.png>
+Package pdftex.def Info: resources/pzgPrompt.png  used on input line 51.
+(pdftex.def)             Requested size: 130.31284pt x 90.78989pt.
+
+
+LaTeX Warning: Reference `fig:numDenPrompt' on page 6 undefined on input line 5
+6.
+
+<resources/numDenPrompt.png, id=48, 505.89pt x 237.88875pt>
 File: resources/numDenPrompt.png Graphic file (type png)
 <use resources/numDenPrompt.png>
 Package pdftex.def Info: resources/numDenPrompt.png  used on input line 60.
 (pdftex.def)             Requested size: 151.76816pt x 71.36716pt.
- [2 <./resources/inputControls.png> <./resources/pzgPrompt.png> <./resources/nu
-mDenPrompt.png>]
-<resources/labelsControl.png, id=18, 400.49625pt x 233.37187pt>
+[6 <./resources/window.png> <./resources/inputControls.png> <./resources/pzgPro
+mpt.png>]
+
+LaTeX Warning: Reference `fig:labesControl' on page 7 undefined on input line 7
+5.
+
+<resources/labelsControl.png, id=52, 400.49625pt x 233.37187pt>
 File: resources/labelsControl.png Graphic file (type png)
 <use resources/labelsControl.png>
 Package pdftex.def Info: resources/labelsControl.png  used on input line 79.
 (pdftex.def)             Requested size: 120.1498pt x 70.01208pt.
-<resources/condensed.png, id=19, 1882.03125pt x 1178.90437pt>
+
+LaTeX Warning: Reference `fig:condensed' on page 7 undefined on input line 85.
+
+
+LaTeX Warning: Reference `fig:expanded' on page 7 undefined on input line 85.
+
+<resources/condensed.png, id=53, 1882.03125pt x 1178.90437pt>
 File: resources/condensed.png Graphic file (type png)
 <use resources/condensed.png>
 Package pdftex.def Info: resources/condensed.png  used on input line 89.
 (pdftex.def)             Requested size: 282.29251pt x 176.82802pt.
-<resources/expanded.png, id=20, 1875.25594pt x 1178.90437pt>
+<resources/expanded.png, id=54, 1875.25594pt x 1178.90437pt>
 File: resources/expanded.png Graphic file (type png)
 <use resources/expanded.png>
 Package pdftex.def Info: resources/expanded.png  used on input line 96.
 (pdftex.def)             Requested size: 281.27626pt x 176.82802pt.
 
-[3 <./resources/labelsControl.png> <./resources/condensed.png> <./resources/exp
-anded.png>]
-<resources/condExport.pdf, id=24, 531.7648pt x 266.97572pt>
+LaTeX Warning: Reference `fig:condExport' on page 7 undefined on input line 105
+.
+
+
+LaTeX Warning: Reference `fig:expExport' on page 7 undefined on input line 105.
+
+
+[7 <./resources/numDenPrompt.png> <./resources/labelsControl.png> <./resources/
+condensed.png>]
+<resources/condExport.pdf, id=59, 531.7648pt x 266.97572pt>
 File: resources/condExport.pdf Graphic file (type pdf)
 <use resources/condExport.pdf>
 Package pdftex.def Info: resources/condExport.pdf  used on input line 109.
 (pdftex.def)             Requested size: 372.23282pt x 186.88171pt.
-<resources/expExport.pdf, id=25, 560.0925pt x 426.39299pt>
+<resources/expExport.pdf, id=60, 560.0925pt x 426.39299pt>
 File: resources/expExport.pdf Graphic file (type pdf)
 <use resources/expExport.pdf>
 Package pdftex.def Info: resources/expExport.pdf  used on input line 116.
 (pdftex.def)             Requested size: 392.06207pt x 298.47305pt.
-) [4 <./resources/condExport.pdf> <./resources/expExport.pdf
-
-pdfTeX warning: pdflatex (file ./resources/expExport.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
->] ("Informe TP01 - Grupo 4.aux"
+) [8 <./resources/expanded.png> <./resources/condExport.pdf>]
+[9 <./resources/expExport.pdf>] ("Informe TP01 - Grupo 4.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-) ) 
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3871 strings out of 492902
- 52663 string characters out of 3133550
- 138194 words of memory out of 3000000
- 7707 multiletter control sequences out of 15000+200000
+ 3940 strings out of 492902
+ 54028 string characters out of 3133550
+ 138122 words of memory out of 3000000
+ 7762 multiletter control sequences out of 15000+200000
  7203 words of font info for 28 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,6n,31p,710b,359s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmti10.pfb>
-Output written on "Informe TP01 - Grupo 4.pdf" (4 pages, 1347952 bytes).
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "Informe TP01 - Grupo 4.pdf" (9 pages, 1688632 bytes).
 PDF statistics:
- 78 PDF objects out of 1000 (max. 8388607)
+ 140 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

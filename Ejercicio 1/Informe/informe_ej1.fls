@@ -345,13 +345,21 @@ INPUT /usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/bode_ltspice_teorico.png
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/bode_ltspice_teorico.png
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/bode_ltspice_teorico.png
-INPUT /usr/local/texlive/2019/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/placa_altium.png
+INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/placa_altium.png
+INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/placa_altium.png
+INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/Superpuesto.pdf
+INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/Superpuesto.pdf
+INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/Superpuesto.pdf
 INPUT /Users/manueldieguez/Google Drive/Instituto Tecnologico de Buenos Aires/Teoria de Circuitos/Trabajos Practicos/TP01/Ejercicio 1/Informe/informe_ej1.aux
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
+INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb

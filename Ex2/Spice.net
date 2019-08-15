@@ -1,8 +1,0 @@
-* C:\Users\Ian Diaz\Desktop\TP01\Ex2\Spice.asc
-R1 N003 N002 3.68k
-C1 N003 0 560p
-R2 N002 N001 50
-V1 N001 0 SINE(0 1 1K) AC 1
-.ac dec 10 1 1meg
-.backanno
-.end

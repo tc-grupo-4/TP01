@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language english
 \language_package default
-\inputencoding auto
+\inputencoding utf8
 \fontencoding global
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -155,7 +155,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename scope_0.png
+	filename resources2/scope_0.png
 	lyxscale 25
 	scale 40
 
@@ -197,7 +197,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename MedyPost.png
+	filename resources2/MedyPost.png
 	scale 65
 
 \end_inset
@@ -242,7 +242,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename montecarlo.png
+	filename resources2/montecarlo.png
 	lyxscale 25
 	scale 50
 
@@ -405,7 +405,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Square.png
+	filename resources2/Square.png
 	lyxscale 20
 	scale 35
 
@@ -413,7 +413,7 @@ status open
 
 
 \begin_inset Graphics
-	filename DiagEspcTeo.png
+	filename resources2/DiagEspcTeo.png
 	lyxscale 25
 	scale 35
 
@@ -456,7 +456,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Med_Arm.png
+	filename resources2/Med_Arm.png
 	lyxscale 20
 	scale 40
 
@@ -655,7 +655,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename out_calc.png
+	filename resources2/out_calc.png
 	lyxscale 20
 	scale 50
 
@@ -772,7 +772,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename 300k.png
+	filename resources2/300k.png
 	lyxscale 50
 	scale 40
 
@@ -818,7 +818,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename sim.png
+	filename resources2/sim.png
 	lyxscale 20
 	scale 60
 
@@ -857,7 +857,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename 640.png
+	filename resources2/640.png
 	lyxscale 20
 	scale 40
 

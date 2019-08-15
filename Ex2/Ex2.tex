@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[english]{article}
 \usepackage[T1]{fontenc}
-\usepackage[latin9]{luainputenc}
+\usepackage[utf8]{luainputenc}
 \usepackage{geometry}
 \geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm,headheight=2cm,headsep=2cm}
 \setlength{\parindent}{0bp}
@@ -13,7 +13,7 @@
 
 \section{Filtro pasabajos}
 
-Se pidiÛ aplicar a un filtro RC de frecuencia de corte $f_{0}=64\,(kHz)$
+Se pidi√≥ aplicar a un filtro RC de frecuencia de corte $f_{0}=64\,(kHz)$
 una onda cuadrada de $10\,V_{pp}$ con frecuencia de $f=32\,(kHz)$
 . Los resultados obtenidos empiricamente fueron los que se muestran
 en las figuras \ref{2_1} y \ref{2_4}. A su vez, se calculo la transferecia
@@ -28,7 +28,7 @@ es el que se ve en las figuras \ref{2_4} y \ref{2_5}.
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.4]{scope_0}
+\includegraphics[scale=0.4]{resources2/scope_0}
 \par\end{centering}
 \caption{Resultados}
 \label{2_1}
@@ -36,7 +36,7 @@ es el que se ve en las figuras \ref{2_4} y \ref{2_5}.
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.65]{MedyPost}
+\includegraphics[scale=0.65]{resources2/MedyPost}
 \par\end{centering}
 \caption{Simulacion LTSpice y Mediciones}
 \label{2_4}
@@ -45,18 +45,18 @@ es el que se ve en las figuras \ref{2_4} y \ref{2_5}.
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.5]{montecarlo}
+\includegraphics[scale=0.5]{resources2/montecarlo}
 \par\end{centering}
-\caption{An·lisis montecarlo}
+\caption{An√°lisis montecarlo}
 \label{2_5}
 \end{figure}
 
-\subsection{Calculo de armÛnicos}
+\subsection{Calculo de arm√≥nicos}
 
-Si queremos ver como reacciona el circuito a una seÒal cuadrada, debemos
+Si queremos ver como reacciona el circuito a una se√±al cuadrada, debemos
 calcular primero como afecta nuestro circuito a la onda de entrada.
-Como sabemos que la onda es una cuadrada, haciendo su descomposiciÛn
-de suma de seÒales trigonometricas, los coeficientes de Fourier resultan
+Como sabemos que la onda es una cuadrada, haciendo su descomposici√≥n
+de suma de se√±ales trigonometricas, los coeficientes de Fourier resultan
 ser:
 
 \[
@@ -76,18 +76,18 @@ b_{2n}=0
 \]
 
 Por lo tanto, la onda cuadrada se puede expresar en el espacio temporal
-como se ve en la expresiÛn \ref{eq:2_1}. Sin embargo, podemos ver,
-por temas de idealizacion, que una seÒal cuadrada ideal, se puede
-aproximar por una suma de tÈrminos finitos de senoidales, por lo tanto,
+como se ve en la expresi√≥n \ref{eq:2_1}. Sin embargo, podemos ver,
+por temas de idealizacion, que una se√±al cuadrada ideal, se puede
+aproximar por una suma de t√©rminos finitos de senoidales, por lo tanto,
 si aproximamos la cuadrada con 10 terminos, podemos ver como la aproximacion
 van quedando mas parecidas, esto se muestra en la figura \ref{2_2}.
-A medida que agreguemos mas tÈrminos a nuestra suma, menos sera la
+A medida que agreguemos mas t√©rminos a nuestra suma, menos sera la
 diferencia con una onda cuadrada ideal. No obstante, hay que tener
-en cuenta que, como fue visto en Matem·tica V, al tener una discontinuidad
-no evitable cada $\frac{T}{2}$, siendo \emph{T} el perÌodo de la
-seÒal, se generaran sobrepicos en los puntos de discontinuidad. por
-ende, si llamamos \emph{x(t)} a la funciÛn cuadrada ideal e \emph{y(t)}
-a su aproximaciÛn por senoides, \emph{x(t)} ser· igual a \emph{y(t)
+en cuenta que, como fue visto en Matem√°tica V, al tener una discontinuidad
+no evitable cada $\frac{T}{2}$, siendo \emph{T} el per√≠odo de la
+se√±al, se generaran sobrepicos en los puntos de discontinuidad. por
+ende, si llamamos \emph{x(t)} a la funci√≥n cuadrada ideal e \emph{y(t)}
+a su aproximaci√≥n por senoides, \emph{x(t)} ser√° igual a \emph{y(t)
 }en todos los numeros reales exceptuando los puntos de discontinuidad.
 Esto quiere decir, que es posible que al trabajar con ondas cuadradas,
 se encuentren sobrepicos.
@@ -98,23 +98,23 @@ x(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi}sin\left(2\pi(2n-1)f_{0}t\right)\
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.35]{Square}\includegraphics[scale=0.35]{DiagEspcTeo}
+\includegraphics[scale=0.35]{resources2/Square}\includegraphics[scale=0.35]{resources2/DiagEspcTeo}
 \par\end{centering}
-\caption{RepresentaciÛn de onda cuadrada mediante suma de senoidales y su diagrama
-espectral teÛrico}
+\caption{Representaci√≥n de onda cuadrada mediante suma de senoidales y su diagrama
+espectral te√≥rico}
 \label{2_2}
 \end{figure}
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.4]{Med_Arm}
+\includegraphics[scale=0.4]{resources2/Med_Arm}
 \par\end{centering}
 \caption{Transferencia superpuesta con los armonicos(los ptos de los armonicos
-est·n unidos por lineas)}
+est√°n unidos por lineas)}
 
 \end{figure}
 
-Debido a que la entrada es una funciÛn continua a trozos de perÌodo
+Debido a que la entrada es una funci√≥n continua a trozos de per√≠odo
 \emph{T, }entonces:
 
 \[
@@ -166,9 +166,9 @@ y(t)\sim\sum_{k\,impares}\frac{20}{k\pi\sqrt{k^{2}+1}}cos\left(2\pi kf_{0}t-arct
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.5]{out_calc}
+\includegraphics[scale=0.5]{resources2/out_calc}
 \par\end{centering}
-\caption{Salida del RC en armÛnicos}
+\caption{Salida del RC en arm√≥nicos}
 \label{2_3}
 \end{figure}
 
@@ -188,7 +188,7 @@ Si\,\,sRC\ggg1\Longrightarrow H(s)=\frac{1}{1+sRC}\approx\frac{1}{RC}\frac{1}{s}
 Por ende, si cambiamos al espacio de frecuencias, procurando que $2\pi fRC\ggg1$
 podemos obtener la transferencia de un circuito integrador. En particular,
 para $R=3.68(k\Omega)\,y\,C=560(pF)$ debemos concluir que para una
-frecuiencia $f_{a}\ggg63(kHz)$, nuestro circuito se comportar· como
+frecuiencia $f_{a}\ggg63(kHz)$, nuestro circuito se comportar√° como
 un integrador.
 
 En particular, si tenemos una frecuencia $f_{i}=300(kHz)$, $2\pi f_{a}RC\gg1$,con
@@ -198,7 +198,7 @@ nuestro circuito como integrador, como se puede observar en la figura
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.4]{300k}
+\includegraphics[scale=0.4]{resources2/300k}
 \par\end{centering}
 \caption{Circuito como integrador a 300 (kHz)}
 \label{2_6}
@@ -207,7 +207,7 @@ nuestro circuito como integrador, como se puede observar en la figura
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.6]{sim}
+\includegraphics[scale=0.6]{resources2/sim}
 \par\end{centering}
 \caption{Simulacion del circuito a 300 (kHz)}
 
@@ -215,7 +215,7 @@ nuestro circuito como integrador, como se puede observar en la figura
 
 \begin{figure}[h]
 \begin{centering}
-\includegraphics[scale=0.4]{640}
+\includegraphics[scale=0.4]{resources2/640}
 \par\end{centering}
 \caption{Circuito andando a 640(Hz)}
 

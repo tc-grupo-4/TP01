@@ -1,0 +1,23 @@
+Removed Pin From Net: NetName=NetC1_2 Pin=C2-1
+Removed Pin From Net: NetName=NetC1_2 Pin=R3-1
+Removed Member From Class: ClassName=Punto1 Member=R5
+Change Component Designator: OldDesignator=R2 NewDesignator=R12
+Change Component Designator: OldDesignator=R4 NewDesignator=R22
+Change Component Designator: OldDesignator=R5 NewDesignator=R2
+Added Component: Designator=C12(CAP100)
+Add component. Clean all parameters for all variants
+Added Component: Designator=C22(CAP100)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=NetC1_2 Pin=C12-1
+Change Net Name : Old Net Name=NetR3_2 New Net Name=NetR2_1
+Added Pin To Net: NetName=NetC2_1 Pin=C2-1
+Added Pin To Net: NetName=NetC2_1 Pin=C22-2
+Added Net: Name=NetC2_1
+Added Pin To Net: NetName=NetC12_2 Pin=C12-2
+Added Pin To Net: NetName=NetC12_2 Pin=C22-1
+Added Pin To Net: NetName=NetC12_2 Pin=R3-1
+Added Net: Name=NetC12_2
+Added Member To Class: ClassName=Punto1 Member=Component C12 CAP
+Added Member To Class: ClassName=Punto1 Member=Component C22 CAP
+Added Member To Class: ClassName=Punto1 Member=Component R12 RES
+Added Room: Name=Punto1

@@ -1,0 +1,11 @@
+* C:\Users\Ian Diaz\Desktop\TP01\Ex2\Spice.asc
+R1 N003 N002 {mc(3.68k,tola)}
+C1 N003 0 {mc(560p,tolb)}
+R2 N002 N001 50
+V1 N001 0 SINE(0 1 1K) AC 1
+.ac dec 10 1 10meg
+.param tola=0.05
+.param tolb=0.1
+.step param run 1 100 1
+.backanno
+.end

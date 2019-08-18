@@ -121,13 +121,7 @@ class PlotTool:
         self.figCanvas.draw()
         self.figCanvas.get_tk_widget().pack(side=tkinter.TOP, fill=tkinter.BOTH)
 
-    def onSelect(self):
-        selection = self.plotListBox.curselection()
-        if len(selection) > 0:
-            self.deleteButton.config(state=tkinter.NORMAL)
-        else:
-            self.deleteButton.config(state=tkinter.DISABLED)
-
+    # Handler del boton 'Spice'. Llama al parser y agrega el grafico
     def onSpiceBtnClicked(self):
         self.markers.append('')
         filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Archivos de Texto", "*.txt"),("Todos los archivos", "*.*")))
@@ -144,6 +138,7 @@ class PlotTool:
             phase=data[:][2]
             self.updatePlots()
 
+    # Handler del boton 'H(s)'. Llama al parser y agrega los graficos.
     def onTransferFunctionButtonClicked(self):
         self.markers.append('')
         mode = self.var.get()
@@ -155,6 +150,7 @@ class PlotTool:
             print ("num y den")
             self.numDenWindow()
 
+    # Ventana que abre el prompt para ingresar polos, ceros y ganancia
     def polesZerosWindow(self):
         self.transferType = 'poles'
         self.poles = tkinter.StringVar()
@@ -190,6 +186,7 @@ class PlotTool:
         cancelButton = tkinter.Button(self.prompt, text="Cancel", command=self.closePrompt)
         cancelButton.grid(row=3,column=3, padx=5, pady=5, sticky="WE")
 
+    # Función que agrega los graficos de las transferencias analiticas
     def submitTransferData(self):
         self.legend = simpledialog.askstring("Input", "Plot Legend", parent=self.root)
         self.legends.append(self.legend)
@@ -207,6 +204,7 @@ class PlotTool:
     def closePrompt(self):
         self.prompt.destroy()
 
+    # Funcion que abre el prompt para ingresar numerador y denominador
     def numDenWindow(self):
         self.transferType='numden'
         self.prompt = tkinter.Toplevel(self.controlsFrame)
@@ -232,11 +230,13 @@ class PlotTool:
         cancelButton = tkinter.Button(self.prompt, text="Cancel", command=self.closePrompt)
         cancelButton.grid(row=3,column=3, padx=5, pady=5, sticky="WE")
 
+    # Handler del radiobutton del tipo de transferencia analitica
     def selTransferMethod(self):
         selection = str(self.MODES[self.var.get()])
         temp = "H(s)\n" + selection
         self.transferBtnText.set(temp)
 
+    # Handler del boton Measurement. Llama al parser y agrega el graficos
     def onMeasurementButton(self):
         self.markers.append('.')
         filePath = tkinter.filedialog.askopenfilenames(title="Seleccionar archivo de Spice", filetypes=(("Coma Separated Values", "*.csv"),("Excel Spreadsheet", "*.xlsx"),("Todos los archivos", "*.*")))
@@ -259,6 +259,7 @@ class PlotTool:
             phase=data[:][2]
             self.updatePlots()
 
+    # Funcion que actualiza los graficos.
     def updatePlots(self):
         self.index = 0
         if self.bodeModeFlag == 0:
@@ -266,6 +267,7 @@ class PlotTool:
         elif self.bodeModeFlag == 1:
             self.redrawExpanded()
 
+    # Handler del radobutton extendido o condensado
     def selBodeMode(self):
         option = self.bodeMode.get()
         if option == 0 and self.bodeModeFlag == 1:
@@ -282,8 +284,8 @@ class PlotTool:
 
         self.bodeModeFlag = option
 
+    # Funcion que borra la figura y vuelve a dibujar todo en modo condensado
     def redrawCondensated(self):
-
         self.figCanvas._tkcanvas.destroy()
         self.fig1 = Figure(figsize=(6,4))
         self.axis1 = self.fig1.add_subplot(111)
@@ -299,6 +301,7 @@ class PlotTool:
             self.drawCondensated(f, mag, phase)
             self.index = self.index + 1
 
+    # Funcion que dibuja un set de datos en modo condensado
     def drawCondensated(self, f, mag, phase):
         self.axis1.semilogx(f, mag, linewidth=1, linestyle='-', marker=self.markers[self.index])
         self.axis1.tick_params(axis='y')
@@ -312,8 +315,8 @@ class PlotTool:
         self.axis2.set_ylabel(r'{}'.format(self.phaseLabel.get()))
         self.figCanvas.draw()
 
+    # Funcion que borra la figura y vuelve a dibujar todo en modo expandido
     def redrawExpanded(self):
-
         self.figCanvas._tkcanvas.destroy()
         self.fig1 = Figure(figsize=(6,4))
         self.figCanvas = FigureCanvasTkAgg(self.fig1, master=self.figuresFrame)
@@ -328,6 +331,7 @@ class PlotTool:
             self.drawExpanded(f, mag, phase)
             self.index = self.index+1
 
+    # Funcion que dibuja un set de datos en modo expandido
     def drawExpanded(self, f, mag, phase):
         self.axis1.semilogx(f, mag, linewidth=1, marker=self.markers[self.index])
         self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
@@ -342,6 +346,7 @@ class PlotTool:
         self.fig1.tight_layout()
         self.figCanvas.draw()
 
+    # Handler del boton 'set labels'. actualiza las etiquetas de los ejes
     def setLabels(self):
         if self.freqLabel.get():
             self.axis1.set_xlabel(r'{}'.format(self.freqLabel.get()))
@@ -357,6 +362,7 @@ class PlotTool:
         self.axis2.relim()
         self.figCanvas.draw()
 
+    # Handler de boton 'delete'. Elimina los plots
     def deletePlots(self):
         self.axis1.cla()
         self.axis2.cla()
@@ -365,6 +371,7 @@ class PlotTool:
         self.legends = []
         self.markers = []
 
+    # Handler exportar como pdf
     def pdfExport(self):
         file = asksaveasfile(filetypes=[('PDF Files', '*.pdf')], defaultextension=[('PDF Files', '*.pdf')])
         if not file:
@@ -373,6 +380,7 @@ class PlotTool:
             self.fig1.savefig(file.name, bbox_inches='tight')
         pass
 
+    # Handler exportar como png
     def pngExport(self):
         file = asksaveasfile(filetypes=[('PNG Files', '*.png')], defaultextension=[('PNG Files', '*.png')])
         if not file:

@@ -20,7 +20,6 @@ class MeasurementParser:
 			mag = [float(i) for i in mag]
 			phase = [float(i) for i in phase]
 			data = [f, mag, phase]
-
 		return data
 
 	def parseSpreadsheet(self, filePath):
@@ -40,10 +39,5 @@ class MeasurementParser:
 			mag.append(sheet.cell_value(i,1))
 			phase.append(sheet.cell_value(i,2))
 			pass
-
-		#f = [float(i) for i in f]
-		#mag = [float(i) for i in mag]
-		#phase = [float(i) for i in phase]
-
 		data = [f, mag, phase]
 		return data

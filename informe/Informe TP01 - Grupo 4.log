@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.18)  18 AUG 2019 23:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2019.8.18)  18 AUG 2019 23:46
 entering extended mode
 **"./Informe TP01 - Grupo 4.tex"
 ("Informe TP01 - Grupo 4.tex"
@@ -1294,14 +1294,14 @@ G,.JBIG2,.JB2,.eps]
 * \paperwidth=598.14806pt
 * \paperheight=845.90042pt
 * \textwidth=427.43153pt
-* \textheight=671.71976pt
-* \oddsidemargin=99.58464pt
-* \evensidemargin=71.13188pt
-* \topmargin=56.9055pt
-* \headheight=12.0pt
-* \headsep=31.29802pt
+* \textheight=589.82567pt
+* \oddsidemargin=85.35826pt
+* \evensidemargin=85.35826pt
+* \topmargin=71.13188pt
+* \headheight=28.45274pt
+* \headsep=42.67912pt
 * \topskip=10.0pt
-* \footskip=31.29802pt
+* \footskip=42.67912pt
 * \marginparwidth=57.0pt
 * \marginparsep=11.0pt
 * \columnsep=10.0pt
@@ -1340,20 +1340,20 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: resources/circuito_1.png Graphic file (type png)
 <use resources/circuito_1.png>
 Package pdftex.def Info: resources/circuito_1.png  used on input line 34.
-(pdftex.def)             Requested size: 341.94652pt x 182.07927pt.
+(pdftex.def)             Requested size: 213.71576pt x 113.79294pt.
 <resources/circuitoconkenelly.png, id=30, 246.9225pt x 167.12437pt>
 File: resources/circuitoconkenelly.png Graphic file (type png)
 <use resources/circuitoconkenelly.png>
 Package pdftex.def Info: resources/circuitoconkenelly.png  used on input line 4
 2.
-(pdftex.def)             Requested size: 213.71576pt x 144.64728pt.
+(pdftex.def)             Requested size: 170.97pt x 115.7163pt.
 <resources/circuitoconkenellysimplificado.png, id=31, 246.9225pt x 167.12437pt>
 
 File: resources/circuitoconkenellysimplificado.png Graphic file (type png)
 <use resources/circuitoconkenellysimplificado.png>
 Package pdftex.def Info: resources/circuitoconkenellysimplificado.png  used on 
 input line 49.
-(pdftex.def)             Requested size: 341.94652pt x 231.45299pt.
+(pdftex.def)             Requested size: 213.71576pt x 144.64728pt.
 
 [1
 
@@ -1382,7 +1382,7 @@ ng (PNG copy)>]
 File: resources/placa_altium.png Graphic file (type png)
 <use resources/placa_altium.png>
 Package pdftex.def Info: resources/placa_altium.png  used on input line 165.
-(pdftex.def)             Requested size: 213.71576pt x 214.17126pt.
+(pdftex.def)             Requested size: 128.23076pt x 128.49985pt.
  [5 <./resources/placa_altium.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 177--181
 
@@ -1393,32 +1393,37 @@ File: resources/Superpuesto.pdf Graphic file (type pdf)
 <use resources/Superpuesto.pdf>
 Package pdftex.def Info: resources/Superpuesto.pdf  used on input line 190.
 (pdftex.def)             Requested size: 598.1735pt x 455.38367pt.
-[6]
-<resources/respuestaalescalon.png, id=70, 1023.825pt x 303.38344pt>
+[6] [7 <./resources/Superpuesto.pdf>]
+<resources/respuestaalescalon.png, id=93, 1023.825pt x 303.38344pt>
 File: resources/respuestaalescalon.png Graphic file (type png)
 <use resources/respuestaalescalon.png>
 Package pdftex.def Info: resources/respuestaalescalon.png  used on input line 2
 44.
 (pdftex.def)             Requested size: 598.14629pt x 177.24481pt.
- [7 <./resources/Superpuesto.pdf>]
 <resources/rtaalescalon.png, id=94, 1027.84pt x 825.0825pt>
 File: resources/rtaalescalon.png Graphic file (type png)
 <use resources/rtaalescalon.png>
 Package pdftex.def Info: resources/rtaalescalon.png  used on input line 262.
 (pdftex.def)             Requested size: 427.43153pt x 343.12047pt.
-) (../Ex2/Ex2.tex [8 <./resources/respuestaalescalon.png (PNG copy)> <./resourc
-es/rtaalescalon.png (PNG copy)>]
+ [8 <./resources/respuestaalescalon.png (PNG copy)>]) (../Ex2/Ex2.tex
 <../Ex2/resources2/scope_0.png, id=98, 803.0pt x 481.8pt>
 File: ../Ex2/resources2/scope_0.png Graphic file (type png)
 <use ../Ex2/resources2/scope_0.png>
 Package pdftex.def Info: ../Ex2/resources2/scope_0.png  used on input line 18.
 (pdftex.def)             Requested size: 321.1943pt x 192.71658pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 <../Ex2/resources2/MedyPost.png, id=99, 531.1845pt x 266.6763pt>
 File: ../Ex2/resources2/MedyPost.png Graphic file (type png)
 <use ../Ex2/resources2/MedyPost.png>
 Package pdftex.def Info: ../Ex2/resources2/MedyPost.png  used on input line 26.
 
 (pdftex.def)             Requested size: 345.26582pt x 173.33754pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 <../Ex2/resources2/montecarlo.png, id=100, 475.02469pt x 287.57437pt>
 File: ../Ex2/resources2/montecarlo.png Graphic file (type png)
 <use ../Ex2/resources2/montecarlo.png>
@@ -1426,25 +1431,26 @@ Package pdftex.def Info: ../Ex2/resources2/montecarlo.png  used on input line 3
 5.
 (pdftex.def)             Requested size: 237.51175pt x 143.78683pt.
 
-
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9 <../Ex2/resources2/scope_0.png (PNG copy)> <../Ex2/resources2/MedyPost.png>]
-<../Ex2/resources2/Square.png, id=105, 578.16pt x 432.6564pt>
+[9 <./resources/rtaalescalon.png (PNG copy)>] [10 <../Ex2/resources2/scope_0.pn
+g (PNG copy)>]
+<../Ex2/resources2/Square.png, id=108, 578.16pt x 432.6564pt>
 File: ../Ex2/resources2/Square.png Graphic file (type png)
 <use ../Ex2/resources2/Square.png>
 Package pdftex.def Info: ../Ex2/resources2/Square.png  used on input line 88.
 (pdftex.def)             Requested size: 202.35902pt x 151.432pt.
-<../Ex2/resources2/DiagEspcTeo.png, id=106, 602.25pt x 372.39125pt>
+<../Ex2/resources2/DiagEspcTeo.png, id=109, 602.25pt x 372.39125pt>
 File: ../Ex2/resources2/DiagEspcTeo.png Graphic file (type png)
 <use ../Ex2/resources2/DiagEspcTeo.png>
 Package pdftex.def Info: ../Ex2/resources2/DiagEspcTeo.png  used on input line 
 88.
 (pdftex.def)             Requested size: 210.79065pt x 130.33888pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Ex2/resources2/Med_Arm.png, id=107, 602.25pt x 372.39125pt>
+<../Ex2/resources2/Med_Arm.png, id=110, 602.25pt x 372.39125pt>
 File: ../Ex2/resources2/Med_Arm.png Graphic file (type png)
 <use ../Ex2/resources2/Med_Arm.png>
 Package pdftex.def Info: ../Ex2/resources2/Med_Arm.png  used on input line 97.
@@ -1452,71 +1458,65 @@ Package pdftex.def Info: ../Ex2/resources2/Med_Arm.png  used on input line 97.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10 <../Ex2/resources2/montecarlo.png>]
+[11 <../Ex2/resources2/MedyPost.png> <../Ex2/resources2/montecarlo.png>]
 Overfull \hbox (0.2047pt too wide) detected at line 145
 \OML/cmm/m/it/10 y\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 ) \OMS/cms
 y/m/n/10  [] []\OML/cmm/m/it/10 cos []
  []
 
-[11 <../Ex2/resources2/Square.png (PNG copy)> <../Ex2/resources2/DiagEspcTeo.pn
+[12 <../Ex2/resources2/Square.png (PNG copy)> <../Ex2/resources2/DiagEspcTeo.pn
 g> <../Ex2/resources2/Med_Arm.png>]
-<../Ex2/resources2/out_calc.png, id=118, 578.16pt x 432.6564pt>
+<../Ex2/resources2/out_calc.png, id=121, 578.16pt x 432.6564pt>
 File: ../Ex2/resources2/out_calc.png Graphic file (type png)
 <use ../Ex2/resources2/out_calc.png>
 Package pdftex.def Info: ../Ex2/resources2/out_calc.png  used on input line 156
 .
 (pdftex.def)             Requested size: 289.07928pt x 216.32767pt.
-<../Ex2/resources2/300k.png, id=119, 803.0pt x 481.8pt>
+<../Ex2/resources2/300k.png, id=122, 803.0pt x 481.8pt>
 File: ../Ex2/resources2/300k.png Graphic file (type png)
 <use ../Ex2/resources2/300k.png>
 Package pdftex.def Info: ../Ex2/resources2/300k.png  used on input line 188.
 (pdftex.def)             Requested size: 321.1943pt x 192.71658pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<../Ex2/resources2/sim.png, id=120, 489.32813pt x 297.36093pt>
+ [13 <../Ex2/resources2/out_calc.png (PNG copy)>]
+<../Ex2/resources2/sim.png, id=128, 489.32813pt x 297.36093pt>
 File: ../Ex2/resources2/sim.png Graphic file (type png)
 <use ../Ex2/resources2/sim.png>
 Package pdftex.def Info: ../Ex2/resources2/sim.png  used on input line 197.
 (pdftex.def)             Requested size: 293.59914pt x 178.41792pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<../Ex2/resources2/640.png, id=121, 803.0pt x 481.8pt>
+<../Ex2/resources2/640.png, id=129, 803.0pt x 481.8pt>
 File: ../Ex2/resources2/640.png Graphic file (type png)
 <use ../Ex2/resources2/640.png>
 Package pdftex.def Info: ../Ex2/resources2/640.png  used on input line 205.
 (pdftex.def)             Requested size: 321.1943pt x 192.71658pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (parte3.tex [12 <../Ex2/resources2/out_calc.png (PNG copy)>]
-<resources/window.png, id=126, 1872.24469pt x 1041.8925pt>
+) (parte3.tex [14 <../Ex2/resources2/300k.png (PNG copy)> <../Ex2/resources2/si
+m.png>]
+<resources/window.png, id=133, 1872.24469pt x 1041.8925pt>
 File: resources/window.png Graphic file (type png)
 <use resources/window.png>
 Package pdftex.def Info: resources/window.png  used on input line 26.
 (pdftex.def)             Requested size: 374.4423pt x 208.3748pt.
- [13 <../Ex2/resources2/300k.png (PNG copy)> <../Ex2/resources2/sim.png>]
-<resources/inputControls.png, id=131, 393.72093pt x 373.395pt>
+<resources/inputControls.png, id=134, 393.72093pt x 373.395pt>
 File: resources/inputControls.png Graphic file (type png)
 <use resources/inputControls.png>
 Package pdftex.def Info: resources/inputControls.png  used on input line 39.
 (pdftex.def)             Requested size: 118.11719pt x 112.01936pt.
- [14 <../Ex2/resources2/640.png (PNG copy)> <./resources/window.png>]
-<resources/pzgPrompt.png, id=136, 434.37282pt x 302.63063pt>
+ [15 <../Ex2/resources2/640.png (PNG copy)>]
+<resources/pzgPrompt.png, id=139, 434.37282pt x 302.63063pt>
 File: resources/pzgPrompt.png Graphic file (type png)
 <use resources/pzgPrompt.png>
 Package pdftex.def Info: resources/pzgPrompt.png  used on input line 51.
 (pdftex.def)             Requested size: 130.31284pt x 90.78989pt.
-<resources/numDenPrompt.png, id=137, 505.89pt x 237.88875pt>
+ [16 <./resources/window.png> <./resources/inputControls.png>]
+<resources/numDenPrompt.png, id=143, 505.89pt x 237.88875pt>
 File: resources/numDenPrompt.png Graphic file (type png)
 <use resources/numDenPrompt.png>
 Package pdftex.def Info: resources/numDenPrompt.png  used on input line 60.
 (pdftex.def)             Requested size: 151.76816pt x 71.36716pt.
- [15 <./resources/inputControls.png> <./resources/pzgPrompt.png> <./resources/n
-umDenPrompt.png>]
-<resources/labelsControl.png, id=141, 400.49625pt x 233.37187pt>
+<resources/labelsControl.png, id=144, 400.49625pt x 233.37187pt>
 File: resources/labelsControl.png Graphic file (type png)
 <use resources/labelsControl.png>
 Package pdftex.def Info: resources/labelsControl.png  used on input line 79.
@@ -1527,32 +1527,38 @@ Overfull \hbox (8.68039pt too wide) in paragraph at lines 85--86
 ni-tud y fa-se en una mis-ma fi-gu-ra('Condensed'),
  []
 
-<resources/condensed.png, id=142, 1882.03125pt x 1178.90437pt>
+[17 <./resources/pzgPrompt.png> <./resources/numDenPrompt.png>]
+<resources/condensed.png, id=148, 1882.03125pt x 1178.90437pt>
 File: resources/condensed.png Graphic file (type png)
 <use resources/condensed.png>
 Package pdftex.def Info: resources/condensed.png  used on input line 89.
 (pdftex.def)             Requested size: 282.29251pt x 176.82802pt.
-<resources/expanded.png, id=143, 1875.25594pt x 1178.90437pt>
+<resources/expanded.png, id=149, 1875.25594pt x 1178.90437pt>
 File: resources/expanded.png Graphic file (type png)
 <use resources/expanded.png>
 Package pdftex.def Info: resources/expanded.png  used on input line 96.
 (pdftex.def)             Requested size: 281.27626pt x 176.82802pt.
-[16 <./resources/labelsControl.png> <./resources/condensed.png>]
-<resources/condExport.pdf, id=147, 531.7648pt x 266.97572pt>
+<resources/condExport.pdf, id=150, 531.7648pt x 266.97572pt>
 File: resources/condExport.pdf Graphic file (type pdf)
 <use resources/condExport.pdf>
 Package pdftex.def Info: resources/condExport.pdf  used on input line 109.
 (pdftex.def)             Requested size: 372.23282pt x 186.88171pt.
-<resources/expExport.pdf, id=148, 560.0925pt x 426.39299pt>
+<resources/expExport.pdf, id=151, 560.0925pt x 426.39299pt>
 File: resources/expExport.pdf Graphic file (type pdf)
 <use resources/expExport.pdf>
 Package pdftex.def Info: resources/expExport.pdf  used on input line 116.
 (pdftex.def)             Requested size: 392.06207pt x 298.47305pt.
-) [17 <./resources/expanded.png> <./resources/condExport.pdf>] [18 <./resources
-/expExport.pdf>] ("Informe TP01 - Grupo 4.aux"
+) [18 <./resources/labelsControl.png> <./resources/condensed.png>] [19 <./resou
+rces/expanded.png> <./resources/condExport.pdf>] [20 <./resources/expExport.pdf
+>]
+("Informe TP01 - Grupo 4.aux"
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-) ) 
+)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  49007 strings out of 492969
  1231461 string characters out of 3134438
@@ -1561,22 +1567,22 @@ Here is how much of TeX's memory you used:
  537310 words of font info for 44 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,7n,119p,851b,684s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on "Informe TP01 - Grupo 4.pdf" (18 pages, 2087455 bytes).
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on "Informe TP01 - Grupo 4.pdf" (20 pages, 2088854 bytes).
 PDF statistics:
- 222 PDF objects out of 1000 (max. 8388607)
+ 229 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  249 words of extra memory for PDF output out of 10000 (max. 10000000)
 

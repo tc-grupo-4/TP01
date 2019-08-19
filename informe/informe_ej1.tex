@@ -31,7 +31,7 @@ En este ejercicio se busca crear un filtro notch a partir del circuito \ref{fig:
 
 \begin{figure}[H]                                                       
     \centering
-    	\includegraphics[width=0.8\textwidth]{resources/circuito_1.png}
+    	\includegraphics[width=0.5\textwidth]{resources/circuito_1.png}
     	\caption{Filtro Notch Pasivo}
     	\label{fig:circuito_1}
 \end{figure}
@@ -39,14 +39,14 @@ En este ejercicio se busca crear un filtro notch a partir del circuito \ref{fig:
 En una primera instancia a través del uso de la herramienta matlab se logró conseguir la función transferencia a través de la resolución de un sistema de ecuaciones, en una segunda instancia se transformaron ambos circuitos tipo T en circuitos tipo PI mediante el teorema de Kennely y se consiguió el circuito de la figura \ref{circuitoconkenelly}.
 
 \begin{figure}[H]                                                       
-    \centering\includegraphics[width=0.5\textwidth]{resources/circuitoconkenelly.png}
+    \centering\includegraphics[width=0.4\textwidth]{resources/circuitoconkenelly.png}
     \caption{Mismo circuito con el teorema de Kenelly aplicado}
     \label{circuitoconkenelly}
 \end{figure}
 Se notó que $Z2$ y $Z6$ se encontraban en paralelo, de la misma manera lo estaban $Z3$ con $Z5$ y $Z1$ con $Z4$, por lo que se prosiguió a calcular el equivalente y se obtuvo el circuito de la figura \ref{circuitoconkenellysimplificado}.
 
 \begin{figure}[H]                                                       
-    \centering\includegraphics[width=0.8\textwidth]{resources/circuitoconkenellysimplificado.png}
+    \centering\includegraphics[width=0.5\textwidth]{resources/circuitoconkenellysimplificado.png}
     \caption{Circuito con el teorema de Kenelly aplicado simplificado}
     \label{circuitoconkenellysimplificado}
 \end{figure}
@@ -63,13 +63,13 @@ Vale aclarar que se utilizó la ayuda propuesta por la cátedra y se consideró 
 \begin{equation} H(s) = \frac{(\frac{S}{1/C_{3} R_{3}})^2 + 1} {(\frac{S}{1/C_{3}R_{3}})^2 + 4\frac{S}{C_{3}R_{3}} + 1}  \label{transferencia_1}\end{equation}.
 
 Como se puede observar, la función transferencia describe un filtro Notch. Su frecuencia de corte es
-$W_0$ y su expresión se muestra en la ecuación \ref{frecuencia_corte}
+$W_0$ y su expresión se muestra en la ecuación \ref{frecuencia_corte}.
 
 \begin{equation} W_{0} =  \frac{1}{C_{3} R_{3}}  \label{frecuencia_corte}\end{equation}
 
 La frecuencia de corte pedida es $10.8k Hz$, obtenemos así la relación que se puede ver en la ecuación \ref{relacion_RC}.
 
-\begin{equation} R_{3} = \frac{1}{C_{3} 2\pi 10.8k} \label{relacion_RC}\end{equation}
+\begin{equation} R_{3} = \frac{1}{C_{3} \  2 \ \pi \ 10.8k} \label{relacion_RC}\end{equation}
 
 Es posible dar valores al capacitor y así obtener un valor para las resistencias. Teniendo en cuenta los valores comerciales disponibles en el pañol, se tomo $C_{3} = 10nF$ y se obtuvo $R_{3}=1.47k\Omega$. Al no haber disponibilidad de una resistencia fija de ese valor, se utilizo una $R_{3}=1.5k\Omega$. Tampoco se encontraron capacitores de $C = 5nF$ por lo que se utilizaron tanto $C_{1} = 4.7nF$ como  $C_{2} = 4.7nF$. Estos valores se cargaron en LTspice y se obtuvo el bode de la figura \ref{fig:bode_ltspice_teorico}.
 
@@ -162,7 +162,7 @@ Con los valores de los componentes calculados anteriormente, se diseño una plac
 puede ver en la figura \ref{fig:placa_altium}.
 
 \begin{figure}[H]                                                       
-    \centering\includegraphics[width=0.5\textwidth]{resources/placa_altium.png}
+    \centering\includegraphics[width=0.3\textwidth]{resources/placa_altium.png}
     \caption{Placa diseñada en Altium}
     \label{fig:placa_altium}
     \end{figure}

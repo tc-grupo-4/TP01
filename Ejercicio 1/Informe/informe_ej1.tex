@@ -27,7 +27,7 @@
 %\begin{document}
 \section{Ejercicio I}
 \subsection{Análisis del circuito}
-En este ejercicio se busca crear un filtro notch a partir del circuito \ref{fig:circuito_1}. 
+En este ejercicio se busca crear un filtro Notch a partir del circuito \ref{fig:circuito_1}. 
 
 \begin{figure}[H]                                                       
     \centering
@@ -36,28 +36,28 @@ En este ejercicio se busca crear un filtro notch a partir del circuito \ref{fig:
     	\label{fig:circuito_1}
 \end{figure}
 
-En una primera instancia a través del uso de la herramienta matlab se logró conseguir la función transferencia a través de la resolución de un sistema de ecuaciones, en una segunda instancia se transformaron ambos circuitos tipo T en circuitos tipo PI mediante el teorema de Kennely y se consiguió el circuito de la figura \ref{circuitoconkenelly}.
+En una primera instancia a través del uso de la herramienta MatLab se logró conseguir la función transferencia resolviendo un sistema de ecuaciones; luego se transformaron ambos circuitos tipo T en circuitos tipo PI mediante el teorema de Kennelly y se consiguió el circuito de la figura \ref{circuitoconKennelly}.
 
 \begin{figure}[H]                                                       
-    \centering\includegraphics[width=0.5\textwidth]{circuitoconkenelly.png}
-    \caption{Mismo circuito con el teorema de Kenelly aplicado}
-    \label{circuitoconkenelly}
+    \centering\includegraphics[width=0.5\textwidth]{circuitoconKennelly.png}
+    \caption{Mismo circuito con el teorema de Kennelly aplicado}
+    \label{circuitoconKennelly}
 \end{figure}
-Se notó que $Z2$ y $Z6$ se encontraban en paralelo, de la misma manera lo estaban $Z3$ con $Z5$ y $Z1$ con $Z4$, por lo que se prosiguió a calcular el equivalente y se obtuvo el circuito de la figura \ref{circuitoconkenellysimplificado}.
+Se notó que $Z2$ y $Z6$ se encontraban en paralelo, al igual que $Z3$ con $Z5$ y $Z1$ con $Z4$, por lo que se calcularon las impedancias equivalentes y se obtuvo el circuito de la figura \ref{circuitoconKennellysimplificado}.
 
 \begin{figure}[H]                                                       
-    \centering\includegraphics[width=0.8\textwidth]{circuitoconkenellysimplificado.png}
-    \caption{Circuito con el teorema de Kenelly aplicado simplificado}
-    \label{circuitoconkenellysimplificado}
+    \centering\includegraphics[width=0.8\textwidth]{circuitoconKennellysimplificado.png}
+    \caption{Circuito con el teorema de Kennelly aplicado (simplificado)}
+    \label{circuitoconKennellysimplificado}
 \end{figure}
 
 Con los valores:
 \begin{equation}
 Z_{p1}=Z_{p2}=\dfrac{C_3 \ R_3 \ s + \ 1}{C_3 \ s} \ \ ; \ Z_{p3}=\dfrac{4 \ R_3 \ (C_3 \ R_3 \ s \ + \ 1)}{C_3^2 \ R_3^2 \ s^2 \ + \ 1}
 \end{equation}
-Una vez se llegó a este punto fue más fácil encontrar la función transferencia y se obtuvo lo detallado en la ecuación \ref{transferencia_1}.
+Una vez que se llegó a este punto fue más fácil encontrar la función transferencia y se obtuvo lo detallado en la ecuación \ref{transferencia_1}.
 %En primer lugar, se calculó analíticamente al circuito mediante un método alternativo como es el de cuadripolos para obtener la función transferencia $H(s)$ que se puede ver en la ecuación \ref{transferencia_1}.
-Vale aclarar que se utilizó la ayuda propuesta por la cátedra y se consideró que $R_{1} = R_{2}
+Cabe aclarar que se utilizó la ayuda propuesta por la cátedra y se consideró que $R_{1} = R_{2}
 = 2 \ R_{3}$ y $2 \ C_{1} = 2 \ C_{2} = C_{3}$.
 
 \begin{equation} H(s) = \frac{(\frac{S}{1/C_{3} R_{3}})^2 + 1} {(\frac{S}{1/C_{3}R_{3}})^2 + 4\frac{S}{C_{3}R_{3}} + 1}  \label{transferencia_1}\end{equation}.
@@ -71,7 +71,7 @@ La frecuencia de corte pedida es $10.8k Hz$, obtenemos así la relación que se 
 
 \begin{equation} R_{3} = \frac{1}{C_{3} 2\pi 10.8k} \label{relacion_RC}\end{equation}
 
-Es posible dar valores al capacitor y así obtener un valor para las resistencias. Teniendo en cuenta los valores comerciales disponibles en el pañol, se tomo $C_{3} = 10nF$ y se obtuvo $R_{3}=1.47k\Omega$. Al no haber disponibilidad de una resistencia fija de ese valor, se utilizo una $R_{3}=1.5k\Omega$. Tampoco se encontraron capacitores de $C = 5nF$ por lo que se utilizaron tanto $C_{1} = 4.7nF$ como  $C_{2} = 4.7nF$. Estos valores se cargaron en LTspice y se obtuvo el bode de la figura \ref{fig:bode_ltspice_teorico}.
+Es posible fijar un valor para el capacitor y así obtener valores posibles para las resistencias. Teniendo en cuenta los valores comerciales disponibles en el pañol, se tomó $C_{3} = 10nF$ y se obtuvo $R_{3}=1.47k\Omega$. Al no haber disponibilidad de una resistencia fija de ese valor, se utilizó una $R_{3}=1.5k\Omega$. Tampoco se encontraron capacitores de $C = 5nF$ por lo que se utilizaron tanto $C_{1} = 4.7nF$ como  $C_{2} = 4.7nF$. Estos valores se cargaron en LTSpice y se obtuvo el Bode de la figura \ref{fig:bode_ltspice_teorico}.
 
 %\begin{figure}[H]                                                       
 %    \centering\includegraphics[width=\paperwidth, height=\textheight,keepaspectratio]{bode_ltspice_teorico.png}
@@ -87,11 +87,11 @@ Es posible dar valores al capacitor y así obtener un valor para las resistencia
 \end{center}
 \end{figure}
 
-Se puede observar que el comportamiento del bode describe un filtro notch y que la frecuencia de corte se ubica en $11.1kHz$. Si
+Se puede observar que la respuesta en frecuencia del circuito es la de un filtro Notch y que la frecuencia de corte se ubica en $11.1kHz$. Si
 bien la frecuencia de corte pedida es $10.8kHz$ nos vemos obligados a tomar $11.1kHz$ por motivos de disponibilidad de componentes
-en el pañol. Luego las futuras mediciones se comparan respecto al bode obtenido en la figura \ref{fig:bode_ltspice_teorico}. \\
+en el pañol. Luego las futuras mediciones se comparan respecto al Bode obtenido en la figura \ref{fig:bode_ltspice_teorico}. \\
 
-Para obtener la respuesta impulsiva $h(t)$, se utilizó la antitrasformada de Laplace conseguida mediante el uso de matlab. Esta resulto ser la que se muestra en la ecuación \ref{ecuacionrtaimpulsiva} y se puede ver graficada en la figura \ref{respuestaimpulsiva} .
+Para obtener la respuesta impulsiva $h(t)$, se utilizó la antitrasformada de Laplace conseguida mediante el uso de MatLab. Esta resultó ser la que se muestra en la ecuación \ref{ecuacionrtaimpulsiva} y se puede ver graficada en la figura \ref{respuestaimpulsiva}.
 
 \begin{equation}
 y \! \left(t\right) = \delta \! \left(t\right) - \dfrac{4\, \mathrm{e}^{-\frac{2\, t}{\mathrm{C3}\, \mathrm{R3}}}} {\mathrm{C3}\, \mathrm{R3}} \left(\cosh\!\left(\dfrac{\sqrt{3}\, t}{\mathrm{C3}\, \mathrm{R3}}\right) - \dfrac{2\, \sqrt{3}\, \sinh\!\left(\dfrac{\sqrt{3}\, t}{\mathrm{C3}\, \mathrm{R3}}\right)}{3}\right)
@@ -115,11 +115,11 @@ y \! \left(t\right) = \delta \! \left(t\right) - \dfrac{4\, \mathrm{e}^{-\frac{2
 %\begin{figure}[H]                                                       
 %    \centering\includegraphics[width=0.8\textwidth]{respuestaimpulsiva.png}
 %    \caption{Respuesta impulsiva}
-%    \label{circuitoconkenellysimplificado}
+%    \label{circuitoconKennellysimplificado}
 %\end{figure}
 
 
-Por último para poder terminar de caracterizar el sistema hace falta el diagrama de polos y ceros. Los polos y ceros se obtienen fácilmente si reordenamos la función transferencia como se ve continuación:
+Por último, para poder terminar de caracterizar el sistema hace falta el diagrama de polos y ceros. Los polos y ceros se obtienen fácilmente si reordenamos la función transferencia como se ve a continuación:
 
 \begin{center}
     $H(S) = \dfrac{(S-S_{1})(S-S_{2})}{(S-P_{1})(S-P_{2})S}$  \\
@@ -138,7 +138,7 @@ Hay dos polos:
     $P_{2}=-260285.7515$
 \end{center}
 
-Como se puede ver los dos ceros se encuentran sobre el eje imaginario y los dos polos en el eje real del semilado negativo
+Como se puede ver, ambos ceros se encuentran sobre el eje imaginario y ambos polos en el eje real del semiplano negativo.
 
 
 \begin{center}\begin{tikzpicture}
@@ -158,7 +158,7 @@ Como se puede ver los dos ceros se encuentran sobre el eje imaginario y los dos 
     \end{center}
 
 \subsection{Respuesta en frecuencia}
-Con los valores de los componentes calculados anteriormente, se diseño una placa en Altium. Su diseño se 
+Con los valores de los componentes calculados anteriormente, se diseñó una placa utilizando el software Altium Designer. Su diseño se 
 puede ver en la figura \ref{fig:placa_altium}.
 
 \begin{figure}[H]                                                       
@@ -167,23 +167,22 @@ puede ver en la figura \ref{fig:placa_altium}.
     \label{fig:placa_altium}
     \end{figure}
 
-Notar que se tuvieron que utilizar dos resistencias en serie de $1.5k\Omega$ para obtener una
+Nótese que se tuvieron que utilizar dos resistencias en serie de $1.5k\Omega$ para obtener una
 resistencia de $3k\Omega$. 
 
-Para medir la respuesta en frecuencia se utilizo un generador de señales y se alimento al circuito con un senoide en $V_{in}$ y se midió $V_{out}$ con la ayuda de un osciloscopio.
+Para medir la respuesta en frecuencia se utilizó un generador de señales y se alimentó al circuito con una señal senoidal en $V_{in}$ y se midió $V_{out}$ con la ayuda de un osciloscopio.
 
-En primer lugar se excito el circuito con una señal senoidal de $10 \ V_{pp}$ a una frecuencia de $11.1kHz$, que es la frecuencia de corte buscada con nuestros componentes. Se esperaría ver una señal totalmente atenuada ya que la señal de entrada esta en la frecuencia de corte. Se realizó un barrido rápido en las frecuencias cercanas a $11.1kHz$ y notamos que nuestro filtro tenía la mayor atenuación en $11.3kHz$. Los resultados fueron los siguientes: $V_{in}=9,73V$ y $V_{out}= 0,038V$ lo que da una atenuación de $20\log(\dfrac{V_{out}}{V_{in}}) = -48,16db$ , representando la salida tan sólo el $0.39 \%$ de la entrada. 
+En primer lugar, se excitó el circuito con una señal senoidal de $10 \ V_{pp}$ a una frecuencia de $11.1kHz$, que es la frecuencia de corte buscada con nuestros componentes. Se esperaría ver una señal totalmente atenuada: la señal de entrada está en la frecuencia de corte. Se realizó un barrido rápido en las frecuencias cercanas a $11.1kHz$ y notamos que nuestro filtro tenía la mayor atenuación en $11.3kHz$. Los resultados fueron los siguientes: $V_{in}=9,73V$ y $V_{out}= 0,038V$ lo que da una atenuación de $20\log(\dfrac{V_{out}}{V_{in}}) = -48,16db$ , representando la salida tan solo el $0.39 \%$ de la entrada. 
 
-Podemos decir que se puede considerar que la señal de entrada fue totalmente atenuada a esta frecuencia y que
-%Si hacemos el calculo de atenuación esta da $20\log(\dfrac{V_{out}}{V_{in}}) = -48,16db$. Esta atenuación debería serla mas chica cuando se realice el bode completo. 
-hay que tener en cuenta el ruido, el 
-osciloscopio es susceptible al ruido. Esto explica porque $V_{out}$ no es cero en la frecuencia de corte del Notch. Lo que se esta midiendo en esta situación es prácticamente ruido ya que este tiende a aumentar al ser tan pequeña la amplitud de la señal. \\
+Puede considerarse que la señal de entrada fue totalmente atenuada a esta frecuencia.
+%Si hacemos el calculo de atenuación esta da $20\log(\dfrac{V_{out}}{V_{in}}) = -48,16db$. Esta atenuación debería serla mas chica cuando se realice el Bode completo. 
+La susceptibilidad del osciloscopio al ruido explica por qué $V_{out}$ no es cero en la frecuencia de corte del Notch. Lo que se está midiendo en esta situación es prácticamente ruido ya que este tiende a volverse relevante al ser tan pequeña la amplitud de la señal. \\
 
-Si tenemos en cuenta que la frecuencia de corte que se planeaba obtener con los componentes elegidos y la que obtuvimos, el filtro fabricado tiene un error un $1.82 \ \%$. Y si se compara con los $10.8 \ kHz$ que se buscaban en un comienzo, este error es de un $4.63 \ \%$.
+Si se considera la frecuencia de corte que se planeaba obtener con los componentes elegidos en comparación con la que se obtuvo, el filtro fabricado tiene un error de $1.82 \ \%$. Y si se compara con los $10.8 \ kHz$ que se buscaban en un comienzo, este error es de un $4.63 \ \%$.
 
-Se prosiguió a realizar el bode completo. Para esto se mantuvo una senoide de $10 \ V_{pp}$ pico a pico
-y se fue modificando la frecuencia de esta. Sabiendo de antemano como es la curva que 
-describe el bode, se tomaron mas puntos en las áreas mas características del bode. Como lo es el área cercana a la frecuencia de corte. Los resultados del bode completo se pueden ver en la figura \ref{fig:superpuesto}.
+Se prosiguió a realizar el Bode completo. Para esto se mantuvo una senoide de $10 \ V_{pp}$ pico a pico
+y se fue modificando su frecuencia. Sabiendo de antemano cómo es la curva que 
+describe el Bode, se tomaron más puntos en las áreas más características del Bode, como lo es la cercana a la frecuencia de corte. Los resultados del Bode completo se pueden ver en la figura \ref{fig:superpuesto}.
 
 \begin{figure}[H] 
 \begin{center}
@@ -199,8 +198,8 @@ describe el bode, se tomaron mas puntos en las áreas mas características del b
 %    \label{fig:superpuesto}
 %\end{figure}
 
-Como se puede observar, la figura \ref{fig:superpuesto} tiene superpuesto el bode
-de LTspice (curva azul) que se mostró en la figura \ref{fig:bode_ltspice_teorico} y el bode que se obtuvo de forma experimental (curva naranja). Los resultados son sumamente satisfactorios. En el bode de la medición se puede apreciar la frecuencia de corte y como el resto de los puntos se asemejan a la curva teórica calculada en LTspice. 
+Como se puede observar, la figura \ref{fig:superpuesto} tiene superpuesto el Bode
+de LTSpice (curva azul) que se mostró en la figura \ref{fig:bode_ltspice_teorico} y el Bode que se obtuvo de forma experimental (curva naranja). Los resultados son sumamente satisfactorios. En el Bode de la medición se puede apreciar la frecuencia de corte y cómo el resto de los puntos se asemejan a la curva teórica calculada en LTSpice. 
 
 
 \subsection{Respuesta al escalón}
@@ -232,7 +231,7 @@ de LTspice (curva azul) que se mostró en la figura \ref{fig:bode_ltspice_teoric
 
 %    \end{center}
 
-Para la obtención de la respuesta teórica al escalón se realizó lo mismo que se mencionó anteriormente para la respuesta al impulso y se muestra a continuación en la ecuación \ref{ecuacionrtaalescalon} su resultado y en la figura \ref{respuestaalescalon} su gráfico.
+Para la obtención de la respuesta teórica al escalón se aplicó el procedimiento mencionado anteriormente para la respuesta al impulso. Los resultados se muestran a continuación en la ecuación \ref{ecuacionrtaalescalon} y en la figura \ref{respuestaalescalon}.
 
 \begin{equation}
 y \! \left(t\right) = 1 - \dfrac{4}{3}\, \sqrt{3}\, \mathrm{e}^{-\frac{2\, t}{\mathrm{C3}\, \mathrm{R3}}}\, \sinh\!\left(\dfrac{\sqrt{3}\, t}{\mathrm{C3}\, \mathrm{R3}}\right)
@@ -247,7 +246,7 @@ y \! \left(t\right) = 1 - \dfrac{4}{3}\, \sqrt{3}\, \mathrm{e}^{-\frac{2\, t}{\m
 \end{center}
 \end{figure}
 
-%Si simulamos en LTspice la respuesta al ecalon tomando $C_{3} = 10nF$ y $R_{3}=1.47k\Omega$, nos queda los que observamos en 
+%Si simulamos en LTSpice la respuesta al ecalon tomando $C_{3} = 10nF$ y $R_{3}=1.47k\Omega$, nos queda los que observamos en 
 %la figura \ref:fig{rta_escalon_teorica}
 
 %\begin{figure}[ht]                                                       
@@ -256,7 +255,7 @@ y \! \left(t\right) = 1 - \dfrac{4}{3}\, \sqrt{3}\, \mathrm{e}^{-\frac{2\, t}{\m
 %    \label{fig:rta_escalon_teorica}
 %    \end{figure}
 
-A continuación en la figura \ref{rtaalescalonosciloscopio} se muestra la imagen tomada del osciloscopio al momento de excitar el circuito con el escalón:
+En la figura \ref{rtaalescalonosciloscopio} se muestra la imagen tomada del osciloscopio al excitar el circuito con el escalón:
 
 \begin{figure}[H]                                                       
     \centering\includegraphics[width=\textwidth]{rtaalescalon.png}
@@ -264,6 +263,6 @@ A continuación en la figura \ref{rtaalescalonosciloscopio} se muestra la imagen
 \label{rtaalescalonosciloscopio}
 \end{figure}
 
-La línea violeta es la repuesta al escalón  medida y la amarilla es el escalón. Podemos decir entonces  que se corresponde de manera adecuada la respuesta medida con la teórica y que el circuito se comportó como se esperaba.
+La línea violeta es la respuesta al escalón medida y la amarilla es el escalón. Podemos decir entonces que se corresponde de manera adecuada la respuesta medida con la teórica y que el circuito se comportó como se esperaba.
  
 %\end{document}

@@ -13,29 +13,28 @@ H(s)=\frac{1}{1+sRC}\label{eq:2_4}
 Si simulamos la transferencia del circuito en LTSpice, el resultado
 es el que se ve en las figuras \ref{2_4} y \ref{2_5}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.4]{../Ex2/resources2/scope_0}
+\includegraphics[scale=0.4]{../Ex2/resources2/scope_0} 
 \par\end{centering}
 \caption{Resultados}
-\label{2_1}
+\label{2_1} 
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.65]{../Ex2/resources2/MedyPost}
+\includegraphics[scale=0.65]{../Ex2/resources2/MedyPost} 
 \par\end{centering}
 \caption{Simulacion LTSpice y Mediciones}
 \label{2_4}
-
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{../Ex2/resources2/montecarlo}
+\includegraphics[scale=0.6]{../Ex2/resources2/montecarlo} 
 \par\end{centering}
 \caption{Análisis montecarlo}
-\label{2_5}
+\label{2_5} 
 \end{figure}
 
 \subsection{Calculo de armónicos}
@@ -71,7 +70,7 @@ van quedando mas parecidas, esto se muestra en la figura \ref{2_2}.
 A medida que agreguemos mas términos a nuestra suma, menos sera la
 diferencia con una onda cuadrada ideal. No obstante, hay que tener
 en cuenta que, como fue visto en Matemática V, al tener una discontinuidad
-no evitable cada $\frac{T}{2}$, siendo \emph{T} el período de la
+no evitable cada $\frac{T}{2}$, siendo \emph{T} el perí­odo de la
 señal, se generaran sobrepicos en los puntos de discontinuidad. por
 ende, si llamamos \emph{x(t)} a la función cuadrada ideal e \emph{y(t)}
 a su aproximación por senoides, \emph{x(t)} será igual a \emph{y(t)
@@ -83,33 +82,32 @@ se encuentren sobrepicos.
 x(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi}sin\left(2\pi(2n-1)f_{0}t\right)\label{eq:2_1}
 \end{equation}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.35]{../Ex2/resources2/Square}\includegraphics[scale=0.35]{../Ex2/resources2/DiagEspcTeo}
+\includegraphics[scale=0.35]{../Ex2/resources2/Square}\includegraphics[scale=0.35]{../Ex2/resources2/DiagEspcTeo} 
 \par\end{centering}
 \caption{Representación de onda cuadrada mediante suma de senoidales y su diagrama
 espectral teórico}
-\label{2_2}
+\label{2_2} 
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.4]{../Ex2/resources2/Med_Arm}
+\includegraphics[scale=0.65]{../Ex2/resources2/Med_Arm} 
 \par\end{centering}
 \caption{Transferencia superpuesta con los armonicos(los ptos de los armonicos
 están unidos por lineas)}
-
 \end{figure}
 
-Debido a que la entrada es una función continua a trozos de período
+Debido a que la entrada es una función continua a trozos de perí­odo
 \emph{T, }entonces:
 
 \[
-y(t)\sim\sum_{n=1}^{\infty}\left|b_{2n-1}\right|\left|H\left((2n-1)f_{0}\right)\right|cos\left[2\pi(2n-1)f_{0}t+\phi((2n-1)f_{0})+\theta_{2n-1}\right]
+y(t)\sim\sum_{n=1}^{\infty}\left|X_{2n-1}\right|\left|H\left((2n-1)f_{0}\right)\right|cos\left[2\pi(2n-1)f_{0}t+\phi((2n-1)f_{0})+\theta_{2n-1}\right]
 \]
 
 \begin{equation}
-b_{2n-1}=\left|b_{2n-1}\right|e^{i\theta_{2n-1}}\label{eq:3}
+X_{2n-1}=i\frac{b_{2n-1}}{2}\label{eq:3}
 \end{equation}
 
 \[
@@ -134,7 +132,7 @@ H(f)=\frac{1}{\sqrt{(2\pi fRC)^{2}+1}}
 \]
 
 \[
-\theta_{n}=0
+\theta_{n}=\frac{\pi}{2}
 \]
 
 Finalmente, podemos escribir la salida como la ecuacion \ref{eq:2_3}
@@ -151,12 +149,12 @@ Teniendo en cuenta que $f_{0}=\frac{1}{2\pi RC}$ , y llamando \emph{k=2n-1,
 y(t)\sim\sum_{k\,impares}\frac{20}{k\pi\sqrt{k^{2}+1}}cos\left(2\pi kf_{0}t-arctg\left(k\right)+\frac{\pi}{2}\right)
 \]
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.5]{../Ex2/resources2/out_calc}
+\includegraphics[scale=0.5]{../Ex2/resources2/out_calc} 
 \par\end{centering}
 \caption{Salida del RC en armónicos}
-\label{2_3}
+\label{2_3} 
 \end{figure}
 
 \subsection{Circuito como Integrador}
@@ -183,27 +181,24 @@ lo cual podemos aproximar el denominado de la transferencia y usar
 nuestro circuito como integrador, como se puede observar en la figura
 \ref{2_6}.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.4]{../Ex2/resources2/300k}
+\includegraphics[scale=0.4]{../Ex2/resources2/300k} 
 \par\end{centering}
 \caption{Circuito como integrador a 300 (kHz)}
 \label{2_6}
-
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.6]{../Ex2/resources2/sim}
+\includegraphics[scale=0.6]{../Ex2/resources2/sim} 
 \par\end{centering}
 \caption{Simulacion del circuito a 300 (kHz)}
-
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \begin{centering}
-\includegraphics[scale=0.4]{../Ex2/resources2/640}
+\includegraphics[scale=0.4]{../Ex2/resources2/640} 
 \par\end{centering}
 \caption{Circuito andando a 640(Hz)}
-
 \end{figure}

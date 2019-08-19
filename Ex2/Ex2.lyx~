@@ -5,12 +5,12 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
-\use_default_options true
+\use_default_options false
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding utf8
-\fontencoding global
+\fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -26,22 +26,22 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
-\paperfontsize default
+\float_placement H
+\paperfontsize 10
 \spacing single
 \use_hyperref false
-\papersize default
+\papersize a4paper
 \use_geometry true
-\use_package amsmath 1
-\use_package amssymb 1
-\use_package cancel 1
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
 \use_package esint 1
-\use_package mathdots 1
-\use_package mathtools 1
-\use_package mhchem 1
-\use_package stackrel 1
-\use_package stmaryrd 1
-\use_package undertilde 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
 \cite_engine basic
 \cite_engine_type default
 \biblio_style plain
@@ -50,7 +50,7 @@
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 1
+\use_refstyle 0
 \index Index
 \shortcut idx
 \color #008000
@@ -64,8 +64,8 @@
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
-\paragraph_indentation 0bp
-\quotes_language english
+\paragraph_indentation 0pt
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -148,6 +148,7 @@ reference "2_5"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -156,12 +157,11 @@ status open
 \align center
 \begin_inset Graphics
 	filename resources2/scope_0.png
-	lyxscale 25
 	scale 40
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -180,7 +180,7 @@ name "2_1"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \end_inset
@@ -190,6 +190,7 @@ name "2_1"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -202,7 +203,7 @@ status open
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -224,10 +225,6 @@ name "2_4"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -235,6 +232,7 @@ name "2_4"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -243,12 +241,11 @@ status open
 \align center
 \begin_inset Graphics
 	filename resources2/montecarlo.png
-	lyxscale 25
-	scale 50
+	scale 60
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -267,7 +264,7 @@ name "2_5"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \end_inset
@@ -363,7 +360,8 @@ reference "2_2"
 \emph on
 T
 \emph default
- el período de la señal, se generaran sobrepicos en los puntos de discontinuidad.
+ el perí­odo de la señal, se generaran sobrepicos en los puntos de discontinuida
+d.
  por ende, si llamamos 
 \emph on
 x(t)
@@ -398,6 +396,7 @@ x(t)\sim\sum_{n=1}^{\infty}\frac{20}{(2n-1)\pi}sin\left(2\pi(2n-1)f_{0}t\right)\
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -406,7 +405,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename resources2/Square.png
-	lyxscale 20
 	scale 35
 
 \end_inset
@@ -414,12 +412,11 @@ status open
 
 \begin_inset Graphics
 	filename resources2/DiagEspcTeo.png
-	lyxscale 25
 	scale 35
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -439,7 +436,7 @@ name "2_2"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \end_inset
@@ -449,6 +446,7 @@ name "2_2"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -457,12 +455,11 @@ status open
 \align center
 \begin_inset Graphics
 	filename resources2/Med_Arm.png
-	lyxscale 20
-	scale 40
+	scale 65
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -478,17 +475,13 @@ Transferencia superpuesta con los armonicos(los ptos de los armonicos están
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Debido a que la entrada es una función continua a trozos de período 
+Debido a que la entrada es una función continua a trozos de perí­odo 
 \emph on
 T, 
 \emph default
@@ -498,7 +491,7 @@ entonces:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-y(t)\sim\sum_{n=1}^{\infty}\left|b_{2n-1}\right|\left|H\left((2n-1)f_{0}\right)\right|cos\left[2\pi(2n-1)f_{0}t+\phi((2n-1)f_{0})+\theta_{2n-1}\right]
+y(t)\sim\sum_{n=1}^{\infty}\left|X_{2n-1}\right|\left|H\left((2n-1)f_{0}\right)\right|cos\left[2\pi(2n-1)f_{0}t+\phi((2n-1)f_{0})+\theta_{2n-1}\right]
 \]
 
 \end_inset
@@ -509,7 +502,7 @@ y(t)\sim\sum_{n=1}^{\infty}\left|b_{2n-1}\right|\left|H\left((2n-1)f_{0}\right)\
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-b_{2n-1}=\left|b_{2n-1}\right|e^{i\theta_{2n-1}}\label{eq:3}
+X_{2n-1}=i\frac{b_{2n-1}}{2}\label{eq:3}
 \end{equation}
 
 \end_inset
@@ -586,7 +579,7 @@ H(f)=\frac{1}{\sqrt{(2\pi fRC)^{2}+1}}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\theta_{n}=0
+\theta_{n}=\frac{\pi}{2}
 \]
 
 \end_inset
@@ -648,6 +641,7 @@ y(t)\sim\sum_{k\,impares}\frac{20}{k\pi\sqrt{k^{2}+1}}cos\left(2\pi kf_{0}t-arct
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -656,12 +650,11 @@ status open
 \align center
 \begin_inset Graphics
 	filename resources2/out_calc.png
-	lyxscale 20
 	scale 50
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -680,7 +673,7 @@ name "2_3"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \end_inset
@@ -765,6 +758,7 @@ reference "2_6"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -773,12 +767,11 @@ status open
 \align center
 \begin_inset Graphics
 	filename resources2/300k.png
-	lyxscale 50
 	scale 40
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -800,10 +793,6 @@ name "2_6"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -811,6 +800,7 @@ name "2_6"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -819,12 +809,11 @@ status open
 \align center
 \begin_inset Graphics
 	filename resources2/sim.png
-	lyxscale 20
 	scale 60
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -839,10 +828,6 @@ Simulacion del circuito a 300 (kHz)
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -850,6 +835,7 @@ Simulacion del circuito a 300 (kHz)
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open
@@ -858,12 +844,11 @@ status open
 \align center
 \begin_inset Graphics
 	filename resources2/640.png
-	lyxscale 20
 	scale 40
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -875,10 +860,6 @@ Circuito andando a 640(Hz)
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

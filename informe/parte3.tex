@@ -41,24 +41,27 @@ El programa permite ingresar datos desde tres fuentes: archivos de LTspice, tran
 \label{fig:inputControls}
 \end{figure}
 
-El botón "Spice" abrirá un explorador de archivos, que permitirá seleccionar un archivo .txt previamente exportado desde una simulación de LTspice. El archivo debe corresponder a una simulación del tipo "AC Analysis", que cuente con la transferencia de un solo nodo. Una vez seleccionado el archivo correspondiente, aparecerá el gráfico correspondiente en la figura.
+El botón 'Spice' abrirá un explorador de archivos, que permitirá seleccionar un archivo .txt previamente exportado desde una simulación de LTspice. El archivo debe corresponder a una simulación del tipo 'AC Analysis', que cuente con la transferencia de un solo nodo. Una vez seleccionado el archivo correspondiente, aparecerá el gráfico correspondiente en la figura.
 
-Para ingresar una transferencia analítica, existen con dos posibilidades: puede ser ingresada mediante sus polos, ceros y ganancia ("Poles, Zeros \& Gain") o bien mediante los polinomios del numerador y denominador ("Num \& Den"). La opción se selecciona con los controles que se encuentran debajo del boton "H(s)", y se debe indicar previo a pulsar el botón. 
-Si se selecciona la opción "Poles, Zeros \& Gain", al pulsar el botón "H(s)" se abrirá una ventana (Figura \ref{fig:pzgPromt}) en la cual se deberán ingresar los datos. El formato de los polos y ceros es el siguiente: suponiendo que la función transferencia tiene \emph{n} polos \emph{p1}, \emph{p2}, ... \emph{pn}, se deberán ingresar separados por un espacio: \emph{p1 p2 ... pn}. De la misma forma para los ceros: si la transferencia cuenta con \emph{m} ceros \emph{z1}, \emph{z2}, ... \emph{zm}, se deberán ingresar separados por un espacio: \emph{z1 z2 ... zm}. El campo de la ganancia se llena con el valor de la ganancia correspondiente.
+Para ingresar una transferencia analítica, existen con dos posibilidades: puede ser ingresada mediante sus polos, ceros y ganancia ('Poles, Zeros \& Gain') o bien mediante los polinomios del numerador y denominador ('Num \& Den'). La opción se selecciona con los controles que se encuentran debajo del boton 'H(s)', y se debe indicar previo a pulsar el botón. 
+
+Si se selecciona la opción 'Poles, Zeros \& Gain', al pulsar el botón 'H(s)' se abrirá una ventana (Figura \ref{fig:pzgPromt}) en la cual se deberán ingresar los datos. El formato de los polos y ceros es el siguiente: suponiendo que la función transferencia tiene \emph{n} polos \emph{p1}, \emph{p2}, ... \emph{pn}, se deberán ingresar separados por un espacio: \emph{p1 p2 ... pn}. De la misma forma para los ceros: si la transferencia cuenta con \emph{m} ceros \emph{z1}, \emph{z2}, ... \emph{zm}, se deberán ingresar separados por un espacio: \emph{z1 z2 ... zm}. 
+
+El campo de la ganancia se llena con el valor de la ganancia correspondiente.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.3]{resources/pzgPrompt.png}
-\caption{Prompt modo "Poles, Zeros \& Gain"}
+\caption{Prompt modo 'Poles, Zeros \& Gain'}
 \label{fig:pzgPromt}
 \end{figure}
 
-Al seleccionar el modo "Num \& Den" y pulsar el botón "H(s)" se abrirá un prompt como el que se muestra en la Figura \ref{fig:numDenPrompt}. Los datos se deben ingresar como un conjunto de coeficientes de polinomios ordenados (estilo polinomio de MatLab). Por ejemplo, si se quisiera ingresar el polinomio $ax^2 + bx + c$, se deberán ingresar los coeficientes \emph{a}, \emph{b} y \emph{c} en forma ordenada separados por un espacio, de la siguiente forma: \emph{a b c}. Los campos Numerador y Denominador admiten el mismo formato.
+Al seleccionar el modo 'Num \& Den' y pulsar el botón 'H(s)' se abrirá un prompt como el que se muestra en la Figura \ref{fig:numDenPrompt}. Los datos se deben ingresar como un conjunto de coeficientes de polinomios ordenados (estilo polinomio de MatLab). Por ejemplo, si se quisiera ingresar el polinomio $ax^2 + bx + c$, se deberán ingresar los coeficientes \emph{a}, \emph{b} y \emph{c} en forma ordenada separados por un espacio, de la siguiente forma: \emph{a b c}. Los campos Numerador y Denominador admiten el mismo formato.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.3]{resources/numDenPrompt.png}
-\caption{Prompt modo "Num \& Den"}
+\caption{Prompt modo 'Num \& Den'}
 \label{fig:numDenPrompt}
 \end{figure}
 
@@ -72,7 +75,7 @@ Cada vez que se cargue un dato a graficar, el programa abrirá automáticamente 
 
 \subsubsection{Editar etiquetas}
 
-En la parte superior del panel de controles se encuentran tres cuadros de texto en los cuales se podrá ingresar las etiquetas de los ejes, como se muestra en la Figura \ref{fig:labesControl}. Por defecto, estas son \emph{Frequency [Hz]}, \emph{Mag [dB]} y \emph{Phase [grad]} para frecuencia, magnitud y fase, respectivamente. Para modificarlas, debemos ingresar la etiqueta deseada y hacer click en "Set Labels".
+En la parte superior del panel de controles se encuentran tres cuadros de texto en los cuales se podrá ingresar las etiquetas de los ejes, como se muestra en la Figura \ref{fig:labesControl}. Por defecto, estas son \emph{Frequency [Hz]}, \emph{Mag [dB]} y \emph{Phase [grad]} para frecuencia, magnitud y fase, respectivamente. Para modificarlas, debemos ingresar la etiqueta deseada y hacer click en 'Set Labels'.
 
 \begin{figure}[ht]
 \centering
@@ -82,38 +85,38 @@ En la parte superior del panel de controles se encuentran tres cuadros de texto 
 \end{figure}
 
 \subsubsection{Distribución de los gráficos}
-La interfaz cuenta con una herramienta para seleccionar la disposición de las curvas. Mediante este control se podrá disponer las curvas de magnitud y fase en una misma figura ("Condensed"), o separar las curvas de magnitud y fase en dos figuras diferentes ("Expanded"). Las figuras \ref{fig:condensed} y \ref{fig:expanded} muestran los gráficos en modo "Condensed" y "Expanded", respectivamente.
+La interfaz cuenta con una herramienta para seleccionar la disposición de las curvas. Mediante este control se podrá disponer las curvas de magnitud y fase en una misma figura ('Condensed'), o separar las curvas de magnitud y fase en dos figuras diferentes ('Expanded'). Las figuras \ref{fig:condensed} y \ref{fig:expanded} muestran los gráficos en modo 'Condensed' y 'Expanded', respectivamente.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.15]{resources/condensed.png}
-\caption{Gráficos en modo "Condensed"}
+\caption{Gráficos en modo 'Condensed'}
 \label{fig:condensed}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.15]{resources/expanded.png}
-\caption{Gráficos en modo "Expanded"}
+\caption{Gráficos en modo 'Expanded'}
 \label{fig:expanded}
 \end{figure}
 
 \subsubsection{Eliminar gráficos}
-Para eliminar los gráficos cargados, bastará con hacer click en la opción "Remove Plots". Esta herramienta borrará todos los trazos que estén graficados en la figura. No es posible remover los gráficos individualmente.
+Para eliminar los gráficos cargados, bastará con hacer click en la opción 'Remove Plots'. Esta herramienta borrará todos los trazos que estén graficados en la figura. No es posible remover los gráficos individualmente.
 
 \subsubsection{Exportar gráficos}
-La ultima herramienta de la interfaz permite exportar los gráficos en dos formatos: PDF y PNG. El archivo exportado tendrá el formato que se presente en la GUI según el modo seleccionado ("Condensed" o "Expanded"). Al seleccionar el botón de \emph{Export as...} se abrirá un explorador de archivos para indicar la ubicación y nombre del archivo exportado. Las Figuras \ref{fig:condExport} y \ref{fig:expExport} muestran las figuras generadas en ambos modos:
+La ultima herramienta de la interfaz permite exportar los gráficos en dos formatos: PDF y PNG. El archivo exportado tendrá el formato que se presente en la GUI según el modo seleccionado ('Condensed' o 'Expanded'). Al seleccionar el botón de \emph{Export as...} se abrirá un explorador de archivos para indicar la ubicación y nombre del archivo exportado. Las Figuras \ref{fig:condExport} y \ref{fig:expExport} muestran las figuras generadas en ambos modos:
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.7]{resources/condExport.pdf}
-\caption{Resultado exportado en modo "Condensed"}
+\caption{Resultado exportado en modo 'Condensed'}
 \label{fig:condExport}
 \end{figure}
 
 \begin{figure}[ht]
 \centering
 \includegraphics[scale=0.7]{resources/expExport.pdf}
-\caption{Resultado exportado en modo "Expanded"}
+\caption{Resultado exportado en modo 'Expanded'}
 \label{fig:expExport}
 \end{figure}
